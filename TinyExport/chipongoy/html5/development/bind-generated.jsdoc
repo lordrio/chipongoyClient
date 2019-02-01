@@ -1,0 +1,584 @@
+/**
+
+@struct
+@memberof game
+@name SceneId
+*/
+/**
+
+@member {game.SceneId}
+@memberof game.SceneId
+@name SceneMgr
+*/
+/**
+
+@member {game.SceneId}
+@memberof game.SceneId
+@name Bootstrap
+*/
+/**
+
+@member {game.SceneId}
+@memberof game.SceneId
+@name Scene1
+*/
+/**
+
+@member {game.SceneId}
+@memberof game.SceneId
+@name Scene2
+*/
+/**
+
+@struct
+@memberof game
+@name ChildScene
+*/
+/**
+
+@member {game.SceneId}
+@memberof game.ChildScene
+@name parentSceneId
+*/
+/**
+
+@member {game.SceneId}
+@memberof game.ChildScene
+@name sceneIdToLoad
+*/
+/**
+
+@struct
+@memberof game
+@name SceneData
+*/
+/**
+
+@member {game.SceneId}
+@memberof game.SceneData
+@name sceneId
+*/
+/**
+
+@member {bool}
+@memberof game.SceneData
+@name DontDestroy
+*/
+/**
+
+@struct
+@memberof game
+@name ScenePathData
+*/
+/**
+
+@member {game.SceneId}
+@memberof game.ScenePathData
+@name sceneId
+*/
+/**
+
+@member {string}
+@memberof game.ScenePathData
+@name scenePath
+*/
+/**
+
+@struct
+@memberof game
+@name ScenePin
+*/
+/**
+
+@member {int8}
+@memberof game.ScenePin
+@name pinId
+*/
+/**
+
+@member {game.SceneId}
+@memberof game.ScenePin
+@name srcSceneId
+*/
+/**
+
+@member {game.SceneId}
+@memberof game.ScenePin
+@name destSceneId
+*/
+/**
+
+@component
+@memberof entities.game.SceneMgr
+@name Component
+*/
+/**
+
+@component
+@memberof entities.game.Bootstrap
+@name Component
+*/
+/**
+
+@component
+@memberof entities.game.Scene1
+@name Component
+*/
+/**
+
+@component
+@memberof entities.game.Scene2
+@name Component
+*/
+/**
+
+@component
+@memberof game
+@name SceneDefineContainer
+*/
+/**
+
+@member {ut.DynamicArray<game.ScenePathData>}
+@memberof game.SceneDefineContainer
+@name sceneList
+*/
+/**
+
+@component
+@memberof game
+@name SceneList
+*/
+/**
+
+@member {ut.DynamicArray<game.SceneData>}
+@memberof game.SceneList
+@name sceneList
+*/
+/**
+
+@member {ut.DynamicArray<game.ChildScene>}
+@memberof game.SceneList
+@name sceneChildList
+*/
+/**
+
+@member {ut.DynamicArray<game.ScenePin>}
+@memberof game.SceneList
+@name scenePinList
+*/
+/**
+
+@component
+@memberof game
+@name MouseSpriteInteractionData
+*/
+/**
+
+@member {ut.Entity}
+@memberof game.MouseSpriteInteractionData
+@name camera
+*/
+/**
+
+@member {bool}
+@memberof game.MouseSpriteInteractionData
+@name hover
+*/
+/**
+
+@member {bool}
+@memberof game.MouseSpriteInteractionData
+@name down
+*/
+/**
+
+@member {bool}
+@memberof game.MouseSpriteInteractionData
+@name lastDown
+*/
+/**
+
+@member {bool}
+@memberof game.MouseSpriteInteractionData
+@name clicked
+*/
+/**
+
+@member {bool}
+@memberof game.MouseSpriteInteractionData
+@name isInteractable
+*/
+/**
+
+@member {int8}
+@memberof game.MouseSpriteInteractionData
+@name mouseButtonCode
+*/
+/**
+
+@member {double}
+@memberof game.MouseSpriteInteractionData
+@name clickDragTreshold
+*/
+/**
+
+@member {double}
+@memberof game.MouseSpriteInteractionData
+@name tresholdCounter
+*/
+/**
+
+@member {bool}
+@memberof game.MouseSpriteInteractionData
+@name drag
+*/
+/**
+
+@member {bool}
+@memberof game.MouseSpriteInteractionData
+@name startDrag
+*/
+/**
+
+@component
+@memberof game
+@name SimpleDraggerTag
+*/
+/**
+
+@component
+@memberof ut.Core2D.layers
+@name Default
+*/
+/**
+
+@component
+@memberof ut.Core2D.layers
+@name TransparentFX
+*/
+/**
+
+@component
+@memberof ut.Core2D.layers
+@name IgnoreRaycast
+*/
+/**
+
+@component
+@memberof ut.Core2D.layers
+@name Water
+*/
+/**
+
+@component
+@memberof ut.Core2D.layers
+@name UI
+*/
+/**
+
+@component
+@memberof ut.Core2D.layers
+@name Grid
+*/
+/**
+
+@component
+@memberof ut.Core2D.layers
+@name Cutscene
+*/
+/**
+
+@component
+@memberof ut.EditorExtensions
+@name AssetReferenceAnimationClip
+*/
+/**
+
+@member {string}
+@memberof ut.EditorExtensions.AssetReferenceAnimationClip
+@name guid
+*/
+/**
+
+@member {int64}
+@memberof ut.EditorExtensions.AssetReferenceAnimationClip
+@name fileId
+*/
+/**
+
+@member {int32}
+@memberof ut.EditorExtensions.AssetReferenceAnimationClip
+@name type
+*/
+/**
+
+@component
+@memberof ut.EditorExtensions
+@name AssetReferenceAudioClip
+*/
+/**
+
+@member {string}
+@memberof ut.EditorExtensions.AssetReferenceAudioClip
+@name guid
+*/
+/**
+
+@member {int64}
+@memberof ut.EditorExtensions.AssetReferenceAudioClip
+@name fileId
+*/
+/**
+
+@member {int32}
+@memberof ut.EditorExtensions.AssetReferenceAudioClip
+@name type
+*/
+/**
+
+@component
+@memberof ut.EditorExtensions
+@name AssetReferenceSprite
+*/
+/**
+
+@member {string}
+@memberof ut.EditorExtensions.AssetReferenceSprite
+@name guid
+*/
+/**
+
+@member {int64}
+@memberof ut.EditorExtensions.AssetReferenceSprite
+@name fileId
+*/
+/**
+
+@member {int32}
+@memberof ut.EditorExtensions.AssetReferenceSprite
+@name type
+*/
+/**
+
+@component
+@memberof ut.EditorExtensions
+@name AssetReferenceSpriteAtlas
+*/
+/**
+
+@member {string}
+@memberof ut.EditorExtensions.AssetReferenceSpriteAtlas
+@name guid
+*/
+/**
+
+@member {int64}
+@memberof ut.EditorExtensions.AssetReferenceSpriteAtlas
+@name fileId
+*/
+/**
+
+@member {int32}
+@memberof ut.EditorExtensions.AssetReferenceSpriteAtlas
+@name type
+*/
+/**
+
+@component
+@memberof ut.EditorExtensions
+@name AssetReferenceTMP_FontAsset
+*/
+/**
+
+@member {string}
+@memberof ut.EditorExtensions.AssetReferenceTMP_FontAsset
+@name guid
+*/
+/**
+
+@member {int64}
+@memberof ut.EditorExtensions.AssetReferenceTMP_FontAsset
+@name fileId
+*/
+/**
+
+@member {int32}
+@memberof ut.EditorExtensions.AssetReferenceTMP_FontAsset
+@name type
+*/
+/**
+
+@component
+@memberof ut.EditorExtensions
+@name AssetReferenceTexture2D
+*/
+/**
+
+@member {string}
+@memberof ut.EditorExtensions.AssetReferenceTexture2D
+@name guid
+*/
+/**
+
+@member {int64}
+@memberof ut.EditorExtensions.AssetReferenceTexture2D
+@name fileId
+*/
+/**
+
+@member {int32}
+@memberof ut.EditorExtensions.AssetReferenceTexture2D
+@name type
+*/
+/**
+
+@component
+@memberof ut.EditorExtensions
+@name AssetReferenceTile
+*/
+/**
+
+@member {string}
+@memberof ut.EditorExtensions.AssetReferenceTile
+@name guid
+*/
+/**
+
+@member {int64}
+@memberof ut.EditorExtensions.AssetReferenceTile
+@name fileId
+*/
+/**
+
+@member {int32}
+@memberof ut.EditorExtensions.AssetReferenceTile
+@name type
+*/
+/**
+
+@component
+@memberof ut.EditorExtensions
+@name CameraCullingMask
+*/
+/**
+
+@member {int32}
+@memberof ut.EditorExtensions.CameraCullingMask
+@name mask
+*/
+/**
+
+@component
+@memberof ut.EditorExtensions
+@name EntityLayer
+*/
+/**
+
+@member {int32}
+@memberof ut.EditorExtensions.EntityLayer
+@name layer
+*/
+/**
+
+@component
+@memberof game
+@name SceneMgrBehaviour_State
+*/
+/**
+
+@member {bool}
+@memberof game.SceneMgrBehaviour_State
+@name initialized
+*/
+/**
+
+@member {bool}
+@memberof game.SceneMgrBehaviour_State
+@name enabled
+*/
+/**
+
+@member {bool}
+@memberof game.SceneMgrBehaviour_State
+@name onEnableCalled
+*/
+/**
+
+@member {bool}
+@memberof game.SceneMgrBehaviour_State
+@name onDisableCalled
+*/
+/**
+
+@component
+@memberof game
+@name SimpleDragger_State
+*/
+/**
+
+@member {bool}
+@memberof game.SimpleDragger_State
+@name initialized
+*/
+/**
+
+@member {bool}
+@memberof game.SimpleDragger_State
+@name enabled
+*/
+/**
+
+@member {bool}
+@memberof game.SimpleDragger_State
+@name onEnableCalled
+*/
+/**
+
+@member {bool}
+@memberof game.SimpleDragger_State
+@name onDisableCalled
+*/
+/**
+
+@system
+@memberof game
+@name MouseSpriteInteractionSystemJS
+*/
+/**
+
+@system
+@memberof game
+@name TimerServiceJS
+*/
+/**
+
+@system
+@memberof game
+@name CustomButtonSystemJS
+*/
+/**
+
+@system
+@memberof game
+@name SceneMgrBehaviour_OnEntityEnableJS
+*/
+/**
+
+@system
+@memberof game
+@name SceneMgrBehaviour_OnEntityUpdateJS
+*/
+/**
+
+@system
+@memberof game
+@name SimpleDragger_OnEntityEnableJS
+*/
+/**
+
+@system
+@memberof game
+@name SimpleDragger_OnEntityUpdateJS
+*/
+
+

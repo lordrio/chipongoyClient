@@ -1,0 +1,239 @@
+{
+    "Success": true,
+    "Diagnostics": [],
+    "Systems": [
+        {
+            "Name": "MouseSpriteInteractionSystem",
+            "QualifiedName": "game.MouseSpriteInteractionSystem",
+            "Description": "",
+            "Source": {
+                "File": "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/chipongoy/Scripts/Sprite/MouseSpriteInteractionSystem.ts",
+                "Line": 7,
+                "Character": 17
+            }
+        },
+        {
+            "Name": "TimerService",
+            "QualifiedName": "game.TimerService",
+            "Description": "New System",
+            "Source": {
+                "File": "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/chipongoy/Scripts/System/TimerService.ts",
+                "Line": 9,
+                "Character": 17
+            }
+        },
+        {
+            "Name": "CustomButtonSystem",
+            "QualifiedName": "game.CustomButtonSystem",
+            "Description": "New System",
+            "Source": {
+                "File": "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/chipongoy/Scripts/UI/CustomButtonSystem.ts",
+                "Line": 5,
+                "Character": 17
+            }
+        }
+    ],
+    "Filters": [
+        {
+            "Name": "SceneMgrBehaviourFilter",
+            "QualifiedName": "game.SceneMgrBehaviourFilter",
+            "Description": "",
+            "Source": {
+                "File": "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/chipongoy/Scripts/SceneMgr/SceneMgrBehaviour.ts",
+                "Line": 103,
+                "Character": 17
+            },
+            "Fields": [
+                {
+                    "Name": "list",
+                    "QualifiedName": "game.SceneList",
+                    "Description": "",
+                    "Source": {
+                        "File": "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/chipongoy/Scripts/SceneMgr/SceneMgrBehaviour.ts",
+                        "Line": 103,
+                        "Character": 67
+                    },
+                    "IsStatic": false,
+                    "IsReadonly": false,
+                    "IsOptional": false,
+                    "IsPublic": true
+                },
+                {
+                    "Name": "def",
+                    "QualifiedName": "game.SceneDefineContainer",
+                    "Description": "",
+                    "Source": {
+                        "File": "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/chipongoy/Scripts/SceneMgr/SceneMgrBehaviour.ts",
+                        "Line": 104,
+                        "Character": 30
+                    },
+                    "IsStatic": false,
+                    "IsReadonly": false,
+                    "IsOptional": false,
+                    "IsPublic": true
+                }
+            ]
+        },
+        {
+            "Name": "SimpleDraggerFilter",
+            "QualifiedName": "game.SimpleDraggerFilter",
+            "Description": "",
+            "Source": {
+                "File": "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/chipongoy/Scripts/Sprite/SimpleDragger.ts",
+                "Line": 4,
+                "Character": 17
+            },
+            "Fields": [
+                {
+                    "Name": "pos",
+                    "QualifiedName": "ut.Core2D.TransformLocalPosition",
+                    "Description": "",
+                    "Source": {
+                        "File": "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/chipongoy/Scripts/Sprite/SimpleDragger.ts",
+                        "Line": 4,
+                        "Character": 63
+                    },
+                    "IsStatic": false,
+                    "IsReadonly": false,
+                    "IsOptional": false,
+                    "IsPublic": true
+                },
+                {
+                    "Name": "mouseSprite",
+                    "QualifiedName": "game.MouseSpriteInteractionData",
+                    "Description": "",
+                    "Source": {
+                        "File": "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/chipongoy/Scripts/Sprite/SimpleDragger.ts",
+                        "Line": 6,
+                        "Character": 47
+                    },
+                    "IsStatic": false,
+                    "IsReadonly": false,
+                    "IsOptional": false,
+                    "IsPublic": true
+                },
+                {
+                    "Name": "tag",
+                    "QualifiedName": "game.SimpleDraggerTag",
+                    "Description": "",
+                    "Source": {
+                        "File": "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/chipongoy/Scripts/Sprite/SimpleDragger.ts",
+                        "Line": 7,
+                        "Character": 54
+                    },
+                    "IsStatic": false,
+                    "IsReadonly": false,
+                    "IsOptional": false,
+                    "IsPublic": true
+                }
+            ]
+        }
+    ],
+    "Behaviours": [
+        {
+            "Name": "SceneMgrBehaviour",
+            "QualifiedName": "game.SceneMgrBehaviour",
+            "Description": "",
+            "Source": {
+                "File": "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/chipongoy/Scripts/SceneMgr/SceneMgrBehaviour.ts",
+                "Line": 110,
+                "Character": 17
+            },
+            "Fields": [
+                {
+                    "Name": "data",
+                    "QualifiedName": "game.SceneMgrBehaviourFilter",
+                    "Description": "",
+                    "Source": {
+                        "File": "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/chipongoy/Scripts/SceneMgr/SceneMgrBehaviour.ts",
+                        "Line": 110,
+                        "Character": 67
+                    },
+                    "IsStatic": false,
+                    "IsReadonly": false,
+                    "IsOptional": false,
+                    "IsPublic": true
+                }
+            ],
+            "Methods": [
+                "OnEntityEnable",
+                "OnEntityUpdate"
+            ]
+        },
+        {
+            "Name": "SimpleDragger",
+            "QualifiedName": "game.SimpleDragger",
+            "Description": "",
+            "Source": {
+                "File": "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/chipongoy/Scripts/Sprite/SimpleDragger.ts",
+                "Line": 11,
+                "Character": 17
+            },
+            "Fields": [
+                {
+                    "Name": "data",
+                    "QualifiedName": "game.SimpleDraggerFilter",
+                    "Description": "",
+                    "Source": {
+                        "File": "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/chipongoy/Scripts/Sprite/SimpleDragger.ts",
+                        "Line": 11,
+                        "Character": 63
+                    },
+                    "IsStatic": false,
+                    "IsReadonly": false,
+                    "IsOptional": false,
+                    "IsPublic": true
+                }
+            ],
+            "Methods": [
+                "OnEntityEnable",
+                "OnEntityUpdate"
+            ]
+        }
+    ],
+    "Performance": [
+        {
+            "Key": "tsconfig",
+            "Description": "Time taken to read and parse the given tsconfig.json file",
+            "Duration": 83,
+            "Steps": 1
+        },
+        {
+            "Key": "checksum",
+            "Description": "Time taken to compute the MD5 of all inputs",
+            "Duration": 182,
+            "Steps": 1
+        },
+        {
+            "Key": "compile",
+            "Description": "Time taken to compile the TypeScript program",
+            "Duration": 864,
+            "Steps": 16
+        },
+        {
+            "Key": "emit",
+            "Description": "Time taken to generate and write the JavaScript output",
+            "Duration": 86,
+            "Steps": 2
+        },
+        {
+            "Key": "metadata",
+            "Description": "Time taken to reflect Tiny metadata from the compiled program",
+            "Duration": 9,
+            "Steps": 3
+        }
+    ],
+    "SourceFiles": [
+        "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/chipongoy/Scripts/SceneMgr/SceneMgr.ts",
+        "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/chipongoy/Scripts/SceneMgr/SceneMgrBehaviour.ts",
+        "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/chipongoy/Scripts/Sprite/MouseSpriteInteractionSystem.ts",
+        "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/chipongoy/Scripts/Sprite/SimpleDragger.ts",
+        "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/chipongoy/Scripts/System/InputService.ts",
+        "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/chipongoy/Scripts/System/TimerService.ts",
+        "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/chipongoy/Scripts/UI/CustomButtonSystem.ts",
+        "/Users/fadzli/Documents/chopodoy/chipodoy/Library/PackageCache/com.unity.tiny@0.13.4-preview/Runtime/Modules/UTiny.EntityGroup/Scripts/EntityGroup.ts",
+        "/Users/fadzli/Documents/chopodoy/chipodoy/Library/PackageCache/com.unity.tiny@0.13.4-preview/Runtime/Modules/UTiny.EntityGroup/Scripts/EntityLookupCache.ts"
+    ],
+    "InputHash": "13c856bab1da7c6cce14cb52ef9b1145",
+    "GeneratedAt": "Fri Feb 01 2019 13:29:09 GMT+0800 (+08)"
+}

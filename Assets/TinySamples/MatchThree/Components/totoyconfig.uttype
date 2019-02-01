@@ -1,0 +1,12 @@
+﻿[{
+    "$TypeId": 3,
+    "Id": "b04bd3b5a597497ab2cda2829f026789",
+    "Name": "totoyconfig",
+    "ExportFlags": 0,
+    "Unlisted": false,
+    "Visibility": 0,
+    "TypeCode": "Configuration",
+    "DefaultValue": {
+        "Type": { "Id": "b04bd3b5a597497ab2cda2829f026789", "Name": "totoyconfig" }
+    }
+}]

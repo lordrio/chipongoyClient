@@ -1,0 +1,103 @@
+﻿{
+    "Item": {
+        "Name": "Project",
+        "Size": 0,
+        "CompressedSize": 0
+    },
+    "Children": [{
+        "Item": {
+            "Name": "Runtime",
+            "Size": 0,
+            "CompressedSize": 0
+        },
+        "Children": [{
+            "Item": {
+                "Name": "TinyExport/chipongoy/html5/development/bin/runtime.js",
+                "Size": 6196605,
+                "CompressedSize": 784956
+            }
+        }]
+    }, {
+        "Item": {
+            "Name": "Assets",
+            "Size": 0,
+            "CompressedSize": 0
+        },
+        "Children": [{
+            "Item": {
+                "Name": "JavaScript",
+                "Size": 1157,
+                "CompressedSize": 0
+            }
+        }]
+    }, {
+        "Item": {
+            "Name": "Code",
+            "Size": 0,
+            "CompressedSize": 0
+        },
+        "Children": [{
+            "Item": {
+                "Name": "TinyExport/chipongoy/html5/development/bin/entities.js",
+                "Size": 27270,
+                "CompressedSize": 3491
+            },
+            "Children": [{
+                "Item": {
+                    "Name": "SceneMgr",
+                    "Size": 2029,
+                    "CompressedSize": 591
+                }
+            }, {
+                "Item": {
+                    "Name": "Bootstrap",
+                    "Size": 7400,
+                    "CompressedSize": 1526
+                }
+            }, {
+                "Item": {
+                    "Name": "Scene1",
+                    "Size": 9010,
+                    "CompressedSize": 1905
+                }
+            }, {
+                "Item": {
+                    "Name": "Scene2",
+                    "Size": 8757,
+                    "CompressedSize": 1806
+                }
+            }]
+        }, {
+            "Item": {
+                "Name": "TinyExport/chipongoy/html5/development/bin/bindings.js",
+                "Size": 123875,
+                "CompressedSize": 10616
+            }
+        }, {
+            "Item": {
+                "Name": "Linked Code Files",
+                "Size": 0,
+                "CompressedSize": 0
+            },
+            "Children": [{
+                "Item": {
+                    "Name": "/Users/fadzli/Documents/chopodoy/chipodoy/TinyExport/chipongoy/html5/development/ScriptAssemblies/tsc-emit.js",
+                    "Size": 26450,
+                    "CompressedSize": 5471
+                }
+            }]
+        }, {
+            "Item": {
+                "Name": "TinyExport/chipongoy/html5/development/bin/main.js",
+                "Size": 7464,
+                "CompressedSize": 1629
+            }
+        }, {
+            "Item": {
+                "Name": "TinyExport/chipongoy/html5/development/bin/wsclient.js",
+                "Size": 9651,
+                "CompressedSize": 2635
+            }
+        }]
+    }]
+}

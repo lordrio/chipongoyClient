@@ -1,0 +1,237 @@
+{
+    "Success": true,
+    "Diagnostics": [],
+    "Systems": [
+        {
+            "Name": "InputMovementSystem",
+            "QualifiedName": "game.InputMovementSystem",
+            "Description": "New System",
+            "Source": {
+                "File": "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/TinySamples/BasicWorkshop/Scripts/InputMovementSystem.ts",
+                "Line": 6,
+                "Character": 17
+            },
+            "ExecuteAfter": [
+                "ut.Shared.InputFence"
+            ]
+        },
+        {
+            "Name": "PlayerCollisionSystem",
+            "QualifiedName": "game.PlayerCollisionSystem",
+            "Description": "New System",
+            "Source": {
+                "File": "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/TinySamples/BasicWorkshop/Scripts/PlayerCollisionSystem.ts",
+                "Line": 5,
+                "Character": 17
+            }
+        },
+        {
+            "Name": "ScrollingBackgroundSystem",
+            "QualifiedName": "game.ScrollingBackgroundSystem",
+            "Description": "New System",
+            "Source": {
+                "File": "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/TinySamples/BasicWorkshop/Scripts/ScrollingBackgroundSystem.ts",
+                "Line": 6,
+                "Character": 17
+            }
+        },
+        {
+            "Name": "SpawnSystem",
+            "QualifiedName": "game.SpawnSystem",
+            "Description": "New System",
+            "Source": {
+                "File": "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/TinySamples/BasicWorkshop/Scripts/SpawnSystem.ts",
+                "Line": 5,
+                "Character": 17
+            }
+        },
+        {
+            "Name": "Time",
+            "QualifiedName": "ut.Time",
+            "Description": "Placeholder system to provide a UnityEngine.Time like API\r\n\r\ne.g. \r\n  let deltaTime = ut.Time.deltaTime();\r\n  let time = ut.Time.time();",
+            "Source": {
+                "File": "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/TinySamples/BasicWorkshop/Scripts/Time.ts",
+                "Line": 12,
+                "Character": 17
+            },
+            "ExecuteBefore": [
+                "ut.Shared.UserCodeStart"
+            ]
+        }
+    ],
+    "Filters": [
+        {
+            "Name": "EnemyBehaviorFilter",
+            "QualifiedName": "game.EnemyBehaviorFilter",
+            "Description": "New Filter",
+            "Source": {
+                "File": "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/TinySamples/BasicWorkshop/Scripts/EnemyBehavior.ts",
+                "Line": 5,
+                "Character": 17
+            },
+            "Fields": [
+                {
+                    "Name": "entity",
+                    "QualifiedName": "ut.Entity",
+                    "Description": "",
+                    "Source": {
+                        "File": "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/TinySamples/BasicWorkshop/Scripts/EnemyBehavior.ts",
+                        "Line": 6,
+                        "Character": 3
+                    },
+                    "IsStatic": false,
+                    "IsReadonly": false,
+                    "IsOptional": false,
+                    "IsPublic": true
+                },
+                {
+                    "Name": "position",
+                    "QualifiedName": "ut.Core2D.TransformLocalPosition",
+                    "Description": "",
+                    "Source": {
+                        "File": "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/TinySamples/BasicWorkshop/Scripts/EnemyBehavior.ts",
+                        "Line": 7,
+                        "Character": 27
+                    },
+                    "IsStatic": false,
+                    "IsReadonly": false,
+                    "IsOptional": false,
+                    "IsPublic": true
+                },
+                {
+                    "Name": "tag",
+                    "QualifiedName": "game.EnemyTag",
+                    "Description": "",
+                    "Source": {
+                        "File": "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/TinySamples/BasicWorkshop/Scripts/EnemyBehavior.ts",
+                        "Line": 8,
+                        "Character": 52
+                    },
+                    "IsStatic": false,
+                    "IsReadonly": false,
+                    "IsOptional": false,
+                    "IsPublic": true
+                },
+                {
+                    "Name": "speed",
+                    "QualifiedName": "game.MoveSpeed",
+                    "Description": "",
+                    "Source": {
+                        "File": "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/TinySamples/BasicWorkshop/Scripts/EnemyBehavior.ts",
+                        "Line": 9,
+                        "Character": 22
+                    },
+                    "IsStatic": false,
+                    "IsReadonly": false,
+                    "IsOptional": false,
+                    "IsPublic": true
+                },
+                {
+                    "Name": "speedChange",
+                    "QualifiedName": "game.ChangeOverTime",
+                    "Description": "",
+                    "Source": {
+                        "File": "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/TinySamples/BasicWorkshop/Scripts/EnemyBehavior.ts",
+                        "Line": 10,
+                        "Character": 25
+                    },
+                    "IsStatic": false,
+                    "IsReadonly": false,
+                    "IsOptional": false,
+                    "IsPublic": true
+                },
+                {
+                    "Name": "bounds",
+                    "QualifiedName": "game.Boundaries",
+                    "Description": "",
+                    "Source": {
+                        "File": "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/TinySamples/BasicWorkshop/Scripts/EnemyBehavior.ts",
+                        "Line": 11,
+                        "Character": 36
+                    },
+                    "IsStatic": false,
+                    "IsReadonly": false,
+                    "IsOptional": false,
+                    "IsPublic": true
+                }
+            ]
+        }
+    ],
+    "Behaviours": [
+        {
+            "Name": "EnemyBehavior",
+            "QualifiedName": "game.EnemyBehavior",
+            "Description": "New Behaviour",
+            "Source": {
+                "File": "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/TinySamples/BasicWorkshop/Scripts/EnemyBehavior.ts",
+                "Line": 16,
+                "Character": 17
+            },
+            "Fields": [
+                {
+                    "Name": "data",
+                    "QualifiedName": "game.EnemyBehaviorFilter",
+                    "Description": "",
+                    "Source": {
+                        "File": "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/TinySamples/BasicWorkshop/Scripts/EnemyBehavior.ts",
+                        "Line": 17,
+                        "Character": 3
+                    },
+                    "IsStatic": false,
+                    "IsReadonly": false,
+                    "IsOptional": false,
+                    "IsPublic": true
+                }
+            ],
+            "Methods": [
+                "OnEntityEnable",
+                "OnEntityUpdate"
+            ]
+        }
+    ],
+    "Performance": [
+        {
+            "Key": "tsconfig",
+            "Description": "Time taken to read and parse the given tsconfig.json file",
+            "Duration": 53,
+            "Steps": 1
+        },
+        {
+            "Key": "checksum",
+            "Description": "Time taken to compute the MD5 of all inputs",
+            "Duration": 182,
+            "Steps": 1
+        },
+        {
+            "Key": "compile",
+            "Description": "Time taken to compile the TypeScript program",
+            "Duration": 728,
+            "Steps": 16
+        },
+        {
+            "Key": "emit",
+            "Description": "Time taken to generate and write the JavaScript output",
+            "Duration": 87,
+            "Steps": 2
+        },
+        {
+            "Key": "metadata",
+            "Description": "Time taken to reflect Tiny metadata from the compiled program",
+            "Duration": 10,
+            "Steps": 5
+        }
+    ],
+    "SourceFiles": [
+        "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/TinySamples/BasicWorkshop/Scripts/EnemyBehavior.ts",
+        "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/TinySamples/BasicWorkshop/Scripts/GameService.ts",
+        "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/TinySamples/BasicWorkshop/Scripts/InputMovementSystem.ts",
+        "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/TinySamples/BasicWorkshop/Scripts/PlayerCollisionSystem.ts",
+        "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/TinySamples/BasicWorkshop/Scripts/ScrollingBackgroundSystem.ts",
+        "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/TinySamples/BasicWorkshop/Scripts/SpawnSystem.ts",
+        "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/TinySamples/BasicWorkshop/Scripts/Time.ts",
+        "/Users/fadzli/Documents/chopodoy/chipodoy/Library/PackageCache/com.unity.tiny@0.13.4-preview/Runtime/Modules/UTiny.EntityGroup/Scripts/EntityGroup.ts",
+        "/Users/fadzli/Documents/chopodoy/chipodoy/Library/PackageCache/com.unity.tiny@0.13.4-preview/Runtime/Modules/UTiny.EntityGroup/Scripts/EntityLookupCache.ts"
+    ],
+    "InputHash": "90eac572371cb88b0d0e28076a7baaf5",
+    "GeneratedAt": "Wed Jan 30 2019 15:32:13 GMT+0800 (+08)"
+}

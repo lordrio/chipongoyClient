@@ -1,0 +1,25 @@
+﻿[{
+    "$TypeId": 3,
+    "Id": "7b420db2998b42509187e54e190b5607",
+    "Name": "SceneData",
+    "ExportFlags": 0,
+    "Unlisted": false,
+    "Visibility": 0,
+    "TypeCode": "Struct",
+    "Fields": [{
+        "Id": "cdb3e21c1ddf445f9dd540440b9a21d5",
+        "Name": "sceneId",
+        "FieldType": { "Id": "85a05c57c8754406a94175e4ae0e954a", "Name": "SceneId" },
+        "Array": false,
+        "Visibility": 0
+    }, {
+        "Id": "ebe771adc34f46baae38d4230eb8c430",
+        "Name": "DontDestroy",
+        "FieldType": { "Id": "2b477f505af74487b7092b5617d88d3f", "Name": "Boolean" },
+        "Array": false,
+        "Visibility": 0
+    }],
+    "DefaultValue": {
+        "Type": { "Id": "7b420db2998b42509187e54e190b5607", "Name": "SceneData" }
+    }
+}]
