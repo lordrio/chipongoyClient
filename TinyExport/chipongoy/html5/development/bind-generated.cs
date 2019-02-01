@@ -13,15 +13,9 @@ namespace game
 {
     public enum TransitionType
     {
-        NONE = -1,
-        FadeIn = 0,
-        FadeOut = 1,
-    }
-}
-namespace game
-{
-    public enum CallbackType
-    {
+        NONE = 0,
+        FadeIn = 1,
+        FadeOut = 2,
     }
 }
 namespace game
@@ -223,52 +217,9 @@ namespace game
     {
 
 
-        public UTiny.Entity[] colorComponent;
-        public float fadeVal;
-        public game.TransitionType FadeType;
-        public float fadeTimeScale;
-        public UTiny.Entity temp;
-
-
-
-    }
-}
-namespace game
-{
-    [global::System.Runtime.InteropServices.StructLayout(global::System.Runtime.InteropServices.LayoutKind.Sequential)]
-    public struct TransitionComponent : UTiny.IComponentData
-    {
-
-
-        public bool transitionStarted;
-        public bool transitionEnded;
-        public bool transitionPlayFlag;
-        public bool destroyWhenFinished;
-
-
-
-    }
-}
-namespace game
-{
-    [global::System.Runtime.InteropServices.StructLayout(global::System.Runtime.InteropServices.LayoutKind.Sequential)]
-    public struct CallbackComponent : UTiny.IComponentData
-    {
-
-
-        public string hash;
-
-
-
-    }
-}
-namespace game
-{
-    [global::System.Runtime.InteropServices.StructLayout(global::System.Runtime.InteropServices.LayoutKind.Sequential)]
-    public struct testflag : UTiny.IComponentData
-    {
-
-
+        public UTiny.Entity[] entityItems;
+        public game.TransitionType transitionType;
+        public float fadeDuration;
 
 
 
@@ -421,21 +372,6 @@ namespace ut.EditorExtensions
 namespace ut.EditorExtensions
 {
     [global::System.Runtime.InteropServices.StructLayout(global::System.Runtime.InteropServices.LayoutKind.Sequential)]
-    public struct AssetReferenceTMP_FontAsset : UTiny.IComponentData
-    {
-
-
-        public string guid;
-        public long fileId;
-        public int type;
-
-
-
-    }
-}
-namespace ut.EditorExtensions
-{
-    [global::System.Runtime.InteropServices.StructLayout(global::System.Runtime.InteropServices.LayoutKind.Sequential)]
     public struct AssetReferenceTexture2D : UTiny.IComponentData
     {
 
@@ -452,6 +388,21 @@ namespace ut.EditorExtensions
 {
     [global::System.Runtime.InteropServices.StructLayout(global::System.Runtime.InteropServices.LayoutKind.Sequential)]
     public struct AssetReferenceTile : UTiny.IComponentData
+    {
+
+
+        public string guid;
+        public long fileId;
+        public int type;
+
+
+
+    }
+}
+namespace ut.EditorExtensions
+{
+    [global::System.Runtime.InteropServices.StructLayout(global::System.Runtime.InteropServices.LayoutKind.Sequential)]
+    public struct AssetReferenceTMP_FontAsset : UTiny.IComponentData
     {
 
 

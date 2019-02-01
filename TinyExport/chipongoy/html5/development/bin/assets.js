@@ -14,7 +14,7 @@ var UT_ASSETS = {
 var UT_ASSETS_SETUP = function(world) {
     var arch0 = world.createArchetype(ut.UIControls.ColorTintTransition)
     var e0 = world.createEntity(arch0);
-    world.setEntityName(e0, "assets/transitions/9aa9d0af344a445d87c77cf8f839e84b");
+    world.setEntityName(e0, "assets/transitions/f645c73fb6f548769ae2a3f54104dc71");
     var c0 = new ut.UIControls.ColorTintTransition();
     var s0 = new ut.Core2D.Color();
     s0.r = 1;

@@ -29,8 +29,9 @@
     "DefaultValue": {
         "Type": { "Id": "767dfc675f664252bf07dc215c5c3486", "Name": "TransitionType" },
         "Properties": {
-            "NONE": -1,
-            "FadeOut": 1
+            "NONE": 0,
+            "FadeIn": 1,
+            "FadeOut": 2
         }
     }
 }]

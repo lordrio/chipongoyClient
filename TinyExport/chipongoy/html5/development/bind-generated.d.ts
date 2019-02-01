@@ -139,11 +139,9 @@ declare namespace game{
     }
     class FadeComponent extends ut.Component {
         constructor();
-        colorComponent: ut.Entity[];
-        fadeVal: number;
-        FadeType: TransitionType;
-        fadeTimeScale: number;
-        temp: ut.Entity;
+        entityItems: ut.Entity[];
+        transitionType: TransitionType;
+        fadeDuration: number;
         static readonly cid: number;
         static readonly _view: any;
         static readonly _isSharedComp: boolean;
@@ -152,44 +150,6 @@ declare namespace game{
         static _toPtr(p: number, v: FadeComponent): void;
         static _tempHeapPtr(v: FadeComponent): number;
         static _dtorFn(v: FadeComponent): void;
-    }
-    class TransitionComponent extends ut.Component {
-        constructor();
-        transitionStarted: boolean;
-        transitionEnded: boolean;
-        transitionPlayFlag: boolean;
-        destroyWhenFinished: boolean;
-        static readonly cid: number;
-        static readonly _view: any;
-        static readonly _isSharedComp: boolean;
-        static _size: number;
-        static _fromPtr(p: number, v?: TransitionComponent): TransitionComponent;
-        static _toPtr(p: number, v: TransitionComponent): void;
-        static _tempHeapPtr(v: TransitionComponent): number;
-        static _dtorFn(v: TransitionComponent): void;
-    }
-    class CallbackComponent extends ut.Component {
-        constructor();
-        hash: string;
-        static readonly cid: number;
-        static readonly _view: any;
-        static readonly _isSharedComp: boolean;
-        static _size: number;
-        static _fromPtr(p: number, v?: CallbackComponent): CallbackComponent;
-        static _toPtr(p: number, v: CallbackComponent): void;
-        static _tempHeapPtr(v: CallbackComponent): number;
-        static _dtorFn(v: CallbackComponent): void;
-    }
-    class testflag extends ut.Component {
-        constructor();
-        static readonly cid: number;
-        static readonly _view: any;
-        static readonly _isSharedComp: boolean;
-        static _size: number;
-        static _fromPtr(p: number, v?: testflag): testflag;
-        static _toPtr(p: number, v: testflag): void;
-        static _tempHeapPtr(v: testflag): number;
-        static _dtorFn(v: testflag): void;
     }
     class ChildScene {
         parentSceneId: SceneId;
@@ -234,8 +194,6 @@ declare namespace game{
         NONE = 0,
         FadeIn = 1,
         FadeOut = 2,
-    }
-    enum CallbackType {
     }
 }
 declare namespace ut{
@@ -297,20 +255,6 @@ declare namespace ut.EditorExtensions{
         static _tempHeapPtr(v: AssetReferenceSpriteAtlas): number;
         static _dtorFn(v: AssetReferenceSpriteAtlas): void;
     }
-    class AssetReferenceTMP_FontAsset extends ut.Component {
-        constructor();
-        guid: string;
-        fileId: number;
-        type: number;
-        static readonly cid: number;
-        static readonly _view: any;
-        static readonly _isSharedComp: boolean;
-        static _size: number;
-        static _fromPtr(p: number, v?: AssetReferenceTMP_FontAsset): AssetReferenceTMP_FontAsset;
-        static _toPtr(p: number, v: AssetReferenceTMP_FontAsset): void;
-        static _tempHeapPtr(v: AssetReferenceTMP_FontAsset): number;
-        static _dtorFn(v: AssetReferenceTMP_FontAsset): void;
-    }
     class AssetReferenceTexture2D extends ut.Component {
         constructor();
         guid: string;
@@ -338,6 +282,20 @@ declare namespace ut.EditorExtensions{
         static _toPtr(p: number, v: AssetReferenceTile): void;
         static _tempHeapPtr(v: AssetReferenceTile): number;
         static _dtorFn(v: AssetReferenceTile): void;
+    }
+    class AssetReferenceTMP_FontAsset extends ut.Component {
+        constructor();
+        guid: string;
+        fileId: number;
+        type: number;
+        static readonly cid: number;
+        static readonly _view: any;
+        static readonly _isSharedComp: boolean;
+        static _size: number;
+        static _fromPtr(p: number, v?: AssetReferenceTMP_FontAsset): AssetReferenceTMP_FontAsset;
+        static _toPtr(p: number, v: AssetReferenceTMP_FontAsset): void;
+        static _tempHeapPtr(v: AssetReferenceTMP_FontAsset): number;
+        static _dtorFn(v: AssetReferenceTMP_FontAsset): void;
     }
     class CameraCullingMask extends ut.Component {
         constructor();

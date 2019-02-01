@@ -156,10 +156,11 @@ namespace game {
             this.nextSceneId = loadedSceneData.pins[pinId];
             this.isInTransition = true;
             // temp without transition
-            FadeTransitionSystem.StartFade(world, TransitionType.FadeIn, () => {
+            FadeHelper.StartFade(world, TransitionType.FadeIn, () => {
                 this.CleanUpScene(world);
                 this.LoadUpScene(world);
-                FadeTransitionSystem.StartFade(world, TransitionType.FadeOut, () => {
+                FadeHelper.StartFade(world, TransitionType.FadeOut, () => {
+                    console.log("done");
                     this.isInTransition = false;
                 });
             })

@@ -89,25 +89,9 @@ namespace game
     }
     public struct FadeComponent : IComponentData
     {
-        public DynamicArray<Entity> colorComponent;
-        public float fadeVal;
-        public game.TransitionType FadeType;
-        public float fadeTimeScale;
-        public Entity temp;
-    }
-    public struct TransitionComponent : IComponentData
-    {
-        public bool transitionStarted;
-        public bool transitionEnded;
-        public bool transitionPlayFlag;
-        public bool destroyWhenFinished;
-    }
-    public struct CallbackComponent : IComponentData
-    {
-        public string hash;
-    }
-    public struct testflag : IComponentData
-    {
+        public DynamicArray<Entity> entityItems;
+        public game.TransitionType transitionType;
+        public float fadeDuration;
     }
     public struct ChildScene
     {
@@ -139,12 +123,9 @@ namespace game
     }
     public enum TransitionType
     {
-        NONE = -1
-        , FadeIn = 0
-        , FadeOut = 1
-    }
-    public enum CallbackType
-    {
+        NONE = 0
+        , FadeIn = 1
+        , FadeOut = 2
     }
 }
 
@@ -254,12 +235,6 @@ namespace ut.EditorExtensions
         public long fileId;
         public int type;
     }
-    public struct AssetReferenceTMP_FontAsset : IComponentData
-    {
-        public string guid;
-        public long fileId;
-        public int type;
-    }
     public struct AssetReferenceTexture2D : IComponentData
     {
         public string guid;
@@ -267,6 +242,12 @@ namespace ut.EditorExtensions
         public int type;
     }
     public struct AssetReferenceTile : IComponentData
+    {
+        public string guid;
+        public long fileId;
+        public int type;
+    }
+    public struct AssetReferenceTMP_FontAsset : IComponentData
     {
         public string guid;
         public long fileId;
@@ -343,12 +324,6 @@ namespace game
 }
 namespace game
 {
-    public class testJS : IComponentSystem
-    {
-    }
-}
-namespace game
-{
     public class MouseSpriteInteractionSystemJS : IComponentSystem
     {
     }
@@ -356,12 +331,6 @@ namespace game
 namespace game
 {
     public class TimerServiceJS : IComponentSystem
-    {
-    }
-}
-namespace game
-{
-    public class FadeTransitionSystemJS : IComponentSystem
     {
     }
 }

@@ -104,28 +104,26 @@
     }, {
         "Type": { "Id": "b1e5348389156b7a260d6ed393754fba", "Name": "LayerSorting" },
         "Properties": {
-            "layer": -420961455,
-            "order": 100
+            "layer": -1291649757,
+            "order": 1
         }
     }, {
         "Type": { "Id": "0da66d2e6e304a418294269d917c1f39", "Name": "FadeComponent" },
         "Properties": {
-            "colorComponent": {
+            "entityItems": {
                 "Type": { "Id": "5a182d9d039d4dfd8fa96132d05f9ee7", "Name": "EntityReference" },
                 "Items": [
                     { "$TypeId": 9, "Id": "e373f6634c8b4c90a5e3b4f30e0a2089", "Name": "Panel" }
                 ]
             },
-            "fadeVal": 1,
-            "FadeType": {
+            "transitionType": {
                 "$TypeId": 8,
                 "Type": { "Id": "767dfc675f664252bf07dc215c5c3486", "Name": "TransitionType" },
                 "Id": "37208247dfc0433b9f0c23347b613400",
                 "Name": "FadeOut",
-                "Value": 1
-            }
+                "Value": 2
+            },
+            "fadeDuration": 1
         }
-    }, {
-        "Type": { "Id": "65a49890200744569907c7282e635312", "Name": "TransitionComponent" }
     }]
 }]

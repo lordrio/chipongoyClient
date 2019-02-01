@@ -56,12 +56,6 @@
 
 @struct
 @memberof game
-@name CallbackType
-*/
-/**
-
-@struct
-@memberof game
 @name ChildScene
 */
 /**
@@ -296,79 +290,19 @@
 
 @member {ut.DynamicArray<ut.Entity>}
 @memberof game.FadeComponent
-@name colorComponent
-*/
-/**
-
-@member {float}
-@memberof game.FadeComponent
-@name fadeVal
+@name entityItems
 */
 /**
 
 @member {game.TransitionType}
 @memberof game.FadeComponent
-@name FadeType
+@name transitionType
 */
 /**
 
 @member {float}
 @memberof game.FadeComponent
-@name fadeTimeScale
-*/
-/**
-
-@member {ut.Entity}
-@memberof game.FadeComponent
-@name temp
-*/
-/**
-
-@component
-@memberof game
-@name TransitionComponent
-*/
-/**
-
-@member {bool}
-@memberof game.TransitionComponent
-@name transitionStarted
-*/
-/**
-
-@member {bool}
-@memberof game.TransitionComponent
-@name transitionEnded
-*/
-/**
-
-@member {bool}
-@memberof game.TransitionComponent
-@name transitionPlayFlag
-*/
-/**
-
-@member {bool}
-@memberof game.TransitionComponent
-@name destroyWhenFinished
-*/
-/**
-
-@component
-@memberof game
-@name CallbackComponent
-*/
-/**
-
-@member {string}
-@memberof game.CallbackComponent
-@name hash
-*/
-/**
-
-@component
-@memberof game
-@name testflag
+@name fadeDuration
 */
 /**
 
@@ -512,30 +446,6 @@
 
 @component
 @memberof ut.EditorExtensions
-@name AssetReferenceTMP_FontAsset
-*/
-/**
-
-@member {string}
-@memberof ut.EditorExtensions.AssetReferenceTMP_FontAsset
-@name guid
-*/
-/**
-
-@member {int64}
-@memberof ut.EditorExtensions.AssetReferenceTMP_FontAsset
-@name fileId
-*/
-/**
-
-@member {int32}
-@memberof ut.EditorExtensions.AssetReferenceTMP_FontAsset
-@name type
-*/
-/**
-
-@component
-@memberof ut.EditorExtensions
 @name AssetReferenceTexture2D
 */
 /**
@@ -578,6 +488,30 @@
 
 @member {int32}
 @memberof ut.EditorExtensions.AssetReferenceTile
+@name type
+*/
+/**
+
+@component
+@memberof ut.EditorExtensions
+@name AssetReferenceTMP_FontAsset
+*/
+/**
+
+@member {string}
+@memberof ut.EditorExtensions.AssetReferenceTMP_FontAsset
+@name guid
+*/
+/**
+
+@member {int64}
+@memberof ut.EditorExtensions.AssetReferenceTMP_FontAsset
+@name fileId
+*/
+/**
+
+@member {int32}
+@memberof ut.EditorExtensions.AssetReferenceTMP_FontAsset
 @name type
 */
 /**
@@ -668,12 +602,6 @@
 
 @system
 @memberof game
-@name testJS
-*/
-/**
-
-@system
-@memberof game
 @name MouseSpriteInteractionSystemJS
 */
 /**
@@ -681,12 +609,6 @@
 @system
 @memberof game
 @name TimerServiceJS
-*/
-/**
-
-@system
-@memberof game
-@name FadeTransitionSystemJS
 */
 /**
 

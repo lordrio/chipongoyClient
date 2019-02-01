@@ -8,39 +8,27 @@
     "TypeCode": "Component",
     "Fields": [{
         "Id": "25e43a1072b2472281a45187a7f7db49",
-        "Name": "colorComponent",
+        "Name": "entityItems",
         "FieldType": { "Id": "5a182d9d039d4dfd8fa96132d05f9ee7", "Name": "EntityReference" },
         "Array": true,
         "Visibility": 0
     }, {
-        "Id": "7dfecb5f0a6b445ba14623892391147a",
-        "Name": "fadeVal",
-        "FieldType": { "Id": "67325dccf2f047c19c7ef4a045354e67", "Name": "Float32" },
-        "Array": false,
-        "Visibility": 0
-    }, {
         "Id": "8bf9cedbd9f3493d8e2a535995e18d6e",
-        "Name": "FadeType",
+        "Name": "transitionType",
         "FieldType": { "Id": "767dfc675f664252bf07dc215c5c3486", "Name": "TransitionType" },
         "Array": false,
         "Visibility": 0
     }, {
         "Id": "50a880f558034e0fbd5e1efc50c968ec",
-        "Name": "fadeTimeScale",
+        "Name": "fadeDuration",
         "FieldType": { "Id": "67325dccf2f047c19c7ef4a045354e67", "Name": "Float32" },
-        "Array": false,
-        "Visibility": 0
-    }, {
-        "Id": "3068497219064d25ada309b4ae3428e1",
-        "Name": "temp",
-        "FieldType": { "Id": "5a182d9d039d4dfd8fa96132d05f9ee7", "Name": "EntityReference" },
         "Array": false,
         "Visibility": 0
     }],
     "DefaultValue": {
         "Type": { "Id": "0da66d2e6e304a418294269d917c1f39", "Name": "FadeComponent" },
         "Properties": {
-            "fadeTimeScale": 1
+            "fadeDuration": 1
         }
     }
 }]

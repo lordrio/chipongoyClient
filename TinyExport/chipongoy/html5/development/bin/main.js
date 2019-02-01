@@ -89,19 +89,15 @@ ut.main = function() {
 
     // Schedule all systems
     var scheduler = world.scheduler();
-    game.testJS.update = new game.test()._MakeSystemFn();
     game.MouseSpriteInteractionSystemJS.update = new game.MouseSpriteInteractionSystem()._MakeSystemFn();
     game.TimerServiceJS.update = new game.TimerService()._MakeSystemFn();
-    game.FadeTransitionSystemJS.update = new game.FadeTransitionSystem()._MakeSystemFn();
     game.CustomButtonSystemJS.update = new game.CustomButtonSystem()._MakeSystemFn();
     game.SceneMgrBehaviour_OnEntityEnableJS.update = game.SceneMgrBehaviour.Instance._MakeOnEntityEnable();
     game.SimpleDragger_OnEntityEnableJS.update = game.SimpleDragger.Instance._MakeOnEntityEnable();
     game.SceneMgrBehaviour_OnEntityUpdateJS.update = game.SceneMgrBehaviour.Instance._MakeOnEntityUpdate();
     game.SimpleDragger_OnEntityUpdateJS.update = game.SimpleDragger.Instance._MakeOnEntityUpdate();
-    scheduler.schedule(game.testJS);
     scheduler.schedule(game.MouseSpriteInteractionSystemJS);
     scheduler.schedule(game.TimerServiceJS);
-    scheduler.schedule(game.FadeTransitionSystemJS);
     scheduler.schedule(game.CustomButtonSystemJS);
     scheduler.schedule(ut.HTML.InputHandler);
     scheduler.schedule(ut.HTML.AssetLoader);

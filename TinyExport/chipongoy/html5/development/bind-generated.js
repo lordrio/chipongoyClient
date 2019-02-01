@@ -20,22 +20,17 @@ game.SceneId._typeDesc = (function() {
   ]);
 })();
 game.TransitionType = {
-  NONE: -1,
-  FadeIn: 0,
-  FadeOut: 1
+  NONE: 0,
+  FadeIn: 1,
+  FadeOut: 2
 };
 game.TransitionType._typeDesc = (function() {
   var enumType = ut.meta.getType('int32');
   return ut.meta.allocType(6, 'game.TransitionType', 4, [
-    {name: 'NONE', offset: -1, type: enumType},
-    {name: 'FadeIn', offset: 0, type: enumType},
-    {name: 'FadeOut', offset: 1, type: enumType}
+    {name: 'NONE', offset: 0, type: enumType},
+    {name: 'FadeIn', offset: 1, type: enumType},
+    {name: 'FadeOut', offset: 2, type: enumType}
   ]);
-})();
-game.CallbackType = {
-};
-game.CallbackType._typeDesc = (function() {
-  return ut.meta.allocType(6, 'game.CallbackType', 4, []);
 })();
 game.ChildScene = function(arg0, arg1) {
   this._parentSceneId = (arg0|0);
@@ -885,63 +880,47 @@ game.SimpleDraggerTag._typeDesc = (function() {
 })();
 Object.defineProperties(game.SimpleDraggerTag, { cid: { configurable: true, get: function() { delete game.SimpleDraggerTag.cid; var offsetsPtr = 0, offsetsCount = 0; return game.SimpleDraggerTag.cid = Module._ut_component_register_cid_with_type(game.SimpleDraggerTag._typeDesc, 0, 0, offsetsPtr, offsetsCount, 0, 0); } } });
 Object.defineProperties(game.SimpleDraggerTag.StorageView, { cid: { configurable: true, get: function() { return game.SimpleDraggerTag.cid; } } });
-game.FadeComponent = function(arg0, arg1, arg2, arg3, arg4) {
-  this._colorComponent = (arg0 === undefined ? new Array() : ((arg0 instanceof Array) ? arg0 : (function() { throw new Error('Assigning non-array to array field'); })()));
-  this._fadeVal = (+(arg1===undefined ? 0 : arg1));
-  this._FadeType = (arg2|0);
-  this._fadeTimeScale = (+(arg3===undefined ? 0 : arg3));
-  this._temp = (arg4 === undefined ? new ut.Entity : arg4);
+game.FadeComponent = function(arg0, arg1, arg2) {
+  this._entityItems = (arg0 === undefined ? new Array() : ((arg0 instanceof Array) ? arg0 : (function() { throw new Error('Assigning non-array to array field'); })()));
+  this._transitionType = (arg1|0);
+  this._fadeDuration = (+(arg2===undefined ? 0 : arg2));
 };
 game.FadeComponent.prototype = Object.create(null);
 game.FadeComponent.prototype.constructor = game.FadeComponent;
 Object.defineProperties(game.FadeComponent.prototype, {
-  colorComponent: {
-    get: function() { return this._colorComponent; },
-    set: function(v) { this._colorComponent = (v === undefined ? new Array() : ((v instanceof Array) ? v : (function() { throw new Error('Assigning non-array to array field'); })())); },
+  entityItems: {
+    get: function() { return this._entityItems; },
+    set: function(v) { this._entityItems = (v === undefined ? new Array() : ((v instanceof Array) ? v : (function() { throw new Error('Assigning non-array to array field'); })())); },
   },
-  fadeVal: {
-    get: function() { return this._fadeVal; },
-    set: function(v) { this._fadeVal = (+(v===undefined ? 0 : v)); },
+  transitionType: {
+    get: function() { return this._transitionType; },
+    set: function(v) { this._transitionType = (v|0); },
   },
-  FadeType: {
-    get: function() { return this._FadeType; },
-    set: function(v) { this._FadeType = (v|0); },
-  },
-  fadeTimeScale: {
-    get: function() { return this._fadeTimeScale; },
-    set: function(v) { this._fadeTimeScale = (+(v===undefined ? 0 : v)); },
-  },
-  temp: {
-    get: function() { return this._temp; },
-    set: function(v) { this._temp = (v === undefined ? new ut.Entity : v); },
+  fadeDuration: {
+    get: function() { return this._fadeDuration; },
+    set: function(v) { this._fadeDuration = (+(v===undefined ? 0 : v)); },
   },
 });
-game.FadeComponent._size = 32;
+game.FadeComponent._size = 20;
 game.FadeComponent._fromPtr = function(ptr, v) {
   v = v || Object.create(game.FadeComponent.prototype);
-  v._colorComponent = ut.nativeBufferToJsArray(ptr+0, 8, function(p) { return ut.Entity._fromPtr(p); });
-  v._fadeVal = HEAPF32[(ptr+12)>>2];
-  v._FadeType = HEAP32[(ptr+16)>>2];
-  v._fadeTimeScale = HEAPF32[(ptr+20)>>2];
-  v._temp = ut.Entity._fromPtr(ptr+24);
+  v._entityItems = ut.nativeBufferToJsArray(ptr+0, 8, function(p) { return ut.Entity._fromPtr(p); });
+  v._transitionType = HEAP32[(ptr+12)>>2];
+  v._fadeDuration = HEAPF32[(ptr+16)>>2];
   return v;
 };
 game.FadeComponent._toPtr = function(ptr, v) {
-  ut.jsArrayToExistingNativeBuffer_pod(v.colorComponent, ptr+0, 8, function(p, v) { ut.Entity._toPtr(p, v); });
-  HEAPF32[(ptr+12)>>2] = v.fadeVal;
-  HEAP32[(ptr+16)>>2] = v.FadeType;
-  HEAPF32[(ptr+20)>>2] = v.fadeTimeScale;
-  ut.Entity._toPtr(ptr+24, v.temp);
+  ut.jsArrayToExistingNativeBuffer_pod(v.entityItems, ptr+0, 8, function(p, v) { ut.Entity._toPtr(p, v); });
+  HEAP32[(ptr+12)>>2] = v.transitionType;
+  HEAPF32[(ptr+16)>>2] = v.fadeDuration;
 };
 game.FadeComponent._toTempHeapPtr = function(ptr, v) {
-  ut.jsArrayToExistingScratchNativeBuffer_pod(v.colorComponent, ptr+0, 8, function(p, v) { ut.Entity._toPtr(p, v); });
-  HEAPF32[(ptr+12)>>2] = v.fadeVal;
-  HEAP32[(ptr+16)>>2] = v.FadeType;
-  HEAPF32[(ptr+20)>>2] = v.fadeTimeScale;
-  ut.Entity._toPtr(ptr+24, v.temp);
+  ut.jsArrayToExistingScratchNativeBuffer_pod(v.entityItems, ptr+0, 8, function(p, v) { ut.Entity._toPtr(p, v); });
+  HEAP32[(ptr+12)>>2] = v.transitionType;
+  HEAPF32[(ptr+16)>>2] = v.fadeDuration;
 };
 game.FadeComponent._tempHeapPtr = function(v) {
-  var ptr = ut.tempHeapPtrBufferZero(32);
+  var ptr = ut.tempHeapPtrBufferZero(20);
   if (v) game.FadeComponent._toTempHeapPtr(ptr, v);
   return ptr;
 };
@@ -957,28 +936,20 @@ game.FadeComponent.StorageView._toPtr = game.FadeComponent._toPtr;
 game.FadeComponent.StorageView._tempHeapPtr = game.FadeComponent._tempHeapPtr;
 game.FadeComponent.StorageView._size = game.FadeComponent._size;
 game.FadeComponent.StorageView.prototype.$advance = function() {
-  this._ptr += 32;
+  this._ptr += 20;
 };
 Object.defineProperties(game.FadeComponent.StorageView.prototype, {
-  colorComponent: {
+  entityItems: {
     get: function() { return ut.nativeBufferToJsArray(this._ptr+0, 8, function(p) { return ut.Entity._fromPtr(p); }); },
     set: function(v) { ut.jsArrayToExistingNativeBuffer_pod(v, this._ptr+0, 8, function(p, v) { ut.Entity._toPtr(p, v); }); },
   },
-  fadeVal: {
-    get: function() { return HEAPF32[(this._ptr+12)>>2]; },
-    set: function(v) { HEAPF32[(this._ptr+12)>>2] = v; },
+  transitionType: {
+    get: function() { return HEAP32[(this._ptr+12)>>2]; },
+    set: function(v) { HEAP32[(this._ptr+12)>>2] = v; },
   },
-  FadeType: {
-    get: function() { return HEAP32[(this._ptr+16)>>2]; },
-    set: function(v) { HEAP32[(this._ptr+16)>>2] = v; },
-  },
-  fadeTimeScale: {
-    get: function() { return HEAPF32[(this._ptr+20)>>2]; },
-    set: function(v) { HEAPF32[(this._ptr+20)>>2] = v; },
-  },
-  temp: {
-    get: function() { return ut.Entity._fromPtr(this._ptr+24); },
-    set: function(v) { if (typeof(v) !== 'object') { throw new Error('expected an object'); } ut.Entity._toPtr(this._ptr+24, v); },
+  fadeDuration: {
+    get: function() { return HEAPF32[(this._ptr+16)>>2]; },
+    set: function(v) { HEAPF32[(this._ptr+16)>>2] = v; },
   },
 });
 game.FadeComponent._dtorFn = function dtor(ptr) {
@@ -991,235 +962,19 @@ game.FadeComponent._copyFn = function copy(src, dst) {
   Module._ut_nativebuffer_pod_copy_construct(dst + 0, src + 0, 8);
   for(var i = 0; i < 4; ++i) HEAPU8[dst+12+i] = HEAPU8[src+12+i];
   for(var i = 0; i < 4; ++i) HEAPU8[dst+16+i] = HEAPU8[src+16+i];
-  for(var i = 0; i < 4; ++i) HEAPU8[dst+20+i] = HEAPU8[src+20+i];
-  for(var i = 0; i < 8; ++i) HEAPU8[dst+24+i] = HEAPU8[src+24+i];
 };
 game.FadeComponent._typeDesc = (function() {
-  return ut.meta.allocType(5, 'game.FadeComponent', 32, [
-    {name: 'colorComponent', offset: 0, type: ut.meta.getType('ut.NativeBuffer<ut.Entity>')},
-    {name: 'fadeVal', offset: 12, type: ut.meta.getType('float')},
-    {name: 'FadeType', offset: 16, type: ut.meta.getType('game.TransitionType')},
-    {name: 'fadeTimeScale', offset: 20, type: ut.meta.getType('float')},
-    {name: 'temp', offset: 24, type: ut.meta.getType('ut.Entity')}
+  return ut.meta.allocType(5, 'game.FadeComponent', 20, [
+    {name: 'entityItems', offset: 0, type: ut.meta.getType('ut.NativeBuffer<ut.Entity>')},
+    {name: 'transitionType', offset: 12, type: ut.meta.getType('game.TransitionType')},
+    {name: 'fadeDuration', offset: 16, type: ut.meta.getType('float')}
   ]);
 })();
-Object.defineProperties(game.FadeComponent, { cid: { configurable: true, get: function() { delete game.FadeComponent.cid; var offsetsPtr = ut.tempHeapPtrI32([-1,24]); var offsetsCount = 2; return game.FadeComponent.cid = Module._ut_component_register_cid_with_type(game.FadeComponent._typeDesc, 4, 0, offsetsPtr, offsetsCount, ut.DestructorFn._cb.token_for(game.FadeComponent._dtorFn), ut.CopyFn._cb.token_for(game.FadeComponent._copyFn)); } } });
+Object.defineProperties(game.FadeComponent, { cid: { configurable: true, get: function() { delete game.FadeComponent.cid; var offsetsPtr = ut.tempHeapPtrI32([-1]); var offsetsCount = 1; return game.FadeComponent.cid = Module._ut_component_register_cid_with_type(game.FadeComponent._typeDesc, 4, 0, offsetsPtr, offsetsCount, ut.DestructorFn._cb.token_for(game.FadeComponent._dtorFn), ut.CopyFn._cb.token_for(game.FadeComponent._copyFn)); } } });
 Object.defineProperties(game.FadeComponent.StorageView, { cid: { configurable: true, get: function() { return game.FadeComponent.cid; } } });
-game.FadeComponent.colorComponent = { $ofs:0, $t:"ut.DynamicArray`1", $c:game.FadeComponent };
-game.FadeComponent.fadeVal = { $ofs:12, $t:"float", $c:game.FadeComponent };
-game.FadeComponent.FadeType = { $ofs:16, $t:"game.TransitionType", $c:game.FadeComponent };
-game.FadeComponent.fadeTimeScale = { $ofs:20, $t:"float", $c:game.FadeComponent };
-game.FadeComponent.temp = { $ofs:24, $t:"ut.Entity", $c:game.FadeComponent };
-game.FadeComponent.temp.index = { $ofs:24, $t:"int32_t", $c:game.FadeComponent };
-game.FadeComponent.temp.version = { $ofs:28, $t:"int32_t", $c:game.FadeComponent };
-game.TransitionComponent = function(arg0, arg1, arg2, arg3) {
-  this._transitionStarted = (arg0 ? true : false);
-  this._transitionEnded = (arg1 ? true : false);
-  this._transitionPlayFlag = (arg2 ? true : false);
-  this._destroyWhenFinished = (arg3 ? true : false);
-};
-game.TransitionComponent.prototype = Object.create(null);
-game.TransitionComponent.prototype.constructor = game.TransitionComponent;
-Object.defineProperties(game.TransitionComponent.prototype, {
-  transitionStarted: {
-    get: function() { return this._transitionStarted; },
-    set: function(v) { this._transitionStarted = (v ? true : false); },
-  },
-  transitionEnded: {
-    get: function() { return this._transitionEnded; },
-    set: function(v) { this._transitionEnded = (v ? true : false); },
-  },
-  transitionPlayFlag: {
-    get: function() { return this._transitionPlayFlag; },
-    set: function(v) { this._transitionPlayFlag = (v ? true : false); },
-  },
-  destroyWhenFinished: {
-    get: function() { return this._destroyWhenFinished; },
-    set: function(v) { this._destroyWhenFinished = (v ? true : false); },
-  },
-});
-game.TransitionComponent._size = 4;
-game.TransitionComponent._fromPtr = function(ptr, v) {
-  v = v || Object.create(game.TransitionComponent.prototype);
-  v._transitionStarted = (HEAP8[ptr+0]?true:false);
-  v._transitionEnded = (HEAP8[ptr+1]?true:false);
-  v._transitionPlayFlag = (HEAP8[ptr+2]?true:false);
-  v._destroyWhenFinished = (HEAP8[ptr+3]?true:false);
-  return v;
-};
-game.TransitionComponent._toPtr = function(ptr, v) {
-  HEAP8[ptr+0] = (v.transitionStarted)?1:0;
-  HEAP8[ptr+1] = (v.transitionEnded)?1:0;
-  HEAP8[ptr+2] = (v.transitionPlayFlag)?1:0;
-  HEAP8[ptr+3] = (v.destroyWhenFinished)?1:0;
-};
-game.TransitionComponent._toTempHeapPtr = function(ptr, v) {
-  HEAP8[ptr+0] = (v.transitionStarted)?1:0;
-  HEAP8[ptr+1] = (v.transitionEnded)?1:0;
-  HEAP8[ptr+2] = (v.transitionPlayFlag)?1:0;
-  HEAP8[ptr+3] = (v.destroyWhenFinished)?1:0;
-};
-game.TransitionComponent._tempHeapPtr = function(v) {
-  var ptr = ut.tempHeapPtrBufferZero(4);
-  if (v) game.TransitionComponent._toTempHeapPtr(ptr, v);
-  return ptr;
-};
-game.TransitionComponent.StorageView = function(ptr) {
-  this._ptr = ptr;
-};
-game.TransitionComponent.StorageView.prototype = Object.create(null);
-game.TransitionComponent.StorageView.prototype.constructor = game.TransitionComponent.StorageView;
-game.TransitionComponent._view = game.TransitionComponent.StorageView;
-game.TransitionComponent.StorageView._isSharedComp = game.TransitionComponent._isSharedComp = false;
-game.TransitionComponent.StorageView._fromPtr = game.TransitionComponent._fromPtr;
-game.TransitionComponent.StorageView._toPtr = game.TransitionComponent._toPtr;
-game.TransitionComponent.StorageView._tempHeapPtr = game.TransitionComponent._tempHeapPtr;
-game.TransitionComponent.StorageView._size = game.TransitionComponent._size;
-game.TransitionComponent.StorageView.prototype.$advance = function() {
-  this._ptr += 4;
-};
-Object.defineProperties(game.TransitionComponent.StorageView.prototype, {
-  transitionStarted: {
-    get: function() { return (HEAP8[this._ptr+0]?true:false); },
-    set: function(v) { HEAP8[this._ptr+0] = (v)?1:0; },
-  },
-  transitionEnded: {
-    get: function() { return (HEAP8[this._ptr+1]?true:false); },
-    set: function(v) { HEAP8[this._ptr+1] = (v)?1:0; },
-  },
-  transitionPlayFlag: {
-    get: function() { return (HEAP8[this._ptr+2]?true:false); },
-    set: function(v) { HEAP8[this._ptr+2] = (v)?1:0; },
-  },
-  destroyWhenFinished: {
-    get: function() { return (HEAP8[this._ptr+3]?true:false); },
-    set: function(v) { HEAP8[this._ptr+3] = (v)?1:0; },
-  },
-});
-game.TransitionComponent._dtorFn = function dtor(ptr) { /* POD, no-op */ }
-// game.TransitionComponent is a POD type, so a JavaScript side copy constructor game.TransitionComponent._copyFn = function copy(src, dst) { ... } does not need to be generated for it
-game.TransitionComponent._typeDesc = (function() {
-  return ut.meta.allocType(5, 'game.TransitionComponent', 4, [
-    {name: 'transitionStarted', offset: 0, type: ut.meta.getType('bool')},
-    {name: 'transitionEnded', offset: 1, type: ut.meta.getType('bool')},
-    {name: 'transitionPlayFlag', offset: 2, type: ut.meta.getType('bool')},
-    {name: 'destroyWhenFinished', offset: 3, type: ut.meta.getType('bool')}
-  ]);
-})();
-Object.defineProperties(game.TransitionComponent, { cid: { configurable: true, get: function() { delete game.TransitionComponent.cid; var offsetsPtr = 0, offsetsCount = 0; return game.TransitionComponent.cid = Module._ut_component_register_cid_with_type(game.TransitionComponent._typeDesc, 1, 0, offsetsPtr, offsetsCount, 0, 0); } } });
-Object.defineProperties(game.TransitionComponent.StorageView, { cid: { configurable: true, get: function() { return game.TransitionComponent.cid; } } });
-game.TransitionComponent.transitionStarted = { $ofs:0, $t:"bool", $c:game.TransitionComponent };
-game.TransitionComponent.transitionEnded = { $ofs:1, $t:"bool", $c:game.TransitionComponent };
-game.TransitionComponent.transitionPlayFlag = { $ofs:2, $t:"bool", $c:game.TransitionComponent };
-game.TransitionComponent.destroyWhenFinished = { $ofs:3, $t:"bool", $c:game.TransitionComponent };
-game.CallbackComponent = function(arg0) {
-  this._hash = (arg0 === undefined ? '' : arg0);
-};
-game.CallbackComponent.prototype = Object.create(null);
-game.CallbackComponent.prototype.constructor = game.CallbackComponent;
-Object.defineProperties(game.CallbackComponent.prototype, {
-  hash: {
-    get: function() { return this._hash; },
-    set: function(v) { this._hash = (v === undefined ? '' : v); },
-  },
-});
-game.CallbackComponent._size = 8;
-game.CallbackComponent._fromPtr = function(ptr, v) {
-  v = v || Object.create(game.CallbackComponent.prototype);
-  v._hash = (Module._ut_nativestring_data(ptr+0) ? UTF8ToString(Module._ut_nativestring_data(ptr+0)) : "");
-  return v;
-};
-game.CallbackComponent._toPtr = function(ptr, v) {
-  ut.newHeapNativeString(ptr+0, v.hash);
-};
-game.CallbackComponent._toTempHeapPtr = function(ptr, v) {
-  ut.toExistingScratchNativeString(ptr+0, v.hash);
-};
-game.CallbackComponent._tempHeapPtr = function(v) {
-  var ptr = ut.tempHeapPtrBufferZero(8);
-  if (v) game.CallbackComponent._toTempHeapPtr(ptr, v);
-  return ptr;
-};
-game.CallbackComponent.StorageView = function(ptr) {
-  this._ptr = ptr;
-};
-game.CallbackComponent.StorageView.prototype = Object.create(null);
-game.CallbackComponent.StorageView.prototype.constructor = game.CallbackComponent.StorageView;
-game.CallbackComponent._view = game.CallbackComponent.StorageView;
-game.CallbackComponent.StorageView._isSharedComp = game.CallbackComponent._isSharedComp = false;
-game.CallbackComponent.StorageView._fromPtr = game.CallbackComponent._fromPtr;
-game.CallbackComponent.StorageView._toPtr = game.CallbackComponent._toPtr;
-game.CallbackComponent.StorageView._tempHeapPtr = game.CallbackComponent._tempHeapPtr;
-game.CallbackComponent.StorageView._size = game.CallbackComponent._size;
-game.CallbackComponent.StorageView.prototype.$advance = function() {
-  this._ptr += 8;
-};
-Object.defineProperties(game.CallbackComponent.StorageView.prototype, {
-  hash: {
-    get: function() { return (Module._ut_nativestring_data(this._ptr+0) ? UTF8ToString(Module._ut_nativestring_data(this._ptr+0)) : ""); },
-    set: function(v) { ut.newHeapNativeString(this._ptr+0, v); },
-  },
-});
-game.CallbackComponent._dtorFn = function dtor(ptr) {
-  if (!ptr) return; 
-  Module._ut_nativestring_placement_delete(ptr + 0);
-};
-game.CallbackComponent._copyFn = function copy(src, dst) {
-  if (!src) throw 'copy function src ptr is null!';
-  if (!dst) throw 'copy function dst ptr is null!';
-  Module._ut_nativestring_copy_construct(dst + 0, src + 0);
-};
-game.CallbackComponent._typeDesc = (function() {
-  return ut.meta.allocType(5, 'game.CallbackComponent', 8, [
-    {name: 'hash', offset: 0, type: ut.meta.getType('string')}
-  ]);
-})();
-Object.defineProperties(game.CallbackComponent, { cid: { configurable: true, get: function() { delete game.CallbackComponent.cid; var offsetsPtr = 0, offsetsCount = 0; return game.CallbackComponent.cid = Module._ut_component_register_cid_with_type(game.CallbackComponent._typeDesc, 4, 0, offsetsPtr, offsetsCount, ut.DestructorFn._cb.token_for(game.CallbackComponent._dtorFn), ut.CopyFn._cb.token_for(game.CallbackComponent._copyFn)); } } });
-Object.defineProperties(game.CallbackComponent.StorageView, { cid: { configurable: true, get: function() { return game.CallbackComponent.cid; } } });
-game.CallbackComponent.hash = { $ofs:0, $t:"System.String", $c:game.CallbackComponent };
-game.testflag = function() {
-};
-game.testflag.prototype = Object.create(null);
-game.testflag.prototype.constructor = game.testflag;
-Object.defineProperties(game.testflag.prototype, {
-});
-game.testflag._size = 1;
-game.testflag._fromPtr = function(ptr, v) {
-  v = v || Object.create(game.testflag.prototype);
-  return v;
-};
-game.testflag._toPtr = function(ptr, v) {
-};
-game.testflag._toTempHeapPtr = function(ptr, v) {
-};
-game.testflag._tempHeapPtr = function(v) {
-  var ptr = ut.tempHeapPtrBufferZero(1);
-  if (v) game.testflag._toTempHeapPtr(ptr, v);
-  return ptr;
-};
-game.testflag.StorageView = function(ptr) {
-  this._ptr = ptr;
-};
-game.testflag.StorageView.prototype = Object.create(null);
-game.testflag.StorageView.prototype.constructor = game.testflag.StorageView;
-game.testflag._view = game.testflag.StorageView;
-game.testflag.StorageView._isSharedComp = game.testflag._isSharedComp = false;
-game.testflag.StorageView._fromPtr = game.testflag._fromPtr;
-game.testflag.StorageView._toPtr = game.testflag._toPtr;
-game.testflag.StorageView._tempHeapPtr = game.testflag._tempHeapPtr;
-game.testflag.StorageView._size = game.testflag._size;
-game.testflag.StorageView.prototype.$advance = function() {
-  this._ptr += 1;
-};
-Object.defineProperties(game.testflag.StorageView.prototype, {
-});
-game.testflag._dtorFn = function dtor(ptr) { /* POD, no-op */ }
-// game.testflag is a POD type, so a JavaScript side copy constructor game.testflag._copyFn = function copy(src, dst) { ... } does not need to be generated for it
-game.testflag._typeDesc = (function() {
-  return ut.meta.allocType(5, 'game.testflag', 1, []);
-})();
-Object.defineProperties(game.testflag, { cid: { configurable: true, get: function() { delete game.testflag.cid; var offsetsPtr = 0, offsetsCount = 0; return game.testflag.cid = Module._ut_component_register_cid_with_type(game.testflag._typeDesc, 0, 0, offsetsPtr, offsetsCount, 0, 0); } } });
-Object.defineProperties(game.testflag.StorageView, { cid: { configurable: true, get: function() { return game.testflag.cid; } } });
+game.FadeComponent.entityItems = { $ofs:0, $t:"ut.DynamicArray`1", $c:game.FadeComponent };
+game.FadeComponent.transitionType = { $ofs:12, $t:"game.TransitionType", $c:game.FadeComponent };
+game.FadeComponent.fadeDuration = { $ofs:16, $t:"float", $c:game.FadeComponent };
 var ut = ut || {};
 ut.Core2D = ut.Core2D || {};
 ut.Core2D.layers = ut.Core2D.layers || {};
@@ -1905,101 +1660,6 @@ Object.defineProperties(ut.EditorExtensions.AssetReferenceSpriteAtlas.StorageVie
 ut.EditorExtensions.AssetReferenceSpriteAtlas.guid = { $ofs:0, $t:"System.String", $c:ut.EditorExtensions.AssetReferenceSpriteAtlas };
 ut.EditorExtensions.AssetReferenceSpriteAtlas.fileId = { $ofs:8, $t:"System.Int64", $c:ut.EditorExtensions.AssetReferenceSpriteAtlas };
 ut.EditorExtensions.AssetReferenceSpriteAtlas.type = { $ofs:16, $t:"int32_t", $c:ut.EditorExtensions.AssetReferenceSpriteAtlas };
-ut.EditorExtensions.AssetReferenceTMP_FontAsset = function(arg0, arg1, arg2) {
-  this._guid = (arg0 === undefined ? '' : arg0);
-  this._fileId = (/*64BIT*/arg1|0);
-  this._type = (arg2|0);
-};
-ut.EditorExtensions.AssetReferenceTMP_FontAsset.prototype = Object.create(null);
-ut.EditorExtensions.AssetReferenceTMP_FontAsset.prototype.constructor = ut.EditorExtensions.AssetReferenceTMP_FontAsset;
-Object.defineProperties(ut.EditorExtensions.AssetReferenceTMP_FontAsset.prototype, {
-  guid: {
-    get: function() { return this._guid; },
-    set: function(v) { this._guid = (v === undefined ? '' : v); },
-  },
-  fileId: {
-    get: function() { return this._fileId; },
-    set: function(v) { this._fileId = (/*64BIT*/v|0); },
-  },
-  type: {
-    get: function() { return this._type; },
-    set: function(v) { this._type = (v|0); },
-  },
-});
-ut.EditorExtensions.AssetReferenceTMP_FontAsset._size = 24;
-ut.EditorExtensions.AssetReferenceTMP_FontAsset._fromPtr = function(ptr, v) {
-  v = v || Object.create(ut.EditorExtensions.AssetReferenceTMP_FontAsset.prototype);
-  v._guid = (Module._ut_nativestring_data(ptr+0) ? UTF8ToString(Module._ut_nativestring_data(ptr+0)) : "");
-  v._fileId = (/*64BIT*/HEAP32[(ptr+8)>>2]);
-  v._type = HEAP32[(ptr+16)>>2];
-  return v;
-};
-ut.EditorExtensions.AssetReferenceTMP_FontAsset._toPtr = function(ptr, v) {
-  ut.newHeapNativeString(ptr+0, v.guid);
-  HEAP32[(ptr+8)>>2] = /*64BIT*/v.fileId;
-  HEAP32[(ptr+16)>>2] = v.type;
-};
-ut.EditorExtensions.AssetReferenceTMP_FontAsset._toTempHeapPtr = function(ptr, v) {
-  ut.toExistingScratchNativeString(ptr+0, v.guid);
-  HEAP32[(ptr+8)>>2] = /*64BIT*/v.fileId;
-  HEAP32[(ptr+16)>>2] = v.type;
-};
-ut.EditorExtensions.AssetReferenceTMP_FontAsset._tempHeapPtr = function(v) {
-  var ptr = ut.tempHeapPtrBufferZero(24);
-  if (v) ut.EditorExtensions.AssetReferenceTMP_FontAsset._toTempHeapPtr(ptr, v);
-  return ptr;
-};
-ut.EditorExtensions.AssetReferenceTMP_FontAsset.StorageView = function(ptr) {
-  this._ptr = ptr;
-};
-ut.EditorExtensions.AssetReferenceTMP_FontAsset.StorageView.prototype = Object.create(null);
-ut.EditorExtensions.AssetReferenceTMP_FontAsset.StorageView.prototype.constructor = ut.EditorExtensions.AssetReferenceTMP_FontAsset.StorageView;
-ut.EditorExtensions.AssetReferenceTMP_FontAsset._view = ut.EditorExtensions.AssetReferenceTMP_FontAsset.StorageView;
-ut.EditorExtensions.AssetReferenceTMP_FontAsset.StorageView._isSharedComp = ut.EditorExtensions.AssetReferenceTMP_FontAsset._isSharedComp = false;
-ut.EditorExtensions.AssetReferenceTMP_FontAsset.StorageView._fromPtr = ut.EditorExtensions.AssetReferenceTMP_FontAsset._fromPtr;
-ut.EditorExtensions.AssetReferenceTMP_FontAsset.StorageView._toPtr = ut.EditorExtensions.AssetReferenceTMP_FontAsset._toPtr;
-ut.EditorExtensions.AssetReferenceTMP_FontAsset.StorageView._tempHeapPtr = ut.EditorExtensions.AssetReferenceTMP_FontAsset._tempHeapPtr;
-ut.EditorExtensions.AssetReferenceTMP_FontAsset.StorageView._size = ut.EditorExtensions.AssetReferenceTMP_FontAsset._size;
-ut.EditorExtensions.AssetReferenceTMP_FontAsset.StorageView.prototype.$advance = function() {
-  this._ptr += 24;
-};
-Object.defineProperties(ut.EditorExtensions.AssetReferenceTMP_FontAsset.StorageView.prototype, {
-  guid: {
-    get: function() { return (Module._ut_nativestring_data(this._ptr+0) ? UTF8ToString(Module._ut_nativestring_data(this._ptr+0)) : ""); },
-    set: function(v) { ut.newHeapNativeString(this._ptr+0, v); },
-  },
-  fileId: {
-    get: function() { return (/*64BIT*/HEAP32[(this._ptr+8)>>2]); },
-    set: function(v) { HEAP32[(this._ptr+8)>>2] = /*64BIT*/v; },
-  },
-  type: {
-    get: function() { return HEAP32[(this._ptr+16)>>2]; },
-    set: function(v) { HEAP32[(this._ptr+16)>>2] = v; },
-  },
-});
-ut.EditorExtensions.AssetReferenceTMP_FontAsset._dtorFn = function dtor(ptr) {
-  if (!ptr) return; 
-  Module._ut_nativestring_placement_delete(ptr + 0);
-};
-ut.EditorExtensions.AssetReferenceTMP_FontAsset._copyFn = function copy(src, dst) {
-  if (!src) throw 'copy function src ptr is null!';
-  if (!dst) throw 'copy function dst ptr is null!';
-  Module._ut_nativestring_copy_construct(dst + 0, src + 0);
-  for(var i = 0; i < 8; ++i) HEAPU8[dst+8+i] = HEAPU8[src+8+i];
-  for(var i = 0; i < 4; ++i) HEAPU8[dst+16+i] = HEAPU8[src+16+i];
-};
-ut.EditorExtensions.AssetReferenceTMP_FontAsset._typeDesc = (function() {
-  return ut.meta.allocType(5, 'ut.EditorExtensions.AssetReferenceTMP_FontAsset', 24, [
-    {name: 'guid', offset: 0, type: ut.meta.getType('string')},
-    {name: 'fileId', offset: 8, type: ut.meta.getType('int64')},
-    {name: 'type', offset: 16, type: ut.meta.getType('int32')}
-  ]);
-})();
-Object.defineProperties(ut.EditorExtensions.AssetReferenceTMP_FontAsset, { cid: { configurable: true, get: function() { delete ut.EditorExtensions.AssetReferenceTMP_FontAsset.cid; var offsetsPtr = 0, offsetsCount = 0; return ut.EditorExtensions.AssetReferenceTMP_FontAsset.cid = Module._ut_component_register_cid_with_type(ut.EditorExtensions.AssetReferenceTMP_FontAsset._typeDesc, 8, 0, offsetsPtr, offsetsCount, ut.DestructorFn._cb.token_for(ut.EditorExtensions.AssetReferenceTMP_FontAsset._dtorFn), ut.CopyFn._cb.token_for(ut.EditorExtensions.AssetReferenceTMP_FontAsset._copyFn)); } } });
-Object.defineProperties(ut.EditorExtensions.AssetReferenceTMP_FontAsset.StorageView, { cid: { configurable: true, get: function() { return ut.EditorExtensions.AssetReferenceTMP_FontAsset.cid; } } });
-ut.EditorExtensions.AssetReferenceTMP_FontAsset.guid = { $ofs:0, $t:"System.String", $c:ut.EditorExtensions.AssetReferenceTMP_FontAsset };
-ut.EditorExtensions.AssetReferenceTMP_FontAsset.fileId = { $ofs:8, $t:"System.Int64", $c:ut.EditorExtensions.AssetReferenceTMP_FontAsset };
-ut.EditorExtensions.AssetReferenceTMP_FontAsset.type = { $ofs:16, $t:"int32_t", $c:ut.EditorExtensions.AssetReferenceTMP_FontAsset };
 ut.EditorExtensions.AssetReferenceTexture2D = function(arg0, arg1, arg2) {
   this._guid = (arg0 === undefined ? '' : arg0);
   this._fileId = (/*64BIT*/arg1|0);
@@ -2190,6 +1850,101 @@ Object.defineProperties(ut.EditorExtensions.AssetReferenceTile.StorageView, { ci
 ut.EditorExtensions.AssetReferenceTile.guid = { $ofs:0, $t:"System.String", $c:ut.EditorExtensions.AssetReferenceTile };
 ut.EditorExtensions.AssetReferenceTile.fileId = { $ofs:8, $t:"System.Int64", $c:ut.EditorExtensions.AssetReferenceTile };
 ut.EditorExtensions.AssetReferenceTile.type = { $ofs:16, $t:"int32_t", $c:ut.EditorExtensions.AssetReferenceTile };
+ut.EditorExtensions.AssetReferenceTMP_FontAsset = function(arg0, arg1, arg2) {
+  this._guid = (arg0 === undefined ? '' : arg0);
+  this._fileId = (/*64BIT*/arg1|0);
+  this._type = (arg2|0);
+};
+ut.EditorExtensions.AssetReferenceTMP_FontAsset.prototype = Object.create(null);
+ut.EditorExtensions.AssetReferenceTMP_FontAsset.prototype.constructor = ut.EditorExtensions.AssetReferenceTMP_FontAsset;
+Object.defineProperties(ut.EditorExtensions.AssetReferenceTMP_FontAsset.prototype, {
+  guid: {
+    get: function() { return this._guid; },
+    set: function(v) { this._guid = (v === undefined ? '' : v); },
+  },
+  fileId: {
+    get: function() { return this._fileId; },
+    set: function(v) { this._fileId = (/*64BIT*/v|0); },
+  },
+  type: {
+    get: function() { return this._type; },
+    set: function(v) { this._type = (v|0); },
+  },
+});
+ut.EditorExtensions.AssetReferenceTMP_FontAsset._size = 24;
+ut.EditorExtensions.AssetReferenceTMP_FontAsset._fromPtr = function(ptr, v) {
+  v = v || Object.create(ut.EditorExtensions.AssetReferenceTMP_FontAsset.prototype);
+  v._guid = (Module._ut_nativestring_data(ptr+0) ? UTF8ToString(Module._ut_nativestring_data(ptr+0)) : "");
+  v._fileId = (/*64BIT*/HEAP32[(ptr+8)>>2]);
+  v._type = HEAP32[(ptr+16)>>2];
+  return v;
+};
+ut.EditorExtensions.AssetReferenceTMP_FontAsset._toPtr = function(ptr, v) {
+  ut.newHeapNativeString(ptr+0, v.guid);
+  HEAP32[(ptr+8)>>2] = /*64BIT*/v.fileId;
+  HEAP32[(ptr+16)>>2] = v.type;
+};
+ut.EditorExtensions.AssetReferenceTMP_FontAsset._toTempHeapPtr = function(ptr, v) {
+  ut.toExistingScratchNativeString(ptr+0, v.guid);
+  HEAP32[(ptr+8)>>2] = /*64BIT*/v.fileId;
+  HEAP32[(ptr+16)>>2] = v.type;
+};
+ut.EditorExtensions.AssetReferenceTMP_FontAsset._tempHeapPtr = function(v) {
+  var ptr = ut.tempHeapPtrBufferZero(24);
+  if (v) ut.EditorExtensions.AssetReferenceTMP_FontAsset._toTempHeapPtr(ptr, v);
+  return ptr;
+};
+ut.EditorExtensions.AssetReferenceTMP_FontAsset.StorageView = function(ptr) {
+  this._ptr = ptr;
+};
+ut.EditorExtensions.AssetReferenceTMP_FontAsset.StorageView.prototype = Object.create(null);
+ut.EditorExtensions.AssetReferenceTMP_FontAsset.StorageView.prototype.constructor = ut.EditorExtensions.AssetReferenceTMP_FontAsset.StorageView;
+ut.EditorExtensions.AssetReferenceTMP_FontAsset._view = ut.EditorExtensions.AssetReferenceTMP_FontAsset.StorageView;
+ut.EditorExtensions.AssetReferenceTMP_FontAsset.StorageView._isSharedComp = ut.EditorExtensions.AssetReferenceTMP_FontAsset._isSharedComp = false;
+ut.EditorExtensions.AssetReferenceTMP_FontAsset.StorageView._fromPtr = ut.EditorExtensions.AssetReferenceTMP_FontAsset._fromPtr;
+ut.EditorExtensions.AssetReferenceTMP_FontAsset.StorageView._toPtr = ut.EditorExtensions.AssetReferenceTMP_FontAsset._toPtr;
+ut.EditorExtensions.AssetReferenceTMP_FontAsset.StorageView._tempHeapPtr = ut.EditorExtensions.AssetReferenceTMP_FontAsset._tempHeapPtr;
+ut.EditorExtensions.AssetReferenceTMP_FontAsset.StorageView._size = ut.EditorExtensions.AssetReferenceTMP_FontAsset._size;
+ut.EditorExtensions.AssetReferenceTMP_FontAsset.StorageView.prototype.$advance = function() {
+  this._ptr += 24;
+};
+Object.defineProperties(ut.EditorExtensions.AssetReferenceTMP_FontAsset.StorageView.prototype, {
+  guid: {
+    get: function() { return (Module._ut_nativestring_data(this._ptr+0) ? UTF8ToString(Module._ut_nativestring_data(this._ptr+0)) : ""); },
+    set: function(v) { ut.newHeapNativeString(this._ptr+0, v); },
+  },
+  fileId: {
+    get: function() { return (/*64BIT*/HEAP32[(this._ptr+8)>>2]); },
+    set: function(v) { HEAP32[(this._ptr+8)>>2] = /*64BIT*/v; },
+  },
+  type: {
+    get: function() { return HEAP32[(this._ptr+16)>>2]; },
+    set: function(v) { HEAP32[(this._ptr+16)>>2] = v; },
+  },
+});
+ut.EditorExtensions.AssetReferenceTMP_FontAsset._dtorFn = function dtor(ptr) {
+  if (!ptr) return; 
+  Module._ut_nativestring_placement_delete(ptr + 0);
+};
+ut.EditorExtensions.AssetReferenceTMP_FontAsset._copyFn = function copy(src, dst) {
+  if (!src) throw 'copy function src ptr is null!';
+  if (!dst) throw 'copy function dst ptr is null!';
+  Module._ut_nativestring_copy_construct(dst + 0, src + 0);
+  for(var i = 0; i < 8; ++i) HEAPU8[dst+8+i] = HEAPU8[src+8+i];
+  for(var i = 0; i < 4; ++i) HEAPU8[dst+16+i] = HEAPU8[src+16+i];
+};
+ut.EditorExtensions.AssetReferenceTMP_FontAsset._typeDesc = (function() {
+  return ut.meta.allocType(5, 'ut.EditorExtensions.AssetReferenceTMP_FontAsset', 24, [
+    {name: 'guid', offset: 0, type: ut.meta.getType('string')},
+    {name: 'fileId', offset: 8, type: ut.meta.getType('int64')},
+    {name: 'type', offset: 16, type: ut.meta.getType('int32')}
+  ]);
+})();
+Object.defineProperties(ut.EditorExtensions.AssetReferenceTMP_FontAsset, { cid: { configurable: true, get: function() { delete ut.EditorExtensions.AssetReferenceTMP_FontAsset.cid; var offsetsPtr = 0, offsetsCount = 0; return ut.EditorExtensions.AssetReferenceTMP_FontAsset.cid = Module._ut_component_register_cid_with_type(ut.EditorExtensions.AssetReferenceTMP_FontAsset._typeDesc, 8, 0, offsetsPtr, offsetsCount, ut.DestructorFn._cb.token_for(ut.EditorExtensions.AssetReferenceTMP_FontAsset._dtorFn), ut.CopyFn._cb.token_for(ut.EditorExtensions.AssetReferenceTMP_FontAsset._copyFn)); } } });
+Object.defineProperties(ut.EditorExtensions.AssetReferenceTMP_FontAsset.StorageView, { cid: { configurable: true, get: function() { return ut.EditorExtensions.AssetReferenceTMP_FontAsset.cid; } } });
+ut.EditorExtensions.AssetReferenceTMP_FontAsset.guid = { $ofs:0, $t:"System.String", $c:ut.EditorExtensions.AssetReferenceTMP_FontAsset };
+ut.EditorExtensions.AssetReferenceTMP_FontAsset.fileId = { $ofs:8, $t:"System.Int64", $c:ut.EditorExtensions.AssetReferenceTMP_FontAsset };
+ut.EditorExtensions.AssetReferenceTMP_FontAsset.type = { $ofs:16, $t:"int32_t", $c:ut.EditorExtensions.AssetReferenceTMP_FontAsset };
 ut.EditorExtensions.CameraCullingMask = function(arg0) {
   this._mask = (arg0|0);
 };
@@ -2506,17 +2261,11 @@ game.SimpleDragger_State.initialized = { $ofs:0, $t:"bool", $c:game.SimpleDragge
 game.SimpleDragger_State.enabled = { $ofs:1, $t:"bool", $c:game.SimpleDragger_State };
 game.SimpleDragger_State.onEnableCalled = { $ofs:2, $t:"bool", $c:game.SimpleDragger_State };
 game.SimpleDragger_State.onDisableCalled = { $ofs:3, $t:"bool", $c:game.SimpleDragger_State };
-game.testJS = ut.System.define({
-  name: "game.testJS"
-});
 game.MouseSpriteInteractionSystemJS = ut.System.define({
   name: "game.MouseSpriteInteractionSystemJS"
 });
 game.TimerServiceJS = ut.System.define({
   name: "game.TimerServiceJS"
-});
-game.FadeTransitionSystemJS = ut.System.define({
-  name: "game.FadeTransitionSystemJS"
 });
 game.CustomButtonSystemJS = ut.System.define({
   name: "game.CustomButtonSystemJS"
