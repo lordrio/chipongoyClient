@@ -1,0 +1,13 @@
+﻿[{
+    "$TypeId": 3,
+    "Id": "fbbd37a8b57b4d77ace7336d28129173",
+    "Name": "CallbackType",
+    "ExportFlags": 0,
+    "Unlisted": false,
+    "Visibility": 0,
+    "TypeCode": "Enum",
+    "BaseType": { "Id": "9633c95a0a68473682f09ed6a01194b4", "Name": "Int32" },
+    "DefaultValue": {
+        "Type": { "Id": "fbbd37a8b57b4d77ace7336d28129173", "Name": "CallbackType" }
+    }
+}]

@@ -28,6 +28,26 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var game;
+(function (game) {
+    /** New System */
+    var test = /** @class */ (function (_super) {
+        __extends(test, _super);
+        function test() {
+            return _super !== null && _super.apply(this, arguments) || this;
+        }
+        test.prototype.OnUpdate = function () {
+            var dt = this.scheduler.deltaTime();
+            this.world.forEach([game.testflag, ut.Core2D.Sprite2DRenderer], function (t, d) {
+                // console.log(dt);
+                // d.color.a = d.color.a - dt;
+                // console.log(d.color.a);
+            });
+        };
+        return test;
+    }(ut.ComponentSystem));
+    game.test = test;
+})(game || (game = {}));
 var scene;
 (function (scene) {
     var SceneData = /** @class */ (function (_super) {
@@ -155,6 +175,10 @@ var game;
         };
         // do clean up
         SceneMgr.prototype.ChangeScene = function (pinId, world) {
+            var _this = this;
+            if (this.isInTransition) {
+                return;
+            }
             var loadedSceneData = this.data[this.currentSceneId];
             // check if pin exist
             if (loadedSceneData.pins[pinId] == undefined || loadedSceneData.pins[pinId] == null) {
@@ -164,9 +188,15 @@ var game;
             }
             // set next scene
             this.nextSceneId = loadedSceneData.pins[pinId];
+            this.isInTransition = true;
             // temp without transition
-            this.CleanUpScene(world);
-            this.LoadUpScene(world);
+            game.FadeTransitionSystem.StartFade(world, game.TransitionType.FadeIn, function () {
+                _this.CleanUpScene(world);
+                _this.LoadUpScene(world);
+                game.FadeTransitionSystem.StartFade(world, game.TransitionType.FadeOut, function () {
+                    _this.isInTransition = false;
+                });
+            });
         };
         SceneMgr.prototype.UpdateSystem = function (world) {
             // temp
@@ -418,6 +448,35 @@ var game;
 })(game || (game = {}));
 var game;
 (function (game) {
+    var CallbackService = /** @class */ (function () {
+        function CallbackService() {
+        }
+        CallbackService.TriggerCallback = function (cb) {
+            // console.log("trigged " + cb.hash);
+            var cbfunc = this.callbackMap[cb.hash];
+            if (cbfunc == null || cbfunc == undefined) {
+                return;
+            }
+            // console.log("trigged " + cb.hash);
+            cbfunc();
+            delete this.callbackMap[cb.hash];
+        };
+        CallbackService.AddCallbackToEntitiy = function (world, obj, func) {
+            var cb = world.getOrAddComponentData(obj, game.CallbackComponent);
+            CallbackService.uniqID++;
+            cb.hash = "" + CallbackService.uniqID;
+            CallbackService.callbackMap[cb.hash] = func;
+            world.setComponentData(obj, cb);
+            // console.log("added " + cb.hash + " " + func);
+        };
+        CallbackService.callbackMap = {};
+        CallbackService.uniqID = 0;
+        return CallbackService;
+    }());
+    game.CallbackService = CallbackService;
+})(game || (game = {}));
+var game;
+(function (game) {
     var InputService = /** @class */ (function () {
         function InputService() {
         }
@@ -449,6 +508,108 @@ var game;
         return TimerService;
     }(ut.ComponentSystem));
     game.TimerService = TimerService;
+})(game || (game = {}));
+var game;
+(function (game) {
+    /** New System */
+    ut.executeBefore(ut.Shared.UserCodeStart);
+    var FadeTransitionSystem = /** @class */ (function (_super) {
+        __extends(FadeTransitionSystem, _super);
+        function FadeTransitionSystem() {
+            return _super !== null && _super.apply(this, arguments) || this;
+        }
+        FadeTransitionSystem.StartFade = function (world, fadetype, func) {
+            var entities;
+            switch (fadetype) {
+                case game.TransitionType.FadeOut:
+                    entities = ut.EntityGroup.instantiate(world, this.FadeOutEntityGroup);
+                    break;
+                case game.TransitionType.FadeIn:
+                    entities = ut.EntityGroup.instantiate(world, this.FadeInEntityGroup);
+                    break;
+                default:
+                    return;
+            }
+            if (func != null && func != undefined) {
+                entities.forEach(function (e) {
+                    if (world.hasComponent(e, game.FadeComponent)) {
+                        game.CallbackService.AddCallbackToEntitiy(world, e, func);
+                    }
+                });
+            }
+        };
+        FadeTransitionSystem.prototype.DoFade = function (self, fade, tc, cb) {
+            var _this = this;
+            var dt = this.scheduler.deltaTime();
+            if (!tc.transitionPlayFlag || tc.transitionEnded) {
+                return;
+            }
+            if (!tc.transitionStarted && !tc.transitionEnded) {
+                tc.transitionStarted = true;
+            }
+            var destroy = false;
+            switch (fade.FadeType) {
+                case game.TransitionType.FadeIn:
+                    {
+                        fade.fadeVal += dt * fade.fadeTimeScale;
+                        if (fade.fadeVal > 1.0) {
+                            fade.fadeVal = 1.0;
+                            if (cb != undefined && cb != null) {
+                                game.CallbackService.TriggerCallback(cb);
+                            }
+                            tc.transitionStarted = false;
+                            tc.transitionEnded = true;
+                            destroy = true;
+                        }
+                    }
+                    break;
+                case game.TransitionType.FadeOut:
+                    {
+                        fade.fadeVal -= dt * fade.fadeTimeScale;
+                        if (fade.fadeVal < 1.0) {
+                            fade.fadeVal = 0.0;
+                            if (cb != undefined && cb != null) {
+                                game.CallbackService.TriggerCallback(cb);
+                            }
+                            tc.transitionStarted = false;
+                            tc.transitionEnded = true;
+                            destroy = true;
+                        }
+                    }
+                    break;
+                default:
+                    break;
+            }
+            fade.colorComponent.forEach(function (i) {
+                // console.log(i);
+                var s = _this.world.getComponentData(i, ut.Core2D.Sprite2DRenderer);
+                s.color.a = fade.fadeVal;
+                _this.world.setComponentData(i, s);
+            });
+            if (destroy && tc.destroyWhenFinished) {
+                switch (fade.FadeType) {
+                    case game.TransitionType.FadeIn:
+                        ut.EntityGroup.destroyAll(this.world, FadeTransitionSystem.FadeInEntityGroup);
+                        break;
+                    case game.TransitionType.FadeOut:
+                        ut.EntityGroup.destroyAll(this.world, FadeTransitionSystem.FadeOutEntityGroup);
+                        break;
+                }
+            }
+        };
+        FadeTransitionSystem.prototype.OnUpdate = function () {
+            var _this = this;
+            this.world.forEach([ut.Entity, game.FadeComponent, game.TransitionComponent, game.CallbackComponent], function (self, fade, tc, cb) {
+                _this.DoFade(self, fade, tc, cb);
+                // let s = this.world.getComponentData(fade.temp, ut.Core2D.Sprite2DRenderer);
+                // s.color.a = 1;
+            });
+        };
+        FadeTransitionSystem.FadeInEntityGroup = "game.FadeIn";
+        FadeTransitionSystem.FadeOutEntityGroup = "game.FadeIn";
+        return FadeTransitionSystem;
+    }(ut.ComponentSystem));
+    game.FadeTransitionSystem = FadeTransitionSystem;
 })(game || (game = {}));
 var game;
 (function (game) {

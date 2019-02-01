@@ -11,6 +11,21 @@ namespace game
 }
 namespace game
 {
+    public enum TransitionType
+    {
+        NONE = -1,
+        FadeIn = 0,
+        FadeOut = 1,
+    }
+}
+namespace game
+{
+    public enum CallbackType
+    {
+    }
+}
+namespace game
+{
     [global::System.Runtime.InteropServices.StructLayout(global::System.Runtime.InteropServices.LayoutKind.Sequential)]
     public struct ChildScene 
     {
@@ -114,6 +129,30 @@ namespace entities.game.Scene2
 
     }
 }
+namespace entities.game.FadeIn
+{
+    [global::System.Runtime.InteropServices.StructLayout(global::System.Runtime.InteropServices.LayoutKind.Sequential)]
+    public struct Component : UTiny.IComponentData
+    {
+
+
+
+
+
+    }
+}
+namespace entities.game.FadeOut
+{
+    [global::System.Runtime.InteropServices.StructLayout(global::System.Runtime.InteropServices.LayoutKind.Sequential)]
+    public struct Component : UTiny.IComponentData
+    {
+
+
+
+
+
+    }
+}
 namespace game
 {
     [global::System.Runtime.InteropServices.StructLayout(global::System.Runtime.InteropServices.LayoutKind.Sequential)]
@@ -169,6 +208,64 @@ namespace game
 {
     [global::System.Runtime.InteropServices.StructLayout(global::System.Runtime.InteropServices.LayoutKind.Sequential)]
     public struct SimpleDraggerTag : UTiny.IComponentData
+    {
+
+
+
+
+
+    }
+}
+namespace game
+{
+    [global::System.Runtime.InteropServices.StructLayout(global::System.Runtime.InteropServices.LayoutKind.Sequential)]
+    public struct FadeComponent : UTiny.IComponentData
+    {
+
+
+        public UTiny.Entity[] colorComponent;
+        public float fadeVal;
+        public game.TransitionType FadeType;
+        public float fadeTimeScale;
+        public UTiny.Entity temp;
+
+
+
+    }
+}
+namespace game
+{
+    [global::System.Runtime.InteropServices.StructLayout(global::System.Runtime.InteropServices.LayoutKind.Sequential)]
+    public struct TransitionComponent : UTiny.IComponentData
+    {
+
+
+        public bool transitionStarted;
+        public bool transitionEnded;
+        public bool transitionPlayFlag;
+        public bool destroyWhenFinished;
+
+
+
+    }
+}
+namespace game
+{
+    [global::System.Runtime.InteropServices.StructLayout(global::System.Runtime.InteropServices.LayoutKind.Sequential)]
+    public struct CallbackComponent : UTiny.IComponentData
+    {
+
+
+        public string hash;
+
+
+
+    }
+}
+namespace game
+{
+    [global::System.Runtime.InteropServices.StructLayout(global::System.Runtime.InteropServices.LayoutKind.Sequential)]
+    public struct testflag : UTiny.IComponentData
     {
 
 

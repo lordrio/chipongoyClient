@@ -1,0 +1,131 @@
+﻿[{
+    "$TypeId": 4,
+    "Id": "81fd9668b5374fce802276d6c7961003",
+    "Name": "FadeOut",
+    "ExportFlags": 0,
+    "SerializedVersion": 0,
+    "Entities": [
+        { "$TypeId": 9, "Id": "1d69a42c974649b7af6cf3c2149d2303", "Name": "Canvas" },
+        { "$TypeId": 9, "Id": "1a8f9c6472034fcbb91c4605656b7f82", "Name": "CanvasCamera" },
+        { "$TypeId": 9, "Id": "e373f6634c8b4c90a5e3b4f30e0a2089", "Name": "Panel" }
+    ]
+},
+{
+    "$TypeId": 5,
+    "Id": "1d69a42c974649b7af6cf3c2149d2303",
+    "Name": "Canvas",
+    "Enabled": true,
+    "Static": false,
+    "Layer": 5,
+    "Components": [{
+        "Type": { "Id": "c895dbe72eb46ecb10d589d320151758", "Name": "TransformNode" }
+    }, {
+        "Type": { "Id": "70449d66178e0d9f66795c24f0fbbdfc", "Name": "TransformLocalPosition" }
+    }, {
+        "Type": { "Id": "2266a95f5d16ca1ddde710d7c047ba69", "Name": "TransformLocalRotation" }
+    }, {
+        "Type": { "Id": "f11fe490eefc969bbc3fde5eab5ccd1e", "Name": "TransformLocalScale" }
+    }, {
+        "Type": { "Id": "5ddde0b906f5f2c3b13d17f455d6ef5e", "Name": "RectTransform" }
+    }, {
+        "Type": { "Id": "757a06c4ae1ec5fccccd28eb89a6dc54", "Name": "UICanvas" },
+        "Properties": {
+            "camera": { "$TypeId": 9, "Id": "1a8f9c6472034fcbb91c4605656b7f82", "Name": "CanvasCamera" }
+        }
+    }]
+},
+{
+    "$TypeId": 5,
+    "Id": "1a8f9c6472034fcbb91c4605656b7f82",
+    "Name": "CanvasCamera",
+    "Enabled": true,
+    "Static": false,
+    "Layer": 5,
+    "Components": [{
+        "Type": { "Id": "c895dbe72eb46ecb10d589d320151758", "Name": "TransformNode" }
+    }, {
+        "Type": { "Id": "70449d66178e0d9f66795c24f0fbbdfc", "Name": "TransformLocalPosition" }
+    }, {
+        "Type": { "Id": "2266a95f5d16ca1ddde710d7c047ba69", "Name": "TransformLocalRotation" }
+    }, {
+        "Type": { "Id": "f11fe490eefc969bbc3fde5eab5ccd1e", "Name": "TransformLocalScale" }
+    }, {
+        "Type": { "Id": "12692383f3fef3bb74c209888c5b0939", "Name": "Camera2D" },
+        "Properties": {
+            "halfVerticalSize": 200,
+            "depth": 3
+        }
+    }]
+},
+{
+    "$TypeId": 5,
+    "Id": "e373f6634c8b4c90a5e3b4f30e0a2089",
+    "Name": "Panel",
+    "Enabled": true,
+    "Static": false,
+    "Layer": 5,
+    "Components": [{
+        "Type": { "Id": "c895dbe72eb46ecb10d589d320151758", "Name": "TransformNode" },
+        "Properties": {
+            "parent": { "$TypeId": 9, "Id": "1d69a42c974649b7af6cf3c2149d2303", "Name": "Canvas" }
+        }
+    }, {
+        "Type": { "Id": "70449d66178e0d9f66795c24f0fbbdfc", "Name": "TransformLocalPosition" }
+    }, {
+        "Type": { "Id": "2266a95f5d16ca1ddde710d7c047ba69", "Name": "TransformLocalRotation" }
+    }, {
+        "Type": { "Id": "f11fe490eefc969bbc3fde5eab5ccd1e", "Name": "TransformLocalScale" }
+    }, {
+        "Type": { "Id": "5ddde0b906f5f2c3b13d17f455d6ef5e", "Name": "RectTransform" }
+    }, {
+        "Type": { "Id": "1c504a8a7963db0d32e89b527b90e057", "Name": "Sprite2DRenderer" },
+        "Properties": {
+            "color": {
+                "Type": { "Id": "2a90a1633d6dc16cd37cdfaca7b93cea", "Name": "Color" },
+                "Properties": {
+                    "r": 0,
+                    "g": 0,
+                    "b": 0,
+                    "a": 1
+                }
+            }
+        }
+    }, {
+        "Type": { "Id": "be2f221c9af74ec5c0a4495a2d6769a3", "Name": "Sprite2DRendererOptions" },
+        "Properties": {
+            "size": {
+                "Type": { "Id": "3abb69286ddfc2d1c617a173c1eeb35d", "Name": "Vector2" },
+                "Properties": {
+                    "x": 0,
+                    "y": 0
+                }
+            }
+        }
+    }, {
+        "Type": { "Id": "b1e5348389156b7a260d6ed393754fba", "Name": "LayerSorting" },
+        "Properties": {
+            "layer": -420961455,
+            "order": 100
+        }
+    }, {
+        "Type": { "Id": "0da66d2e6e304a418294269d917c1f39", "Name": "FadeComponent" },
+        "Properties": {
+            "colorComponent": {
+                "Type": { "Id": "5a182d9d039d4dfd8fa96132d05f9ee7", "Name": "EntityReference" },
+                "Items": [
+                    { "$TypeId": 9, "Id": "e373f6634c8b4c90a5e3b4f30e0a2089", "Name": "Panel" }
+                ]
+            },
+            "fadeVal": 1,
+            "FadeType": {
+                "$TypeId": 8,
+                "Type": { "Id": "767dfc675f664252bf07dc215c5c3486", "Name": "TransitionType" },
+                "Id": "37208247dfc0433b9f0c23347b613400",
+                "Name": "FadeOut",
+                "Value": 1
+            }
+        }
+    }, {
+        "Type": { "Id": "65a49890200744569907c7282e635312", "Name": "TransitionComponent" }
+    }]
+}]

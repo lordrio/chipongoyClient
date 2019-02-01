@@ -32,6 +32,36 @@
 
 @struct
 @memberof game
+@name TransitionType
+*/
+/**
+
+@member {game.TransitionType}
+@memberof game.TransitionType
+@name NONE
+*/
+/**
+
+@member {game.TransitionType}
+@memberof game.TransitionType
+@name FadeIn
+*/
+/**
+
+@member {game.TransitionType}
+@memberof game.TransitionType
+@name FadeOut
+*/
+/**
+
+@struct
+@memberof game
+@name CallbackType
+*/
+/**
+
+@struct
+@memberof game
 @name ChildScene
 */
 /**
@@ -128,6 +158,18 @@
 
 @component
 @memberof entities.game.Scene2
+@name Component
+*/
+/**
+
+@component
+@memberof entities.game.FadeIn
+@name Component
+*/
+/**
+
+@component
+@memberof entities.game.FadeOut
 @name Component
 */
 /**
@@ -243,6 +285,90 @@
 @component
 @memberof game
 @name SimpleDraggerTag
+*/
+/**
+
+@component
+@memberof game
+@name FadeComponent
+*/
+/**
+
+@member {ut.DynamicArray<ut.Entity>}
+@memberof game.FadeComponent
+@name colorComponent
+*/
+/**
+
+@member {float}
+@memberof game.FadeComponent
+@name fadeVal
+*/
+/**
+
+@member {game.TransitionType}
+@memberof game.FadeComponent
+@name FadeType
+*/
+/**
+
+@member {float}
+@memberof game.FadeComponent
+@name fadeTimeScale
+*/
+/**
+
+@member {ut.Entity}
+@memberof game.FadeComponent
+@name temp
+*/
+/**
+
+@component
+@memberof game
+@name TransitionComponent
+*/
+/**
+
+@member {bool}
+@memberof game.TransitionComponent
+@name transitionStarted
+*/
+/**
+
+@member {bool}
+@memberof game.TransitionComponent
+@name transitionEnded
+*/
+/**
+
+@member {bool}
+@memberof game.TransitionComponent
+@name transitionPlayFlag
+*/
+/**
+
+@member {bool}
+@memberof game.TransitionComponent
+@name destroyWhenFinished
+*/
+/**
+
+@component
+@memberof game
+@name CallbackComponent
+*/
+/**
+
+@member {string}
+@memberof game.CallbackComponent
+@name hash
+*/
+/**
+
+@component
+@memberof game
+@name testflag
 */
 /**
 
@@ -542,6 +668,12 @@
 
 @system
 @memberof game
+@name testJS
+*/
+/**
+
+@system
+@memberof game
 @name MouseSpriteInteractionSystemJS
 */
 /**
@@ -549,6 +681,12 @@
 @system
 @memberof game
 @name TimerServiceJS
+*/
+/**
+
+@system
+@memberof game
+@name FadeTransitionSystemJS
 */
 /**
 

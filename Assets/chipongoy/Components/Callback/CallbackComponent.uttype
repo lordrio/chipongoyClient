@@ -1,0 +1,19 @@
+﻿[{
+    "$TypeId": 3,
+    "Id": "52b4e88310b44ed1aa58ace3cccec559",
+    "Name": "CallbackComponent",
+    "ExportFlags": 0,
+    "Unlisted": false,
+    "Visibility": 0,
+    "TypeCode": "Component",
+    "Fields": [{
+        "Id": "5d2fca5b1b5e412b86216f8505bfcbc8",
+        "Name": "hash",
+        "FieldType": { "Id": "1bff5adddd7c41de98d3329c7c641208", "Name": "String" },
+        "Array": false,
+        "Visibility": 1
+    }],
+    "DefaultValue": {
+        "Type": { "Id": "52b4e88310b44ed1aa58ace3cccec559", "Name": "CallbackComponent" }
+    }
+}]

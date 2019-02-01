@@ -19,6 +19,24 @@ game.SceneId._typeDesc = (function() {
     {name: 'Scene2', offset: 3, type: enumType}
   ]);
 })();
+game.TransitionType = {
+  NONE: -1,
+  FadeIn: 0,
+  FadeOut: 1
+};
+game.TransitionType._typeDesc = (function() {
+  var enumType = ut.meta.getType('int32');
+  return ut.meta.allocType(6, 'game.TransitionType', 4, [
+    {name: 'NONE', offset: -1, type: enumType},
+    {name: 'FadeIn', offset: 0, type: enumType},
+    {name: 'FadeOut', offset: 1, type: enumType}
+  ]);
+})();
+game.CallbackType = {
+};
+game.CallbackType._typeDesc = (function() {
+  return ut.meta.allocType(6, 'game.CallbackType', 4, []);
+})();
 game.ChildScene = function(arg0, arg1) {
   this._parentSceneId = (arg0|0);
   this._sceneIdToLoad = (arg1|0);
@@ -374,6 +392,94 @@ entities.game.Scene2.Component._typeDesc = (function() {
 })();
 Object.defineProperties(entities.game.Scene2.Component, { cid: { configurable: true, get: function() { delete entities.game.Scene2.Component.cid; var offsetsPtr = 0, offsetsCount = 0; return entities.game.Scene2.Component.cid = Module._ut_component_register_cid_with_type(entities.game.Scene2.Component._typeDesc, 0, 0, offsetsPtr, offsetsCount, 0, 0); } } });
 Object.defineProperties(entities.game.Scene2.Component.StorageView, { cid: { configurable: true, get: function() { return entities.game.Scene2.Component.cid; } } });
+entities.game.FadeIn = entities.game.FadeIn || {};
+entities.game.FadeIn.Component = function() {
+};
+entities.game.FadeIn.Component.prototype = Object.create(null);
+entities.game.FadeIn.Component.prototype.constructor = entities.game.FadeIn.Component;
+Object.defineProperties(entities.game.FadeIn.Component.prototype, {
+});
+entities.game.FadeIn.Component._size = 1;
+entities.game.FadeIn.Component._fromPtr = function(ptr, v) {
+  v = v || Object.create(entities.game.FadeIn.Component.prototype);
+  return v;
+};
+entities.game.FadeIn.Component._toPtr = function(ptr, v) {
+};
+entities.game.FadeIn.Component._toTempHeapPtr = function(ptr, v) {
+};
+entities.game.FadeIn.Component._tempHeapPtr = function(v) {
+  var ptr = ut.tempHeapPtrBufferZero(1);
+  if (v) entities.game.FadeIn.Component._toTempHeapPtr(ptr, v);
+  return ptr;
+};
+entities.game.FadeIn.Component.StorageView = function(ptr) {
+  this._ptr = ptr;
+};
+entities.game.FadeIn.Component.StorageView.prototype = Object.create(null);
+entities.game.FadeIn.Component.StorageView.prototype.constructor = entities.game.FadeIn.Component.StorageView;
+entities.game.FadeIn.Component._view = entities.game.FadeIn.Component.StorageView;
+entities.game.FadeIn.Component.StorageView._isSharedComp = entities.game.FadeIn.Component._isSharedComp = false;
+entities.game.FadeIn.Component.StorageView._fromPtr = entities.game.FadeIn.Component._fromPtr;
+entities.game.FadeIn.Component.StorageView._toPtr = entities.game.FadeIn.Component._toPtr;
+entities.game.FadeIn.Component.StorageView._tempHeapPtr = entities.game.FadeIn.Component._tempHeapPtr;
+entities.game.FadeIn.Component.StorageView._size = entities.game.FadeIn.Component._size;
+entities.game.FadeIn.Component.StorageView.prototype.$advance = function() {
+  this._ptr += 1;
+};
+Object.defineProperties(entities.game.FadeIn.Component.StorageView.prototype, {
+});
+entities.game.FadeIn.Component._dtorFn = function dtor(ptr) { /* POD, no-op */ }
+// entities.game.FadeIn.Component is a POD type, so a JavaScript side copy constructor entities.game.FadeIn.Component._copyFn = function copy(src, dst) { ... } does not need to be generated for it
+entities.game.FadeIn.Component._typeDesc = (function() {
+  return ut.meta.allocType(5, 'entities.game.FadeIn.Component', 1, []);
+})();
+Object.defineProperties(entities.game.FadeIn.Component, { cid: { configurable: true, get: function() { delete entities.game.FadeIn.Component.cid; var offsetsPtr = 0, offsetsCount = 0; return entities.game.FadeIn.Component.cid = Module._ut_component_register_cid_with_type(entities.game.FadeIn.Component._typeDesc, 0, 0, offsetsPtr, offsetsCount, 0, 0); } } });
+Object.defineProperties(entities.game.FadeIn.Component.StorageView, { cid: { configurable: true, get: function() { return entities.game.FadeIn.Component.cid; } } });
+entities.game.FadeOut = entities.game.FadeOut || {};
+entities.game.FadeOut.Component = function() {
+};
+entities.game.FadeOut.Component.prototype = Object.create(null);
+entities.game.FadeOut.Component.prototype.constructor = entities.game.FadeOut.Component;
+Object.defineProperties(entities.game.FadeOut.Component.prototype, {
+});
+entities.game.FadeOut.Component._size = 1;
+entities.game.FadeOut.Component._fromPtr = function(ptr, v) {
+  v = v || Object.create(entities.game.FadeOut.Component.prototype);
+  return v;
+};
+entities.game.FadeOut.Component._toPtr = function(ptr, v) {
+};
+entities.game.FadeOut.Component._toTempHeapPtr = function(ptr, v) {
+};
+entities.game.FadeOut.Component._tempHeapPtr = function(v) {
+  var ptr = ut.tempHeapPtrBufferZero(1);
+  if (v) entities.game.FadeOut.Component._toTempHeapPtr(ptr, v);
+  return ptr;
+};
+entities.game.FadeOut.Component.StorageView = function(ptr) {
+  this._ptr = ptr;
+};
+entities.game.FadeOut.Component.StorageView.prototype = Object.create(null);
+entities.game.FadeOut.Component.StorageView.prototype.constructor = entities.game.FadeOut.Component.StorageView;
+entities.game.FadeOut.Component._view = entities.game.FadeOut.Component.StorageView;
+entities.game.FadeOut.Component.StorageView._isSharedComp = entities.game.FadeOut.Component._isSharedComp = false;
+entities.game.FadeOut.Component.StorageView._fromPtr = entities.game.FadeOut.Component._fromPtr;
+entities.game.FadeOut.Component.StorageView._toPtr = entities.game.FadeOut.Component._toPtr;
+entities.game.FadeOut.Component.StorageView._tempHeapPtr = entities.game.FadeOut.Component._tempHeapPtr;
+entities.game.FadeOut.Component.StorageView._size = entities.game.FadeOut.Component._size;
+entities.game.FadeOut.Component.StorageView.prototype.$advance = function() {
+  this._ptr += 1;
+};
+Object.defineProperties(entities.game.FadeOut.Component.StorageView.prototype, {
+});
+entities.game.FadeOut.Component._dtorFn = function dtor(ptr) { /* POD, no-op */ }
+// entities.game.FadeOut.Component is a POD type, so a JavaScript side copy constructor entities.game.FadeOut.Component._copyFn = function copy(src, dst) { ... } does not need to be generated for it
+entities.game.FadeOut.Component._typeDesc = (function() {
+  return ut.meta.allocType(5, 'entities.game.FadeOut.Component', 1, []);
+})();
+Object.defineProperties(entities.game.FadeOut.Component, { cid: { configurable: true, get: function() { delete entities.game.FadeOut.Component.cid; var offsetsPtr = 0, offsetsCount = 0; return entities.game.FadeOut.Component.cid = Module._ut_component_register_cid_with_type(entities.game.FadeOut.Component._typeDesc, 0, 0, offsetsPtr, offsetsCount, 0, 0); } } });
+Object.defineProperties(entities.game.FadeOut.Component.StorageView, { cid: { configurable: true, get: function() { return entities.game.FadeOut.Component.cid; } } });
 game.SceneDefineContainer = function(arg0) {
   this._sceneList = (arg0 === undefined ? new Array() : ((arg0 instanceof Array) ? arg0 : (function() { throw new Error('Assigning non-array to array field'); })()));
 };
@@ -779,6 +885,341 @@ game.SimpleDraggerTag._typeDesc = (function() {
 })();
 Object.defineProperties(game.SimpleDraggerTag, { cid: { configurable: true, get: function() { delete game.SimpleDraggerTag.cid; var offsetsPtr = 0, offsetsCount = 0; return game.SimpleDraggerTag.cid = Module._ut_component_register_cid_with_type(game.SimpleDraggerTag._typeDesc, 0, 0, offsetsPtr, offsetsCount, 0, 0); } } });
 Object.defineProperties(game.SimpleDraggerTag.StorageView, { cid: { configurable: true, get: function() { return game.SimpleDraggerTag.cid; } } });
+game.FadeComponent = function(arg0, arg1, arg2, arg3, arg4) {
+  this._colorComponent = (arg0 === undefined ? new Array() : ((arg0 instanceof Array) ? arg0 : (function() { throw new Error('Assigning non-array to array field'); })()));
+  this._fadeVal = (+(arg1===undefined ? 0 : arg1));
+  this._FadeType = (arg2|0);
+  this._fadeTimeScale = (+(arg3===undefined ? 0 : arg3));
+  this._temp = (arg4 === undefined ? new ut.Entity : arg4);
+};
+game.FadeComponent.prototype = Object.create(null);
+game.FadeComponent.prototype.constructor = game.FadeComponent;
+Object.defineProperties(game.FadeComponent.prototype, {
+  colorComponent: {
+    get: function() { return this._colorComponent; },
+    set: function(v) { this._colorComponent = (v === undefined ? new Array() : ((v instanceof Array) ? v : (function() { throw new Error('Assigning non-array to array field'); })())); },
+  },
+  fadeVal: {
+    get: function() { return this._fadeVal; },
+    set: function(v) { this._fadeVal = (+(v===undefined ? 0 : v)); },
+  },
+  FadeType: {
+    get: function() { return this._FadeType; },
+    set: function(v) { this._FadeType = (v|0); },
+  },
+  fadeTimeScale: {
+    get: function() { return this._fadeTimeScale; },
+    set: function(v) { this._fadeTimeScale = (+(v===undefined ? 0 : v)); },
+  },
+  temp: {
+    get: function() { return this._temp; },
+    set: function(v) { this._temp = (v === undefined ? new ut.Entity : v); },
+  },
+});
+game.FadeComponent._size = 32;
+game.FadeComponent._fromPtr = function(ptr, v) {
+  v = v || Object.create(game.FadeComponent.prototype);
+  v._colorComponent = ut.nativeBufferToJsArray(ptr+0, 8, function(p) { return ut.Entity._fromPtr(p); });
+  v._fadeVal = HEAPF32[(ptr+12)>>2];
+  v._FadeType = HEAP32[(ptr+16)>>2];
+  v._fadeTimeScale = HEAPF32[(ptr+20)>>2];
+  v._temp = ut.Entity._fromPtr(ptr+24);
+  return v;
+};
+game.FadeComponent._toPtr = function(ptr, v) {
+  ut.jsArrayToExistingNativeBuffer_pod(v.colorComponent, ptr+0, 8, function(p, v) { ut.Entity._toPtr(p, v); });
+  HEAPF32[(ptr+12)>>2] = v.fadeVal;
+  HEAP32[(ptr+16)>>2] = v.FadeType;
+  HEAPF32[(ptr+20)>>2] = v.fadeTimeScale;
+  ut.Entity._toPtr(ptr+24, v.temp);
+};
+game.FadeComponent._toTempHeapPtr = function(ptr, v) {
+  ut.jsArrayToExistingScratchNativeBuffer_pod(v.colorComponent, ptr+0, 8, function(p, v) { ut.Entity._toPtr(p, v); });
+  HEAPF32[(ptr+12)>>2] = v.fadeVal;
+  HEAP32[(ptr+16)>>2] = v.FadeType;
+  HEAPF32[(ptr+20)>>2] = v.fadeTimeScale;
+  ut.Entity._toPtr(ptr+24, v.temp);
+};
+game.FadeComponent._tempHeapPtr = function(v) {
+  var ptr = ut.tempHeapPtrBufferZero(32);
+  if (v) game.FadeComponent._toTempHeapPtr(ptr, v);
+  return ptr;
+};
+game.FadeComponent.StorageView = function(ptr) {
+  this._ptr = ptr;
+};
+game.FadeComponent.StorageView.prototype = Object.create(null);
+game.FadeComponent.StorageView.prototype.constructor = game.FadeComponent.StorageView;
+game.FadeComponent._view = game.FadeComponent.StorageView;
+game.FadeComponent.StorageView._isSharedComp = game.FadeComponent._isSharedComp = false;
+game.FadeComponent.StorageView._fromPtr = game.FadeComponent._fromPtr;
+game.FadeComponent.StorageView._toPtr = game.FadeComponent._toPtr;
+game.FadeComponent.StorageView._tempHeapPtr = game.FadeComponent._tempHeapPtr;
+game.FadeComponent.StorageView._size = game.FadeComponent._size;
+game.FadeComponent.StorageView.prototype.$advance = function() {
+  this._ptr += 32;
+};
+Object.defineProperties(game.FadeComponent.StorageView.prototype, {
+  colorComponent: {
+    get: function() { return ut.nativeBufferToJsArray(this._ptr+0, 8, function(p) { return ut.Entity._fromPtr(p); }); },
+    set: function(v) { ut.jsArrayToExistingNativeBuffer_pod(v, this._ptr+0, 8, function(p, v) { ut.Entity._toPtr(p, v); }); },
+  },
+  fadeVal: {
+    get: function() { return HEAPF32[(this._ptr+12)>>2]; },
+    set: function(v) { HEAPF32[(this._ptr+12)>>2] = v; },
+  },
+  FadeType: {
+    get: function() { return HEAP32[(this._ptr+16)>>2]; },
+    set: function(v) { HEAP32[(this._ptr+16)>>2] = v; },
+  },
+  fadeTimeScale: {
+    get: function() { return HEAPF32[(this._ptr+20)>>2]; },
+    set: function(v) { HEAPF32[(this._ptr+20)>>2] = v; },
+  },
+  temp: {
+    get: function() { return ut.Entity._fromPtr(this._ptr+24); },
+    set: function(v) { if (typeof(v) !== 'object') { throw new Error('expected an object'); } ut.Entity._toPtr(this._ptr+24, v); },
+  },
+});
+game.FadeComponent._dtorFn = function dtor(ptr) {
+  if (!ptr) return; 
+  Module._ut_nativebuffer_pod_placement_delete(ptr + 0);
+};
+game.FadeComponent._copyFn = function copy(src, dst) {
+  if (!src) throw 'copy function src ptr is null!';
+  if (!dst) throw 'copy function dst ptr is null!';
+  Module._ut_nativebuffer_pod_copy_construct(dst + 0, src + 0, 8);
+  for(var i = 0; i < 4; ++i) HEAPU8[dst+12+i] = HEAPU8[src+12+i];
+  for(var i = 0; i < 4; ++i) HEAPU8[dst+16+i] = HEAPU8[src+16+i];
+  for(var i = 0; i < 4; ++i) HEAPU8[dst+20+i] = HEAPU8[src+20+i];
+  for(var i = 0; i < 8; ++i) HEAPU8[dst+24+i] = HEAPU8[src+24+i];
+};
+game.FadeComponent._typeDesc = (function() {
+  return ut.meta.allocType(5, 'game.FadeComponent', 32, [
+    {name: 'colorComponent', offset: 0, type: ut.meta.getType('ut.NativeBuffer<ut.Entity>')},
+    {name: 'fadeVal', offset: 12, type: ut.meta.getType('float')},
+    {name: 'FadeType', offset: 16, type: ut.meta.getType('game.TransitionType')},
+    {name: 'fadeTimeScale', offset: 20, type: ut.meta.getType('float')},
+    {name: 'temp', offset: 24, type: ut.meta.getType('ut.Entity')}
+  ]);
+})();
+Object.defineProperties(game.FadeComponent, { cid: { configurable: true, get: function() { delete game.FadeComponent.cid; var offsetsPtr = ut.tempHeapPtrI32([-1,24]); var offsetsCount = 2; return game.FadeComponent.cid = Module._ut_component_register_cid_with_type(game.FadeComponent._typeDesc, 4, 0, offsetsPtr, offsetsCount, ut.DestructorFn._cb.token_for(game.FadeComponent._dtorFn), ut.CopyFn._cb.token_for(game.FadeComponent._copyFn)); } } });
+Object.defineProperties(game.FadeComponent.StorageView, { cid: { configurable: true, get: function() { return game.FadeComponent.cid; } } });
+game.FadeComponent.colorComponent = { $ofs:0, $t:"ut.DynamicArray`1", $c:game.FadeComponent };
+game.FadeComponent.fadeVal = { $ofs:12, $t:"float", $c:game.FadeComponent };
+game.FadeComponent.FadeType = { $ofs:16, $t:"game.TransitionType", $c:game.FadeComponent };
+game.FadeComponent.fadeTimeScale = { $ofs:20, $t:"float", $c:game.FadeComponent };
+game.FadeComponent.temp = { $ofs:24, $t:"ut.Entity", $c:game.FadeComponent };
+game.FadeComponent.temp.index = { $ofs:24, $t:"int32_t", $c:game.FadeComponent };
+game.FadeComponent.temp.version = { $ofs:28, $t:"int32_t", $c:game.FadeComponent };
+game.TransitionComponent = function(arg0, arg1, arg2, arg3) {
+  this._transitionStarted = (arg0 ? true : false);
+  this._transitionEnded = (arg1 ? true : false);
+  this._transitionPlayFlag = (arg2 ? true : false);
+  this._destroyWhenFinished = (arg3 ? true : false);
+};
+game.TransitionComponent.prototype = Object.create(null);
+game.TransitionComponent.prototype.constructor = game.TransitionComponent;
+Object.defineProperties(game.TransitionComponent.prototype, {
+  transitionStarted: {
+    get: function() { return this._transitionStarted; },
+    set: function(v) { this._transitionStarted = (v ? true : false); },
+  },
+  transitionEnded: {
+    get: function() { return this._transitionEnded; },
+    set: function(v) { this._transitionEnded = (v ? true : false); },
+  },
+  transitionPlayFlag: {
+    get: function() { return this._transitionPlayFlag; },
+    set: function(v) { this._transitionPlayFlag = (v ? true : false); },
+  },
+  destroyWhenFinished: {
+    get: function() { return this._destroyWhenFinished; },
+    set: function(v) { this._destroyWhenFinished = (v ? true : false); },
+  },
+});
+game.TransitionComponent._size = 4;
+game.TransitionComponent._fromPtr = function(ptr, v) {
+  v = v || Object.create(game.TransitionComponent.prototype);
+  v._transitionStarted = (HEAP8[ptr+0]?true:false);
+  v._transitionEnded = (HEAP8[ptr+1]?true:false);
+  v._transitionPlayFlag = (HEAP8[ptr+2]?true:false);
+  v._destroyWhenFinished = (HEAP8[ptr+3]?true:false);
+  return v;
+};
+game.TransitionComponent._toPtr = function(ptr, v) {
+  HEAP8[ptr+0] = (v.transitionStarted)?1:0;
+  HEAP8[ptr+1] = (v.transitionEnded)?1:0;
+  HEAP8[ptr+2] = (v.transitionPlayFlag)?1:0;
+  HEAP8[ptr+3] = (v.destroyWhenFinished)?1:0;
+};
+game.TransitionComponent._toTempHeapPtr = function(ptr, v) {
+  HEAP8[ptr+0] = (v.transitionStarted)?1:0;
+  HEAP8[ptr+1] = (v.transitionEnded)?1:0;
+  HEAP8[ptr+2] = (v.transitionPlayFlag)?1:0;
+  HEAP8[ptr+3] = (v.destroyWhenFinished)?1:0;
+};
+game.TransitionComponent._tempHeapPtr = function(v) {
+  var ptr = ut.tempHeapPtrBufferZero(4);
+  if (v) game.TransitionComponent._toTempHeapPtr(ptr, v);
+  return ptr;
+};
+game.TransitionComponent.StorageView = function(ptr) {
+  this._ptr = ptr;
+};
+game.TransitionComponent.StorageView.prototype = Object.create(null);
+game.TransitionComponent.StorageView.prototype.constructor = game.TransitionComponent.StorageView;
+game.TransitionComponent._view = game.TransitionComponent.StorageView;
+game.TransitionComponent.StorageView._isSharedComp = game.TransitionComponent._isSharedComp = false;
+game.TransitionComponent.StorageView._fromPtr = game.TransitionComponent._fromPtr;
+game.TransitionComponent.StorageView._toPtr = game.TransitionComponent._toPtr;
+game.TransitionComponent.StorageView._tempHeapPtr = game.TransitionComponent._tempHeapPtr;
+game.TransitionComponent.StorageView._size = game.TransitionComponent._size;
+game.TransitionComponent.StorageView.prototype.$advance = function() {
+  this._ptr += 4;
+};
+Object.defineProperties(game.TransitionComponent.StorageView.prototype, {
+  transitionStarted: {
+    get: function() { return (HEAP8[this._ptr+0]?true:false); },
+    set: function(v) { HEAP8[this._ptr+0] = (v)?1:0; },
+  },
+  transitionEnded: {
+    get: function() { return (HEAP8[this._ptr+1]?true:false); },
+    set: function(v) { HEAP8[this._ptr+1] = (v)?1:0; },
+  },
+  transitionPlayFlag: {
+    get: function() { return (HEAP8[this._ptr+2]?true:false); },
+    set: function(v) { HEAP8[this._ptr+2] = (v)?1:0; },
+  },
+  destroyWhenFinished: {
+    get: function() { return (HEAP8[this._ptr+3]?true:false); },
+    set: function(v) { HEAP8[this._ptr+3] = (v)?1:0; },
+  },
+});
+game.TransitionComponent._dtorFn = function dtor(ptr) { /* POD, no-op */ }
+// game.TransitionComponent is a POD type, so a JavaScript side copy constructor game.TransitionComponent._copyFn = function copy(src, dst) { ... } does not need to be generated for it
+game.TransitionComponent._typeDesc = (function() {
+  return ut.meta.allocType(5, 'game.TransitionComponent', 4, [
+    {name: 'transitionStarted', offset: 0, type: ut.meta.getType('bool')},
+    {name: 'transitionEnded', offset: 1, type: ut.meta.getType('bool')},
+    {name: 'transitionPlayFlag', offset: 2, type: ut.meta.getType('bool')},
+    {name: 'destroyWhenFinished', offset: 3, type: ut.meta.getType('bool')}
+  ]);
+})();
+Object.defineProperties(game.TransitionComponent, { cid: { configurable: true, get: function() { delete game.TransitionComponent.cid; var offsetsPtr = 0, offsetsCount = 0; return game.TransitionComponent.cid = Module._ut_component_register_cid_with_type(game.TransitionComponent._typeDesc, 1, 0, offsetsPtr, offsetsCount, 0, 0); } } });
+Object.defineProperties(game.TransitionComponent.StorageView, { cid: { configurable: true, get: function() { return game.TransitionComponent.cid; } } });
+game.TransitionComponent.transitionStarted = { $ofs:0, $t:"bool", $c:game.TransitionComponent };
+game.TransitionComponent.transitionEnded = { $ofs:1, $t:"bool", $c:game.TransitionComponent };
+game.TransitionComponent.transitionPlayFlag = { $ofs:2, $t:"bool", $c:game.TransitionComponent };
+game.TransitionComponent.destroyWhenFinished = { $ofs:3, $t:"bool", $c:game.TransitionComponent };
+game.CallbackComponent = function(arg0) {
+  this._hash = (arg0 === undefined ? '' : arg0);
+};
+game.CallbackComponent.prototype = Object.create(null);
+game.CallbackComponent.prototype.constructor = game.CallbackComponent;
+Object.defineProperties(game.CallbackComponent.prototype, {
+  hash: {
+    get: function() { return this._hash; },
+    set: function(v) { this._hash = (v === undefined ? '' : v); },
+  },
+});
+game.CallbackComponent._size = 8;
+game.CallbackComponent._fromPtr = function(ptr, v) {
+  v = v || Object.create(game.CallbackComponent.prototype);
+  v._hash = (Module._ut_nativestring_data(ptr+0) ? UTF8ToString(Module._ut_nativestring_data(ptr+0)) : "");
+  return v;
+};
+game.CallbackComponent._toPtr = function(ptr, v) {
+  ut.newHeapNativeString(ptr+0, v.hash);
+};
+game.CallbackComponent._toTempHeapPtr = function(ptr, v) {
+  ut.toExistingScratchNativeString(ptr+0, v.hash);
+};
+game.CallbackComponent._tempHeapPtr = function(v) {
+  var ptr = ut.tempHeapPtrBufferZero(8);
+  if (v) game.CallbackComponent._toTempHeapPtr(ptr, v);
+  return ptr;
+};
+game.CallbackComponent.StorageView = function(ptr) {
+  this._ptr = ptr;
+};
+game.CallbackComponent.StorageView.prototype = Object.create(null);
+game.CallbackComponent.StorageView.prototype.constructor = game.CallbackComponent.StorageView;
+game.CallbackComponent._view = game.CallbackComponent.StorageView;
+game.CallbackComponent.StorageView._isSharedComp = game.CallbackComponent._isSharedComp = false;
+game.CallbackComponent.StorageView._fromPtr = game.CallbackComponent._fromPtr;
+game.CallbackComponent.StorageView._toPtr = game.CallbackComponent._toPtr;
+game.CallbackComponent.StorageView._tempHeapPtr = game.CallbackComponent._tempHeapPtr;
+game.CallbackComponent.StorageView._size = game.CallbackComponent._size;
+game.CallbackComponent.StorageView.prototype.$advance = function() {
+  this._ptr += 8;
+};
+Object.defineProperties(game.CallbackComponent.StorageView.prototype, {
+  hash: {
+    get: function() { return (Module._ut_nativestring_data(this._ptr+0) ? UTF8ToString(Module._ut_nativestring_data(this._ptr+0)) : ""); },
+    set: function(v) { ut.newHeapNativeString(this._ptr+0, v); },
+  },
+});
+game.CallbackComponent._dtorFn = function dtor(ptr) {
+  if (!ptr) return; 
+  Module._ut_nativestring_placement_delete(ptr + 0);
+};
+game.CallbackComponent._copyFn = function copy(src, dst) {
+  if (!src) throw 'copy function src ptr is null!';
+  if (!dst) throw 'copy function dst ptr is null!';
+  Module._ut_nativestring_copy_construct(dst + 0, src + 0);
+};
+game.CallbackComponent._typeDesc = (function() {
+  return ut.meta.allocType(5, 'game.CallbackComponent', 8, [
+    {name: 'hash', offset: 0, type: ut.meta.getType('string')}
+  ]);
+})();
+Object.defineProperties(game.CallbackComponent, { cid: { configurable: true, get: function() { delete game.CallbackComponent.cid; var offsetsPtr = 0, offsetsCount = 0; return game.CallbackComponent.cid = Module._ut_component_register_cid_with_type(game.CallbackComponent._typeDesc, 4, 0, offsetsPtr, offsetsCount, ut.DestructorFn._cb.token_for(game.CallbackComponent._dtorFn), ut.CopyFn._cb.token_for(game.CallbackComponent._copyFn)); } } });
+Object.defineProperties(game.CallbackComponent.StorageView, { cid: { configurable: true, get: function() { return game.CallbackComponent.cid; } } });
+game.CallbackComponent.hash = { $ofs:0, $t:"System.String", $c:game.CallbackComponent };
+game.testflag = function() {
+};
+game.testflag.prototype = Object.create(null);
+game.testflag.prototype.constructor = game.testflag;
+Object.defineProperties(game.testflag.prototype, {
+});
+game.testflag._size = 1;
+game.testflag._fromPtr = function(ptr, v) {
+  v = v || Object.create(game.testflag.prototype);
+  return v;
+};
+game.testflag._toPtr = function(ptr, v) {
+};
+game.testflag._toTempHeapPtr = function(ptr, v) {
+};
+game.testflag._tempHeapPtr = function(v) {
+  var ptr = ut.tempHeapPtrBufferZero(1);
+  if (v) game.testflag._toTempHeapPtr(ptr, v);
+  return ptr;
+};
+game.testflag.StorageView = function(ptr) {
+  this._ptr = ptr;
+};
+game.testflag.StorageView.prototype = Object.create(null);
+game.testflag.StorageView.prototype.constructor = game.testflag.StorageView;
+game.testflag._view = game.testflag.StorageView;
+game.testflag.StorageView._isSharedComp = game.testflag._isSharedComp = false;
+game.testflag.StorageView._fromPtr = game.testflag._fromPtr;
+game.testflag.StorageView._toPtr = game.testflag._toPtr;
+game.testflag.StorageView._tempHeapPtr = game.testflag._tempHeapPtr;
+game.testflag.StorageView._size = game.testflag._size;
+game.testflag.StorageView.prototype.$advance = function() {
+  this._ptr += 1;
+};
+Object.defineProperties(game.testflag.StorageView.prototype, {
+});
+game.testflag._dtorFn = function dtor(ptr) { /* POD, no-op */ }
+// game.testflag is a POD type, so a JavaScript side copy constructor game.testflag._copyFn = function copy(src, dst) { ... } does not need to be generated for it
+game.testflag._typeDesc = (function() {
+  return ut.meta.allocType(5, 'game.testflag', 1, []);
+})();
+Object.defineProperties(game.testflag, { cid: { configurable: true, get: function() { delete game.testflag.cid; var offsetsPtr = 0, offsetsCount = 0; return game.testflag.cid = Module._ut_component_register_cid_with_type(game.testflag._typeDesc, 0, 0, offsetsPtr, offsetsCount, 0, 0); } } });
+Object.defineProperties(game.testflag.StorageView, { cid: { configurable: true, get: function() { return game.testflag.cid; } } });
 var ut = ut || {};
 ut.Core2D = ut.Core2D || {};
 ut.Core2D.layers = ut.Core2D.layers || {};
@@ -2065,11 +2506,17 @@ game.SimpleDragger_State.initialized = { $ofs:0, $t:"bool", $c:game.SimpleDragge
 game.SimpleDragger_State.enabled = { $ofs:1, $t:"bool", $c:game.SimpleDragger_State };
 game.SimpleDragger_State.onEnableCalled = { $ofs:2, $t:"bool", $c:game.SimpleDragger_State };
 game.SimpleDragger_State.onDisableCalled = { $ofs:3, $t:"bool", $c:game.SimpleDragger_State };
+game.testJS = ut.System.define({
+  name: "game.testJS"
+});
 game.MouseSpriteInteractionSystemJS = ut.System.define({
   name: "game.MouseSpriteInteractionSystemJS"
 });
 game.TimerServiceJS = ut.System.define({
   name: "game.TimerServiceJS"
+});
+game.FadeTransitionSystemJS = ut.System.define({
+  name: "game.FadeTransitionSystemJS"
 });
 game.CustomButtonSystemJS = ut.System.define({
   name: "game.CustomButtonSystemJS"

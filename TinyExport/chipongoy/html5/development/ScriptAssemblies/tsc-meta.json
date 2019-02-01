@@ -3,6 +3,16 @@
     "Diagnostics": [],
     "Systems": [
         {
+            "Name": "test",
+            "QualifiedName": "game.test",
+            "Description": "New System",
+            "Source": {
+                "File": "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/chipongoy/Scripts/test.ts",
+                "Line": 5,
+                "Character": 17
+            }
+        },
+        {
             "Name": "MouseSpriteInteractionSystem",
             "QualifiedName": "game.MouseSpriteInteractionSystem",
             "Description": "",
@@ -19,6 +29,16 @@
             "Source": {
                 "File": "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/chipongoy/Scripts/System/TimerService.ts",
                 "Line": 9,
+                "Character": 17
+            }
+        },
+        {
+            "Name": "FadeTransitionSystem",
+            "QualifiedName": "game.FadeTransitionSystem",
+            "Description": "",
+            "Source": {
+                "File": "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/chipongoy/Scripts/Transition/FadeTransitionSystem.ts",
+                "Line": 6,
                 "Character": 17
             }
         },
@@ -195,45 +215,48 @@
         {
             "Key": "tsconfig",
             "Description": "Time taken to read and parse the given tsconfig.json file",
-            "Duration": 83,
+            "Duration": 79,
             "Steps": 1
         },
         {
             "Key": "checksum",
             "Description": "Time taken to compute the MD5 of all inputs",
-            "Duration": 182,
+            "Duration": 200,
             "Steps": 1
         },
         {
             "Key": "compile",
             "Description": "Time taken to compile the TypeScript program",
-            "Duration": 864,
-            "Steps": 16
+            "Duration": 954,
+            "Steps": 19
         },
         {
             "Key": "emit",
             "Description": "Time taken to generate and write the JavaScript output",
-            "Duration": 86,
+            "Duration": 107,
             "Steps": 2
         },
         {
             "Key": "metadata",
             "Description": "Time taken to reflect Tiny metadata from the compiled program",
-            "Duration": 9,
-            "Steps": 3
+            "Duration": 12,
+            "Steps": 5
         }
     ],
     "SourceFiles": [
+        "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/chipongoy/Scripts/test.ts",
         "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/chipongoy/Scripts/SceneMgr/SceneMgr.ts",
         "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/chipongoy/Scripts/SceneMgr/SceneMgrBehaviour.ts",
         "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/chipongoy/Scripts/Sprite/MouseSpriteInteractionSystem.ts",
         "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/chipongoy/Scripts/Sprite/SimpleDragger.ts",
+        "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/chipongoy/Scripts/System/CallbackService.ts",
         "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/chipongoy/Scripts/System/InputService.ts",
         "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/chipongoy/Scripts/System/TimerService.ts",
+        "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/chipongoy/Scripts/Transition/FadeTransitionSystem.ts",
         "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/chipongoy/Scripts/UI/CustomButtonSystem.ts",
         "/Users/fadzli/Documents/chopodoy/chipodoy/Library/PackageCache/com.unity.tiny@0.13.4-preview/Runtime/Modules/UTiny.EntityGroup/Scripts/EntityGroup.ts",
         "/Users/fadzli/Documents/chopodoy/chipodoy/Library/PackageCache/com.unity.tiny@0.13.4-preview/Runtime/Modules/UTiny.EntityGroup/Scripts/EntityLookupCache.ts"
     ],
-    "InputHash": "13c856bab1da7c6cce14cb52ef9b1145",
-    "GeneratedAt": "Fri Feb 01 2019 13:29:09 GMT+0800 (+08)"
+    "InputHash": "23626dd9d99f1bb3d15fc96289c5cffd",
+    "GeneratedAt": "Fri Feb 01 2019 18:04:46 GMT+0800 (+08)"
 }

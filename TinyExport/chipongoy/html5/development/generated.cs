@@ -44,6 +44,18 @@ namespace entities.game
         {
         }
     }
+    namespace FadeIn
+    {
+        public struct Component : IComponentData
+        {
+        }
+    }
+    namespace FadeOut
+    {
+        public struct Component : IComponentData
+        {
+        }
+    }
 }
 
 namespace game
@@ -75,6 +87,28 @@ namespace game
     public struct SimpleDraggerTag : IComponentData
     {
     }
+    public struct FadeComponent : IComponentData
+    {
+        public DynamicArray<Entity> colorComponent;
+        public float fadeVal;
+        public game.TransitionType FadeType;
+        public float fadeTimeScale;
+        public Entity temp;
+    }
+    public struct TransitionComponent : IComponentData
+    {
+        public bool transitionStarted;
+        public bool transitionEnded;
+        public bool transitionPlayFlag;
+        public bool destroyWhenFinished;
+    }
+    public struct CallbackComponent : IComponentData
+    {
+        public string hash;
+    }
+    public struct testflag : IComponentData
+    {
+    }
     public struct ChildScene
     {
         public game.SceneId parentSceneId;
@@ -102,6 +136,15 @@ namespace game
         , Bootstrap = 1
         , Scene1 = 2
         , Scene2 = 3
+    }
+    public enum TransitionType
+    {
+        NONE = -1
+        , FadeIn = 0
+        , FadeOut = 1
+    }
+    public enum CallbackType
+    {
     }
 }
 
@@ -300,6 +343,12 @@ namespace game
 }
 namespace game
 {
+    public class testJS : IComponentSystem
+    {
+    }
+}
+namespace game
+{
     public class MouseSpriteInteractionSystemJS : IComponentSystem
     {
     }
@@ -307,6 +356,12 @@ namespace game
 namespace game
 {
     public class TimerServiceJS : IComponentSystem
+    {
+    }
+}
+namespace game
+{
+    public class FadeTransitionSystemJS : IComponentSystem
     {
     }
 }

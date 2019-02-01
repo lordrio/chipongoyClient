@@ -137,6 +137,60 @@ declare namespace game{
         static _tempHeapPtr(v: SimpleDraggerTag): number;
         static _dtorFn(v: SimpleDraggerTag): void;
     }
+    class FadeComponent extends ut.Component {
+        constructor();
+        colorComponent: ut.Entity[];
+        fadeVal: number;
+        FadeType: TransitionType;
+        fadeTimeScale: number;
+        temp: ut.Entity;
+        static readonly cid: number;
+        static readonly _view: any;
+        static readonly _isSharedComp: boolean;
+        static _size: number;
+        static _fromPtr(p: number, v?: FadeComponent): FadeComponent;
+        static _toPtr(p: number, v: FadeComponent): void;
+        static _tempHeapPtr(v: FadeComponent): number;
+        static _dtorFn(v: FadeComponent): void;
+    }
+    class TransitionComponent extends ut.Component {
+        constructor();
+        transitionStarted: boolean;
+        transitionEnded: boolean;
+        transitionPlayFlag: boolean;
+        destroyWhenFinished: boolean;
+        static readonly cid: number;
+        static readonly _view: any;
+        static readonly _isSharedComp: boolean;
+        static _size: number;
+        static _fromPtr(p: number, v?: TransitionComponent): TransitionComponent;
+        static _toPtr(p: number, v: TransitionComponent): void;
+        static _tempHeapPtr(v: TransitionComponent): number;
+        static _dtorFn(v: TransitionComponent): void;
+    }
+    class CallbackComponent extends ut.Component {
+        constructor();
+        hash: string;
+        static readonly cid: number;
+        static readonly _view: any;
+        static readonly _isSharedComp: boolean;
+        static _size: number;
+        static _fromPtr(p: number, v?: CallbackComponent): CallbackComponent;
+        static _toPtr(p: number, v: CallbackComponent): void;
+        static _tempHeapPtr(v: CallbackComponent): number;
+        static _dtorFn(v: CallbackComponent): void;
+    }
+    class testflag extends ut.Component {
+        constructor();
+        static readonly cid: number;
+        static readonly _view: any;
+        static readonly _isSharedComp: boolean;
+        static _size: number;
+        static _fromPtr(p: number, v?: testflag): testflag;
+        static _toPtr(p: number, v: testflag): void;
+        static _tempHeapPtr(v: testflag): number;
+        static _dtorFn(v: testflag): void;
+    }
     class ChildScene {
         parentSceneId: SceneId;
         sceneIdToLoad: SceneId;
@@ -175,6 +229,13 @@ declare namespace game{
         Bootstrap = 1,
         Scene1 = 2,
         Scene2 = 3,
+    }
+    enum TransitionType {
+        NONE = 0,
+        FadeIn = 1,
+        FadeOut = 2,
+    }
+    enum CallbackType {
     }
 }
 declare namespace ut{
@@ -318,6 +379,7 @@ declare namespace ut{
             Scene1: EntityGroupData;
             Scene2: EntityGroupData;
             FadeIn: EntityGroupData;
+            FadeOut: EntityGroupData;
         }
     }
 }

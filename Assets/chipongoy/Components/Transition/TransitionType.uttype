@@ -1,0 +1,36 @@
+﻿[{
+    "$TypeId": 3,
+    "Id": "767dfc675f664252bf07dc215c5c3486",
+    "Name": "TransitionType",
+    "ExportFlags": 0,
+    "Unlisted": false,
+    "Visibility": 0,
+    "TypeCode": "Enum",
+    "BaseType": { "Id": "9633c95a0a68473682f09ed6a01194b4", "Name": "Int32" },
+    "Fields": [{
+        "Id": "a2bdb3b45d434835b610addff7a38775",
+        "Name": "NONE",
+        "FieldType": { "Id": "9633c95a0a68473682f09ed6a01194b4", "Name": "Int32" },
+        "Array": false,
+        "Visibility": 0
+    }, {
+        "Id": "cf13780a42664a3a9cbf087583cca482",
+        "Name": "FadeIn",
+        "FieldType": { "Id": "9633c95a0a68473682f09ed6a01194b4", "Name": "Int32" },
+        "Array": false,
+        "Visibility": 0
+    }, {
+        "Id": "37208247dfc0433b9f0c23347b613400",
+        "Name": "FadeOut",
+        "FieldType": { "Id": "9633c95a0a68473682f09ed6a01194b4", "Name": "Int32" },
+        "Array": false,
+        "Visibility": 0
+    }],
+    "DefaultValue": {
+        "Type": { "Id": "767dfc675f664252bf07dc215c5c3486", "Name": "TransitionType" },
+        "Properties": {
+            "NONE": -1,
+            "FadeOut": 1
+        }
+    }
+}]

@@ -39,8 +39,8 @@
         "Children": [{
             "Item": {
                 "Name": "TinyExport/chipongoy/html5/development/bin/entities.js",
-                "Size": 27270,
-                "CompressedSize": 3491
+                "Size": 44068,
+                "CompressedSize": 4696
             },
             "Children": [{
                 "Item": {
@@ -51,14 +51,14 @@
             }, {
                 "Item": {
                     "Name": "Bootstrap",
-                    "Size": 7400,
-                    "CompressedSize": 1526
+                    "Size": 7415,
+                    "CompressedSize": 1534
                 }
             }, {
                 "Item": {
                     "Name": "Scene1",
                     "Size": 9010,
-                    "CompressedSize": 1905
+                    "CompressedSize": 1907
                 }
             }, {
                 "Item": {
@@ -66,12 +66,24 @@
                     "Size": 8757,
                     "CompressedSize": 1806
                 }
+            }, {
+                "Item": {
+                    "Name": "FadeIn",
+                    "Size": 10176,
+                    "CompressedSize": 2021
+                }
+            }, {
+                "Item": {
+                    "Name": "FadeOut",
+                    "Size": 6609,
+                    "CompressedSize": 1507
+                }
             }]
         }, {
             "Item": {
                 "Name": "TinyExport/chipongoy/html5/development/bin/bindings.js",
-                "Size": 123875,
-                "CompressedSize": 10616
+                "Size": 147418,
+                "CompressedSize": 12676
             }
         }, {
             "Item": {
@@ -82,15 +94,15 @@
             "Children": [{
                 "Item": {
                     "Name": "/Users/fadzli/Documents/chopodoy/chipodoy/TinyExport/chipongoy/html5/development/ScriptAssemblies/tsc-emit.js",
-                    "Size": 26450,
-                    "CompressedSize": 5471
+                    "Size": 33160,
+                    "CompressedSize": 6434
                 }
             }]
         }, {
             "Item": {
                 "Name": "TinyExport/chipongoy/html5/development/bin/main.js",
-                "Size": 7464,
-                "CompressedSize": 1629
+                "Size": 7702,
+                "CompressedSize": 1658
             }
         }, {
             "Item": {

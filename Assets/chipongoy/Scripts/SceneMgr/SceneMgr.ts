@@ -139,6 +139,10 @@ namespace game {
 
         // do clean up
         ChangeScene(pinId: number, world: ut.World): void {
+            if (this.isInTransition) {
+                return;
+            }
+            
             let loadedSceneData = this.data[this.currentSceneId];
 
             // check if pin exist
@@ -150,10 +154,15 @@ namespace game {
 
             // set next scene
             this.nextSceneId = loadedSceneData.pins[pinId];
-
+            this.isInTransition = true;
             // temp without transition
-            this.CleanUpScene(world);
-            this.LoadUpScene(world);
+            FadeTransitionSystem.StartFade(world, TransitionType.FadeIn, () => {
+                this.CleanUpScene(world);
+                this.LoadUpScene(world);
+                FadeTransitionSystem.StartFade(world, TransitionType.FadeOut, () => {
+                    this.isInTransition = false;
+                });
+            })
         }
 
         UpdateSystem(world: ut.World): void {

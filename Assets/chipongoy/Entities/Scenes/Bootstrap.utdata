@@ -243,5 +243,7 @@
         }
     }, {
         "Type": { "Id": "dfc83173f48b4cbb82f2ae3fc8a646dd", "Name": "SimpleDraggerTag" }
+    }, {
+        "Type": { "Id": "975c4cdcae604ca19553d6e073013dc9", "Name": "test" }
     }]
 }]
