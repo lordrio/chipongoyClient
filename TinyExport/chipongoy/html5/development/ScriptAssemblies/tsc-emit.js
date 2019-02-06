@@ -41,7 +41,7 @@ var scene;
     function ParseSceneData(data) {
         var output = {};
         data.list.sceneList.forEach(function (d) {
-            var item = __assign({}, d, { pins: {}, childs: [], path: "" });
+            var item = __assign({}, d, { pins: {}, childs: [], path: "", attachedEntity: [] });
             data.list.scenePinList.forEach(function (pin) {
                 if (pin.srcSceneId == d.sceneId) {
                     item.pins[pin.pinId] = pin.destSceneId;
@@ -150,6 +150,11 @@ var game;
                 var d = _this.data[child];
                 ut.EntityGroup.destroyAll(world, d.path);
             });
+            // clean attached entity
+            loadedSceneData.attachedEntity.forEach(function (child) {
+                ut.Core2D.TransformService.destroyTree(world, child, true);
+            });
+            loadedSceneData.attachedEntity = [];
             // clean parent
             ut.EntityGroup.destroyAll(world, loadedSceneData.path);
         };
@@ -172,6 +177,7 @@ var game;
             // temp without transition
             game.FadeHelper.StartFade(world, game.TransitionType.FadeIn, function () {
                 _this.CleanUpScene(world);
+                ut.Tweens.TweenService.removeAllTweensInWorld(world);
                 _this.LoadUpScene(world);
                 game.FadeHelper.StartFade(world, game.TransitionType.FadeOut, function () {
                     console.log("done");
@@ -190,6 +196,15 @@ var game;
                 this.ChangeScene(2, world);
             }
             // for transition animation :O
+        };
+        // always use this to instantiate
+        SceneMgr.prototype.InstanstiateToScene = function (world, path) {
+            var ent = ut.EntityGroup.instantiate(world, path);
+            var loadedSceneData = this.data[this.currentSceneId];
+            ent.forEach(function (e) {
+                loadedSceneData.attachedEntity.push(e);
+            });
+            return ent;
         };
         var SceneMgr_1;
         SceneMgr.StartUpScene = game.SceneId.SceneMgr;
@@ -481,7 +496,7 @@ var game;
                             world.usingComponentData(x, [game.FadeComponent], function (fade) {
                                 maxTimer = Math.max(maxTimer, fade.fadeDuration);
                                 fade.entityItems.forEach(function (i) {
-                                    ut.Tweens.TweenService.addTween(world, i, ut.Core2D.Sprite2DRenderer.color.a, 1, 0, fade.fadeDuration, 0, ut.Core2D.LoopMode.Once, ut.Tweens.TweenFunc.InOutCubic, true);
+                                    ut.Tweens.TweenService.addTween(world, i, ut.Core2D.Sprite2DRenderer.color.a, 1, 0, fade.fadeDuration, 0, ut.Core2D.LoopMode.Once, ut.Tweens.TweenFunc.OutExponential, true);
                                 });
                             });
                         }
@@ -491,7 +506,7 @@ var game;
                             func();
                             ut.EntityGroup.destroyAll(world, _this.FadeOutEntityGroup);
                         }
-                    }, 1000 * maxTimer);
+                    }, 1100 * maxTimer);
                     break;
                 case game.TransitionType.FadeIn:
                     entities = ut.EntityGroup.instantiate(world, this.FadeInEntityGroup);
@@ -501,7 +516,7 @@ var game;
                             world.usingComponentData(x, [game.FadeComponent], function (fade) {
                                 maxTimer = Math.max(maxTimer, fade.fadeDuration);
                                 fade.entityItems.forEach(function (i) {
-                                    ut.Tweens.TweenService.addTween(world, i, ut.Core2D.Sprite2DRenderer.color.a, 0, 1, fade.fadeDuration, 0, ut.Core2D.LoopMode.Once, ut.Tweens.TweenFunc.InOutCubic, true);
+                                    ut.Tweens.TweenService.addTween(world, i, ut.Core2D.Sprite2DRenderer.color.a, 0, 1, fade.fadeDuration, 0, ut.Core2D.LoopMode.Once, ut.Tweens.TweenFunc.InExponential, true);
                                 });
                             });
                         }
@@ -511,7 +526,7 @@ var game;
                             func();
                             ut.EntityGroup.destroyAll(world, _this.FadeInEntityGroup);
                         }
-                    }, 1000 * maxTimer);
+                    }, 1100 * maxTimer);
                     break;
                 default:
                     return;

@@ -195,25 +195,25 @@
         {
             "Key": "tsconfig",
             "Description": "Time taken to read and parse the given tsconfig.json file",
-            "Duration": 99,
+            "Duration": 109,
             "Steps": 1
         },
         {
             "Key": "checksum",
             "Description": "Time taken to compute the MD5 of all inputs",
-            "Duration": 185,
+            "Duration": 189,
             "Steps": 1
         },
         {
             "Key": "compile",
             "Description": "Time taken to compile the TypeScript program",
-            "Duration": 711,
+            "Duration": 763,
             "Steps": 17
         },
         {
             "Key": "emit",
             "Description": "Time taken to generate and write the JavaScript output",
-            "Duration": 97,
+            "Duration": 116,
             "Steps": 2
         },
         {
@@ -235,6 +235,6 @@
         "C:/Users/riole/Documents/unitards/chipongoyClient/Library/PackageCache/com.unity.tiny@0.13.4-preview/Runtime/Modules/UTiny.EntityGroup/Scripts/EntityGroup.ts",
         "C:/Users/riole/Documents/unitards/chipongoyClient/Library/PackageCache/com.unity.tiny@0.13.4-preview/Runtime/Modules/UTiny.EntityGroup/Scripts/EntityLookupCache.ts"
     ],
-    "InputHash": "e44fd0de4fffe071679c32411ff4c43c",
-    "GeneratedAt": "Fri Feb 01 2019 23:38:26 GMT+0800 (Malay Peninsula Standard Time)"
+    "InputHash": "f055603c565992bcbae817d3faac8ebb",
+    "GeneratedAt": "Sun Feb 03 2019 12:16:24 GMT+0800 (Malay Peninsula Standard Time)"
 }

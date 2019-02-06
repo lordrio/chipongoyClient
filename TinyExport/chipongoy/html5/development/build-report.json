@@ -40,7 +40,7 @@
             "Item": {
                 "Name": "TinyExport/chipongoy/html5/development/bin/entities.js",
                 "Size": 41161,
-                "CompressedSize": 4418
+                "CompressedSize": 4421
             },
             "Children": [{
                 "Item": {
@@ -58,7 +58,7 @@
                 "Item": {
                     "Name": "Scene1",
                     "Size": 9285,
-                    "CompressedSize": 1921
+                    "CompressedSize": 1922
                 }
             }, {
                 "Item": {
@@ -94,8 +94,8 @@
             "Children": [{
                 "Item": {
                     "Name": "C:\\Users\\riole\\Documents\\unitards\\chipongoyClient\\TinyExport\\chipongoy\\html5\\development\\ScriptAssemblies\\tsc-emit.js",
-                    "Size": 30584,
-                    "CompressedSize": 5922
+                    "Size": 30591,
+                    "CompressedSize": 5923
                 }
             }]
         }, {

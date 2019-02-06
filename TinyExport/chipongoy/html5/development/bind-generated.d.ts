@@ -338,6 +338,7 @@ declare namespace ut{
             Scene2: EntityGroupData;
             FadeIn: EntityGroupData;
             FadeOut: EntityGroupData;
+            LocalmapBase: EntityGroupData;
         }
     }
 }

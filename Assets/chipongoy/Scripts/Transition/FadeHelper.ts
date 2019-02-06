@@ -30,7 +30,7 @@ namespace game {
                                     fade.fadeDuration,
                                     0,
                                     ut.Core2D.LoopMode.Once,
-                                    ut.Tweens.TweenFunc.InOutCubic,
+                                    ut.Tweens.TweenFunc.OutExponential,
                                     true);
                             });
                         });
@@ -41,7 +41,7 @@ namespace game {
                         func();
                         ut.EntityGroup.destroyAll(world, this.FadeOutEntityGroup);
                     }
-                }, 1000 * maxTimer);
+                }, 1100 * maxTimer);
                 break;
 
                 case TransitionType.FadeIn:
@@ -61,7 +61,7 @@ namespace game {
                                     fade.fadeDuration,
                                     0,
                                     ut.Core2D.LoopMode.Once,
-                                    ut.Tweens.TweenFunc.InOutCubic,
+                                    ut.Tweens.TweenFunc.InExponential,
                                     true);
                             });
                         });
@@ -72,7 +72,7 @@ namespace game {
                         func();
                         ut.EntityGroup.destroyAll(world, this.FadeInEntityGroup);
                     }
-                }, 1000 * maxTimer);
+                }, 1100 * maxTimer);
                 break;
 
                 default:

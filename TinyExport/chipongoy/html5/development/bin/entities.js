@@ -111,7 +111,7 @@ entities.game.Bootstrap.load = function(world) {
     c3.scale = s2;
     world.setComponentData(e0, c3);
     var c4 = new ut.Core2D.Camera2D();
-    c4.halfVerticalSize = 200;
+    c4.halfVerticalSize = 600;
     var s3 = new ut.Math.Rect();
     s3.x = 0;
     s3.y = 0;
@@ -554,7 +554,7 @@ entities.game.Scene1.load = function(world) {
     world.setComponentData(e3, c32);
     var c33 = new ut.UIControls.Button();
     c33.sprite2DRenderer = e3;
-    c33.transition = ut.EntityLookupCache.getByName(world, 'assets/transitions/f645c73fb6f548769ae2a3f54104dc71');
+    c33.transition = ut.EntityLookupCache.getByName(world, 'assets/transitions/21978e6f62cf4df08b5cd72dd5057c78');
     world.setComponentData(e3, c33);
     var c34 = new ut.EditorExtensions.EntityLayer();
     c34.layer = 5;

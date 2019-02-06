@@ -3,13 +3,16 @@ namespace scene {
         pins: {[pinId: number]: game.SceneId};
         childs: game.SceneId[];
         path: string;
+
+        // dynamic
+        attachedEntity: ut.Entity[];
     }
 
     export function ParseSceneData(data:game.SceneMgrBehaviourFilter): {[id: number]: SceneData} {
         var output:{[id: number]: SceneData} = {};
 
         data.list.sceneList.forEach(d => {
-            var item:SceneData = { ...d, pins:{}, childs:[], path:""};
+            var item:SceneData = { ...d, pins:{}, childs:[], path:"", attachedEntity: []};
             data.list.scenePinList.forEach(pin => {
                 if(pin.srcSceneId == d.sceneId) {
                     item.pins[pin.pinId] = pin.destSceneId;
@@ -132,6 +135,12 @@ namespace game {
                 let d = this.data[child];
                 ut.EntityGroup.destroyAll(world, d.path);
             });
+            
+            // clean attached entity
+            loadedSceneData.attachedEntity.forEach(child => {
+                ut.Core2D.TransformService.destroyTree(world, child, true);
+            })
+            loadedSceneData.attachedEntity = [];
 
             // clean parent
             ut.EntityGroup.destroyAll(world, loadedSceneData.path);
@@ -158,6 +167,7 @@ namespace game {
             // temp without transition
             FadeHelper.StartFade(world, TransitionType.FadeIn, () => {
                 this.CleanUpScene(world);
+                ut.Tweens.TweenService.removeAllTweensInWorld(world);
                 this.LoadUpScene(world);
                 FadeHelper.StartFade(world, TransitionType.FadeOut, () => {
                     console.log("done");
@@ -178,6 +188,16 @@ namespace game {
             }
 
             // for transition animation :O
+        }
+
+        // always use this to instantiate
+        InstanstiateToScene(world: ut.World, path: string): ut.Entity[] {
+            let ent = ut.EntityGroup.instantiate(world, path);
+            let loadedSceneData = this.data[this.currentSceneId];
+            ent.forEach(e => {
+                loadedSceneData.attachedEntity.push(e);
+            })
+            return ent;
         }
     }
 }

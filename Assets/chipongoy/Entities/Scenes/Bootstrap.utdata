@@ -5,7 +5,7 @@
     "ExportFlags": 0,
     "SerializedVersion": 0,
     "Entities": [
-        { "$TypeId": 9, "Id": "65e7c41a347d43b3aecdb050c45ca9b6", "Name": "Camera" },
+        { "$TypeId": 9, "Id": "65e7c41a347d43b3aecdb050c45ca9b6", "Name": "MainCamera" },
         { "$TypeId": 9, "Id": "e59cfc0618af4c92a6ae48f5a01dd73f", "Name": "Entity" },
         { "$TypeId": 9, "Id": "fe0ae816ebe4490897fb72c1dfccede4", "Name": "Entity1" },
         { "$TypeId": 9, "Id": "65a06f8a969c405f8aa0005afda14bcd", "Name": "Sprite" },
@@ -15,7 +15,7 @@
 {
     "$TypeId": 5,
     "Id": "65e7c41a347d43b3aecdb050c45ca9b6",
-    "Name": "Camera",
+    "Name": "MainCamera",
     "Enabled": true,
     "Static": false,
     "Layer": 0,
@@ -30,7 +30,7 @@
     }, {
         "Type": { "Id": "12692383f3fef3bb74c209888c5b0939", "Name": "Camera2D" },
         "Properties": {
-            "halfVerticalSize": 200,
+            "halfVerticalSize": 600,
             "clearFlags": {
                 "$TypeId": 8,
                 "Type": { "Id": "76a06ddd38e99125d930e77c6a287872", "Name": "CameraClearFlags" },
