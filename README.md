@@ -52,3 +52,10 @@ unity tiny play around
 ## player
 - player and camera is linked
 - mouseclick/wasd move the charater + camera
+- notes :
+    - its possible to use isometric camera(ish) but each grid need to have its own sorting layer number from top left
+    - 1 from top left, then bottom, right, bottom right will become 2 and so on
+    - if player character goes into the that grid, it will have that sorting layer so bottom, right and bottom right will always have higher value
+    - so player chara will be properly drawn/hidden
+    - warning : sorting layer means jack shit if its render by two different camera.
+    - alternative : or we can just do 2d topdown (simple)

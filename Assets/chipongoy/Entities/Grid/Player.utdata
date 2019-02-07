@@ -6,10 +6,7 @@
     "SerializedVersion": 0,
     "Entities": [
         { "$TypeId": 9, "Id": "79a60779062b495ca582e48da48db951", "Name": "Sprite" },
-        { "$TypeId": 9, "Id": "61351614e28b44d3a4489df552f13ff8", "Name": "BuildingTest" },
-        { "$TypeId": 9, "Id": "75b4e05bbbe94167be1fb4737d73e1e0", "Name": "BuildingTest" },
-        { "$TypeId": 9, "Id": "99f41d3ba55e4e19964531be3c7a5926", "Name": "BuildingTest" },
-        { "$TypeId": 9, "Id": "86171b00c3164dbabae799598cc138fe", "Name": "BuildingTest" }
+        { "$TypeId": 9, "Id": "559a3c7f4eb24ed4bc4c12b90bb75c4f", "Name": "Sprite" }
     ]
 },
 {
@@ -17,6 +14,75 @@
     "Id": "79a60779062b495ca582e48da48db951",
     "Name": "Sprite",
     "Enabled": true,
+    "Static": false,
+    "Layer": 8,
+    "Components": [{
+        "Type": { "Id": "c895dbe72eb46ecb10d589d320151758", "Name": "TransformNode" }
+    }, {
+        "Type": { "Id": "70449d66178e0d9f66795c24f0fbbdfc", "Name": "TransformLocalPosition" },
+        "Properties": {
+            "position": {
+                "Type": { "Id": "f139194553e8ae4a3250c5527d6de169", "Name": "Vector3" },
+                "Properties": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            }
+        }
+    }, {
+        "Type": { "Id": "2266a95f5d16ca1ddde710d7c047ba69", "Name": "TransformLocalRotation" },
+        "Properties": {
+            "rotation": {
+                "Type": { "Id": "dc7e11e5d517ed01fd5d084a6c9fd64d", "Name": "Quaternion" },
+                "Properties": {
+                    "x": -0.3758094,
+                    "y": -0.1645002,
+                    "z": 0.377175,
+                    "w": 0.8303289
+                }
+            }
+        }
+    }, {
+        "Type": { "Id": "f11fe490eefc969bbc3fde5eab5ccd1e", "Name": "TransformLocalScale" },
+        "Properties": {
+            "scale": {
+                "Type": { "Id": "f139194553e8ae4a3250c5527d6de169", "Name": "Vector3" },
+                "Properties": {
+                    "x": 1.2,
+                    "y": 1.2,
+                    "z": 1.2
+                }
+            }
+        }
+    }, {
+        "Type": { "Id": "1c504a8a7963db0d32e89b527b90e057", "Name": "Sprite2DRenderer" },
+        "Properties": {
+            "sprite": { "$TypeId": 10, "Guid": "5a388d8278ddc423fa08db8444a13123", "FileId": 21300000, "Type": 3 },
+            "color": {
+                "Type": { "Id": "2a90a1633d6dc16cd37cdfaca7b93cea", "Name": "Color" },
+                "Properties": {
+                    "r": 1,
+                    "g": 1,
+                    "b": 1,
+                    "a": 1
+                }
+            }
+        }
+    }, {
+        "Type": { "Id": "b1e5348389156b7a260d6ed393754fba", "Name": "LayerSorting" },
+        "Properties": {
+            "order": 1
+        }
+    }, {
+        "Type": { "Id": "288a861a8ca311346faecf4c20a2da76", "Name": "SortingGroup" }
+    }]
+},
+{
+    "$TypeId": 5,
+    "Id": "559a3c7f4eb24ed4bc4c12b90bb75c4f",
+    "Name": "Sprite",
+    "Enabled": false,
     "Static": false,
     "Layer": 9,
     "Components": [{
@@ -34,7 +100,18 @@
             }
         }
     }, {
-        "Type": { "Id": "2266a95f5d16ca1ddde710d7c047ba69", "Name": "TransformLocalRotation" }
+        "Type": { "Id": "2266a95f5d16ca1ddde710d7c047ba69", "Name": "TransformLocalRotation" },
+        "Properties": {
+            "rotation": {
+                "Type": { "Id": "dc7e11e5d517ed01fd5d084a6c9fd64d", "Name": "Quaternion" },
+                "Properties": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0,
+                    "w": 1
+                }
+            }
+        }
     }, {
         "Type": { "Id": "f11fe490eefc969bbc3fde5eab5ccd1e", "Name": "TransformLocalScale" },
         "Properties": {
@@ -64,275 +141,9 @@
     }, {
         "Type": { "Id": "b1e5348389156b7a260d6ed393754fba", "Name": "LayerSorting" },
         "Properties": {
-            "order": 1000
-        }
-    }]
-},
-{
-    "$TypeId": 5,
-    "Id": "61351614e28b44d3a4489df552f13ff8",
-    "Name": "BuildingTest",
-    "Enabled": true,
-    "Static": false,
-    "Layer": 8,
-    "Components": [{
-        "Type": { "Id": "c895dbe72eb46ecb10d589d320151758", "Name": "TransformNode" }
-    }, {
-        "Type": { "Id": "70449d66178e0d9f66795c24f0fbbdfc", "Name": "TransformLocalPosition" },
-        "Properties": {
-            "position": {
-                "Type": { "Id": "f139194553e8ae4a3250c5527d6de169", "Name": "Vector3" },
-                "Properties": {
-                    "x": -24.7,
-                    "y": 12,
-                    "z": -12
-                }
-            }
+            "order": 2
         }
     }, {
-        "Type": { "Id": "2266a95f5d16ca1ddde710d7c047ba69", "Name": "TransformLocalRotation" },
-        "Properties": {
-            "rotation": {
-                "Type": { "Id": "dc7e11e5d517ed01fd5d084a6c9fd64d", "Name": "Quaternion" },
-                "Properties": {
-                    "x": -0.7071068,
-                    "y": 0,
-                    "z": 0,
-                    "w": 0.7071068
-                }
-            }
-        }
-    }, {
-        "Type": { "Id": "f11fe490eefc969bbc3fde5eab5ccd1e", "Name": "TransformLocalScale" },
-        "Properties": {
-            "scale": {
-                "Type": { "Id": "f139194553e8ae4a3250c5527d6de169", "Name": "Vector3" },
-                "Properties": {
-                    "x": 1,
-                    "y": 1,
-                    "z": 0
-                }
-            }
-        }
-    }, {
-        "Type": { "Id": "1c504a8a7963db0d32e89b527b90e057", "Name": "Sprite2DRenderer" },
-        "Properties": {
-            "sprite": { "$TypeId": 10, "Guid": "e6427612191c440eaa18ad6bfd689fe5", "FileId": 21300016, "Type": 3 },
-            "color": {
-                "Type": { "Id": "2a90a1633d6dc16cd37cdfaca7b93cea", "Name": "Color" },
-                "Properties": {
-                    "r": 0.1942417,
-                    "g": 0.3736228,
-                    "b": 0.4245283,
-                    "a": 1
-                }
-            }
-        }
-    }, {
-        "Type": { "Id": "b1e5348389156b7a260d6ed393754fba", "Name": "LayerSorting" },
-        "Properties": {
-            "order": 1
-        }
-    }]
-},
-{
-    "$TypeId": 5,
-    "Id": "75b4e05bbbe94167be1fb4737d73e1e0",
-    "Name": "BuildingTest",
-    "Enabled": true,
-    "Static": false,
-    "Layer": 8,
-    "Components": [{
-        "Type": { "Id": "c895dbe72eb46ecb10d589d320151758", "Name": "TransformNode" }
-    }, {
-        "Type": { "Id": "70449d66178e0d9f66795c24f0fbbdfc", "Name": "TransformLocalPosition" },
-        "Properties": {
-            "position": {
-                "Type": { "Id": "f139194553e8ae4a3250c5527d6de169", "Name": "Vector3" },
-                "Properties": {
-                    "x": -24.7,
-                    "y": -12,
-                    "z": -12
-                }
-            }
-        }
-    }, {
-        "Type": { "Id": "2266a95f5d16ca1ddde710d7c047ba69", "Name": "TransformLocalRotation" },
-        "Properties": {
-            "rotation": {
-                "Type": { "Id": "dc7e11e5d517ed01fd5d084a6c9fd64d", "Name": "Quaternion" },
-                "Properties": {
-                    "x": -0.7071068,
-                    "y": 0,
-                    "z": 0,
-                    "w": 0.7071068
-                }
-            }
-        }
-    }, {
-        "Type": { "Id": "f11fe490eefc969bbc3fde5eab5ccd1e", "Name": "TransformLocalScale" },
-        "Properties": {
-            "scale": {
-                "Type": { "Id": "f139194553e8ae4a3250c5527d6de169", "Name": "Vector3" },
-                "Properties": {
-                    "x": 1,
-                    "y": 1,
-                    "z": 0
-                }
-            }
-        }
-    }, {
-        "Type": { "Id": "1c504a8a7963db0d32e89b527b90e057", "Name": "Sprite2DRenderer" },
-        "Properties": {
-            "sprite": { "$TypeId": 10, "Guid": "e6427612191c440eaa18ad6bfd689fe5", "FileId": 21300016, "Type": 3 },
-            "color": {
-                "Type": { "Id": "2a90a1633d6dc16cd37cdfaca7b93cea", "Name": "Color" },
-                "Properties": {
-                    "r": 0.4074404,
-                    "g": 0.7073448,
-                    "b": 0.7924528,
-                    "a": 1
-                }
-            }
-        }
-    }, {
-        "Type": { "Id": "b1e5348389156b7a260d6ed393754fba", "Name": "LayerSorting" },
-        "Properties": {
-            "order": 1
-        }
-    }]
-},
-{
-    "$TypeId": 5,
-    "Id": "99f41d3ba55e4e19964531be3c7a5926",
-    "Name": "BuildingTest",
-    "Enabled": true,
-    "Static": false,
-    "Layer": 8,
-    "Components": [{
-        "Type": { "Id": "c895dbe72eb46ecb10d589d320151758", "Name": "TransformNode" }
-    }, {
-        "Type": { "Id": "70449d66178e0d9f66795c24f0fbbdfc", "Name": "TransformLocalPosition" },
-        "Properties": {
-            "position": {
-                "Type": { "Id": "f139194553e8ae4a3250c5527d6de169", "Name": "Vector3" },
-                "Properties": {
-                    "x": -36.8,
-                    "y": 0,
-                    "z": -12
-                }
-            }
-        }
-    }, {
-        "Type": { "Id": "2266a95f5d16ca1ddde710d7c047ba69", "Name": "TransformLocalRotation" },
-        "Properties": {
-            "rotation": {
-                "Type": { "Id": "dc7e11e5d517ed01fd5d084a6c9fd64d", "Name": "Quaternion" },
-                "Properties": {
-                    "x": -0.4999999,
-                    "y": -0.5000001,
-                    "z": 0.4999999,
-                    "w": 0.5000001
-                }
-            }
-        }
-    }, {
-        "Type": { "Id": "f11fe490eefc969bbc3fde5eab5ccd1e", "Name": "TransformLocalScale" },
-        "Properties": {
-            "scale": {
-                "Type": { "Id": "f139194553e8ae4a3250c5527d6de169", "Name": "Vector3" },
-                "Properties": {
-                    "x": 1,
-                    "y": 1,
-                    "z": 0
-                }
-            }
-        }
-    }, {
-        "Type": { "Id": "1c504a8a7963db0d32e89b527b90e057", "Name": "Sprite2DRenderer" },
-        "Properties": {
-            "sprite": { "$TypeId": 10, "Guid": "e6427612191c440eaa18ad6bfd689fe5", "FileId": 21300016, "Type": 3 },
-            "color": {
-                "Type": { "Id": "2a90a1633d6dc16cd37cdfaca7b93cea", "Name": "Color" },
-                "Properties": {
-                    "r": 0.2035867,
-                    "g": 0.4953552,
-                    "b": 0.5754717,
-                    "a": 1
-                }
-            }
-        }
-    }, {
-        "Type": { "Id": "b1e5348389156b7a260d6ed393754fba", "Name": "LayerSorting" },
-        "Properties": {
-            "order": 1
-        }
-    }]
-},
-{
-    "$TypeId": 5,
-    "Id": "86171b00c3164dbabae799598cc138fe",
-    "Name": "BuildingTest",
-    "Enabled": true,
-    "Static": false,
-    "Layer": 8,
-    "Components": [{
-        "Type": { "Id": "c895dbe72eb46ecb10d589d320151758", "Name": "TransformNode" }
-    }, {
-        "Type": { "Id": "70449d66178e0d9f66795c24f0fbbdfc", "Name": "TransformLocalPosition" },
-        "Properties": {
-            "position": {
-                "Type": { "Id": "f139194553e8ae4a3250c5527d6de169", "Name": "Vector3" },
-                "Properties": {
-                    "x": -12.7,
-                    "y": 0,
-                    "z": -12
-                }
-            }
-        }
-    }, {
-        "Type": { "Id": "2266a95f5d16ca1ddde710d7c047ba69", "Name": "TransformLocalRotation" },
-        "Properties": {
-            "rotation": {
-                "Type": { "Id": "dc7e11e5d517ed01fd5d084a6c9fd64d", "Name": "Quaternion" },
-                "Properties": {
-                    "x": -0.4999999,
-                    "y": -0.5000001,
-                    "z": 0.4999999,
-                    "w": 0.5000001
-                }
-            }
-        }
-    }, {
-        "Type": { "Id": "f11fe490eefc969bbc3fde5eab5ccd1e", "Name": "TransformLocalScale" },
-        "Properties": {
-            "scale": {
-                "Type": { "Id": "f139194553e8ae4a3250c5527d6de169", "Name": "Vector3" },
-                "Properties": {
-                    "x": 1,
-                    "y": 1,
-                    "z": 0
-                }
-            }
-        }
-    }, {
-        "Type": { "Id": "1c504a8a7963db0d32e89b527b90e057", "Name": "Sprite2DRenderer" },
-        "Properties": {
-            "sprite": { "$TypeId": 10, "Guid": "e6427612191c440eaa18ad6bfd689fe5", "FileId": 21300016, "Type": 3 },
-            "color": {
-                "Type": { "Id": "2a90a1633d6dc16cd37cdfaca7b93cea", "Name": "Color" },
-                "Properties": {
-                    "r": 0.2035867,
-                    "g": 0.4953552,
-                    "b": 0.5754717,
-                    "a": 1
-                }
-            }
-        }
-    }, {
-        "Type": { "Id": "b1e5348389156b7a260d6ed393754fba", "Name": "LayerSorting" },
-        "Properties": {
-            "order": 1
-        }
+        "Type": { "Id": "288a861a8ca311346faecf4c20a2da76", "Name": "SortingGroup" }
     }]
 }]

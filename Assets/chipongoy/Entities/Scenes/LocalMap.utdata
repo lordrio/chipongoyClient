@@ -27,7 +27,7 @@
                 "Properties": {
                     "x": 0,
                     "y": 0,
-                    "z": -10
+                    "z": 0
                 }
             }
         }
@@ -37,10 +37,10 @@
             "rotation": {
                 "Type": { "Id": "dc7e11e5d517ed01fd5d084a6c9fd64d", "Name": "Quaternion" },
                 "Properties": {
-                    "x": 0.4619398,
-                    "y": 0.1913417,
-                    "z": 0.1913417,
-                    "w": 0.8446233
+                    "x": -0.3919038,
+                    "y": -0.2005621,
+                    "z": 0.3604234,
+                    "w": 0.8223632
                 }
             }
         }
@@ -50,7 +50,7 @@
         "Type": { "Id": "12692383f3fef3bb74c209888c5b0939", "Name": "Camera2D" },
         "Properties": {
             "halfVerticalSize": 100,
-            "depth": -10,
+            "depth": -1000,
             "layerMask": 256
         }
     }]

@@ -255,20 +255,6 @@ declare namespace ut.EditorExtensions{
         static _tempHeapPtr(v: AssetReferenceSpriteAtlas): number;
         static _dtorFn(v: AssetReferenceSpriteAtlas): void;
     }
-    class AssetReferenceTMP_FontAsset extends ut.Component {
-        constructor();
-        guid: string;
-        fileId: number;
-        type: number;
-        static readonly cid: number;
-        static readonly _view: any;
-        static readonly _isSharedComp: boolean;
-        static _size: number;
-        static _fromPtr(p: number, v?: AssetReferenceTMP_FontAsset): AssetReferenceTMP_FontAsset;
-        static _toPtr(p: number, v: AssetReferenceTMP_FontAsset): void;
-        static _tempHeapPtr(v: AssetReferenceTMP_FontAsset): number;
-        static _dtorFn(v: AssetReferenceTMP_FontAsset): void;
-    }
     class AssetReferenceTexture2D extends ut.Component {
         constructor();
         guid: string;
@@ -296,6 +282,20 @@ declare namespace ut.EditorExtensions{
         static _toPtr(p: number, v: AssetReferenceTile): void;
         static _tempHeapPtr(v: AssetReferenceTile): number;
         static _dtorFn(v: AssetReferenceTile): void;
+    }
+    class AssetReferenceTMP_FontAsset extends ut.Component {
+        constructor();
+        guid: string;
+        fileId: number;
+        type: number;
+        static readonly cid: number;
+        static readonly _view: any;
+        static readonly _isSharedComp: boolean;
+        static _size: number;
+        static _fromPtr(p: number, v?: AssetReferenceTMP_FontAsset): AssetReferenceTMP_FontAsset;
+        static _toPtr(p: number, v: AssetReferenceTMP_FontAsset): void;
+        static _tempHeapPtr(v: AssetReferenceTMP_FontAsset): number;
+        static _dtorFn(v: AssetReferenceTMP_FontAsset): void;
     }
     class CameraCullingMask extends ut.Component {
         constructor();
@@ -332,15 +332,15 @@ declare namespace ut{
         [module: string]: any;
         game: {
             [data: string]: EntityGroupData;
+            LocalGridBase: EntityGroupData;
+            Player: EntityGroupData;
             SceneMgr: EntityGroupData;
             Bootstrap: EntityGroupData;
+            LocalMap: EntityGroupData;
             Scene1: EntityGroupData;
             Scene2: EntityGroupData;
             FadeIn: EntityGroupData;
             FadeOut: EntityGroupData;
-            LocalGridBase: EntityGroupData;
-            LocalMap: EntityGroupData;
-            Player: EntityGroupData;
         }
     }
 }
@@ -370,8 +370,12 @@ declare namespace ut.Core2D.layers{
         static _wrap(w: number, e: number): Grid;
         static readonly cid: number;
     }
-    class Cutscene extends ut.Component {
-        static _wrap(w: number, e: number): Cutscene;
+    class Player extends ut.Component {
+        static _wrap(w: number, e: number): Player;
+        static readonly cid: number;
+    }
+    class Buildings extends ut.Component {
+        static _wrap(w: number, e: number): Buildings;
         static readonly cid: number;
     }
 }
