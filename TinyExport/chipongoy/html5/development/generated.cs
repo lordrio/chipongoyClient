@@ -235,6 +235,12 @@ namespace ut.EditorExtensions
         public long fileId;
         public int type;
     }
+    public struct AssetReferenceTMP_FontAsset : IComponentData
+    {
+        public string guid;
+        public long fileId;
+        public int type;
+    }
     public struct AssetReferenceTexture2D : IComponentData
     {
         public string guid;
@@ -242,12 +248,6 @@ namespace ut.EditorExtensions
         public int type;
     }
     public struct AssetReferenceTile : IComponentData
-    {
-        public string guid;
-        public long fileId;
-        public int type;
-    }
-    public struct AssetReferenceTMP_FontAsset : IComponentData
     {
         public string guid;
         public long fileId;

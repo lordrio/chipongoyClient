@@ -47,7 +47,7 @@
     "$TypeId": 5,
     "Id": "e59cfc0618af4c92a6ae48f5a01dd73f",
     "Name": "Entity",
-    "Enabled": true,
+    "Enabled": false,
     "Static": false,
     "Layer": 0,
     "Components": [{

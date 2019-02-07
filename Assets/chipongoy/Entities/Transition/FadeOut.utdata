@@ -53,7 +53,8 @@
         "Type": { "Id": "12692383f3fef3bb74c209888c5b0939", "Name": "Camera2D" },
         "Properties": {
             "halfVerticalSize": 200,
-            "depth": 3
+            "depth": 3,
+            "layerMask": 32
         }
     }]
 },
@@ -96,8 +97,8 @@
             "size": {
                 "Type": { "Id": "3abb69286ddfc2d1c617a173c1eeb35d", "Name": "Vector2" },
                 "Properties": {
-                    "x": 0,
-                    "y": 0
+                    "x": 4082,
+                    "y": 994
                 }
             }
         }

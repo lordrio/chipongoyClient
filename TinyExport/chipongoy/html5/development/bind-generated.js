@@ -1660,6 +1660,101 @@ Object.defineProperties(ut.EditorExtensions.AssetReferenceSpriteAtlas.StorageVie
 ut.EditorExtensions.AssetReferenceSpriteAtlas.guid = { $ofs:0, $t:"System.String", $c:ut.EditorExtensions.AssetReferenceSpriteAtlas };
 ut.EditorExtensions.AssetReferenceSpriteAtlas.fileId = { $ofs:8, $t:"System.Int64", $c:ut.EditorExtensions.AssetReferenceSpriteAtlas };
 ut.EditorExtensions.AssetReferenceSpriteAtlas.type = { $ofs:16, $t:"int32_t", $c:ut.EditorExtensions.AssetReferenceSpriteAtlas };
+ut.EditorExtensions.AssetReferenceTMP_FontAsset = function(arg0, arg1, arg2) {
+  this._guid = (arg0 === undefined ? '' : arg0);
+  this._fileId = (/*64BIT*/arg1|0);
+  this._type = (arg2|0);
+};
+ut.EditorExtensions.AssetReferenceTMP_FontAsset.prototype = Object.create(null);
+ut.EditorExtensions.AssetReferenceTMP_FontAsset.prototype.constructor = ut.EditorExtensions.AssetReferenceTMP_FontAsset;
+Object.defineProperties(ut.EditorExtensions.AssetReferenceTMP_FontAsset.prototype, {
+  guid: {
+    get: function() { return this._guid; },
+    set: function(v) { this._guid = (v === undefined ? '' : v); },
+  },
+  fileId: {
+    get: function() { return this._fileId; },
+    set: function(v) { this._fileId = (/*64BIT*/v|0); },
+  },
+  type: {
+    get: function() { return this._type; },
+    set: function(v) { this._type = (v|0); },
+  },
+});
+ut.EditorExtensions.AssetReferenceTMP_FontAsset._size = 24;
+ut.EditorExtensions.AssetReferenceTMP_FontAsset._fromPtr = function(ptr, v) {
+  v = v || Object.create(ut.EditorExtensions.AssetReferenceTMP_FontAsset.prototype);
+  v._guid = (Module._ut_nativestring_data(ptr+0) ? UTF8ToString(Module._ut_nativestring_data(ptr+0)) : "");
+  v._fileId = (/*64BIT*/HEAP32[(ptr+8)>>2]);
+  v._type = HEAP32[(ptr+16)>>2];
+  return v;
+};
+ut.EditorExtensions.AssetReferenceTMP_FontAsset._toPtr = function(ptr, v) {
+  ut.newHeapNativeString(ptr+0, v.guid);
+  HEAP32[(ptr+8)>>2] = /*64BIT*/v.fileId;
+  HEAP32[(ptr+16)>>2] = v.type;
+};
+ut.EditorExtensions.AssetReferenceTMP_FontAsset._toTempHeapPtr = function(ptr, v) {
+  ut.toExistingScratchNativeString(ptr+0, v.guid);
+  HEAP32[(ptr+8)>>2] = /*64BIT*/v.fileId;
+  HEAP32[(ptr+16)>>2] = v.type;
+};
+ut.EditorExtensions.AssetReferenceTMP_FontAsset._tempHeapPtr = function(v) {
+  var ptr = ut.tempHeapPtrBufferZero(24);
+  if (v) ut.EditorExtensions.AssetReferenceTMP_FontAsset._toTempHeapPtr(ptr, v);
+  return ptr;
+};
+ut.EditorExtensions.AssetReferenceTMP_FontAsset.StorageView = function(ptr) {
+  this._ptr = ptr;
+};
+ut.EditorExtensions.AssetReferenceTMP_FontAsset.StorageView.prototype = Object.create(null);
+ut.EditorExtensions.AssetReferenceTMP_FontAsset.StorageView.prototype.constructor = ut.EditorExtensions.AssetReferenceTMP_FontAsset.StorageView;
+ut.EditorExtensions.AssetReferenceTMP_FontAsset._view = ut.EditorExtensions.AssetReferenceTMP_FontAsset.StorageView;
+ut.EditorExtensions.AssetReferenceTMP_FontAsset.StorageView._isSharedComp = ut.EditorExtensions.AssetReferenceTMP_FontAsset._isSharedComp = false;
+ut.EditorExtensions.AssetReferenceTMP_FontAsset.StorageView._fromPtr = ut.EditorExtensions.AssetReferenceTMP_FontAsset._fromPtr;
+ut.EditorExtensions.AssetReferenceTMP_FontAsset.StorageView._toPtr = ut.EditorExtensions.AssetReferenceTMP_FontAsset._toPtr;
+ut.EditorExtensions.AssetReferenceTMP_FontAsset.StorageView._tempHeapPtr = ut.EditorExtensions.AssetReferenceTMP_FontAsset._tempHeapPtr;
+ut.EditorExtensions.AssetReferenceTMP_FontAsset.StorageView._size = ut.EditorExtensions.AssetReferenceTMP_FontAsset._size;
+ut.EditorExtensions.AssetReferenceTMP_FontAsset.StorageView.prototype.$advance = function() {
+  this._ptr += 24;
+};
+Object.defineProperties(ut.EditorExtensions.AssetReferenceTMP_FontAsset.StorageView.prototype, {
+  guid: {
+    get: function() { return (Module._ut_nativestring_data(this._ptr+0) ? UTF8ToString(Module._ut_nativestring_data(this._ptr+0)) : ""); },
+    set: function(v) { ut.newHeapNativeString(this._ptr+0, v); },
+  },
+  fileId: {
+    get: function() { return (/*64BIT*/HEAP32[(this._ptr+8)>>2]); },
+    set: function(v) { HEAP32[(this._ptr+8)>>2] = /*64BIT*/v; },
+  },
+  type: {
+    get: function() { return HEAP32[(this._ptr+16)>>2]; },
+    set: function(v) { HEAP32[(this._ptr+16)>>2] = v; },
+  },
+});
+ut.EditorExtensions.AssetReferenceTMP_FontAsset._dtorFn = function dtor(ptr) {
+  if (!ptr) return; 
+  Module._ut_nativestring_placement_delete(ptr + 0);
+};
+ut.EditorExtensions.AssetReferenceTMP_FontAsset._copyFn = function copy(src, dst) {
+  if (!src) throw 'copy function src ptr is null!';
+  if (!dst) throw 'copy function dst ptr is null!';
+  Module._ut_nativestring_copy_construct(dst + 0, src + 0);
+  for(var i = 0; i < 8; ++i) HEAPU8[dst+8+i] = HEAPU8[src+8+i];
+  for(var i = 0; i < 4; ++i) HEAPU8[dst+16+i] = HEAPU8[src+16+i];
+};
+ut.EditorExtensions.AssetReferenceTMP_FontAsset._typeDesc = (function() {
+  return ut.meta.allocType(5, 'ut.EditorExtensions.AssetReferenceTMP_FontAsset', 24, [
+    {name: 'guid', offset: 0, type: ut.meta.getType('string')},
+    {name: 'fileId', offset: 8, type: ut.meta.getType('int64')},
+    {name: 'type', offset: 16, type: ut.meta.getType('int32')}
+  ]);
+})();
+Object.defineProperties(ut.EditorExtensions.AssetReferenceTMP_FontAsset, { cid: { configurable: true, get: function() { delete ut.EditorExtensions.AssetReferenceTMP_FontAsset.cid; var offsetsPtr = 0, offsetsCount = 0; return ut.EditorExtensions.AssetReferenceTMP_FontAsset.cid = Module._ut_component_register_cid_with_type(ut.EditorExtensions.AssetReferenceTMP_FontAsset._typeDesc, 8, 0, offsetsPtr, offsetsCount, ut.DestructorFn._cb.token_for(ut.EditorExtensions.AssetReferenceTMP_FontAsset._dtorFn), ut.CopyFn._cb.token_for(ut.EditorExtensions.AssetReferenceTMP_FontAsset._copyFn)); } } });
+Object.defineProperties(ut.EditorExtensions.AssetReferenceTMP_FontAsset.StorageView, { cid: { configurable: true, get: function() { return ut.EditorExtensions.AssetReferenceTMP_FontAsset.cid; } } });
+ut.EditorExtensions.AssetReferenceTMP_FontAsset.guid = { $ofs:0, $t:"System.String", $c:ut.EditorExtensions.AssetReferenceTMP_FontAsset };
+ut.EditorExtensions.AssetReferenceTMP_FontAsset.fileId = { $ofs:8, $t:"System.Int64", $c:ut.EditorExtensions.AssetReferenceTMP_FontAsset };
+ut.EditorExtensions.AssetReferenceTMP_FontAsset.type = { $ofs:16, $t:"int32_t", $c:ut.EditorExtensions.AssetReferenceTMP_FontAsset };
 ut.EditorExtensions.AssetReferenceTexture2D = function(arg0, arg1, arg2) {
   this._guid = (arg0 === undefined ? '' : arg0);
   this._fileId = (/*64BIT*/arg1|0);
@@ -1850,101 +1945,6 @@ Object.defineProperties(ut.EditorExtensions.AssetReferenceTile.StorageView, { ci
 ut.EditorExtensions.AssetReferenceTile.guid = { $ofs:0, $t:"System.String", $c:ut.EditorExtensions.AssetReferenceTile };
 ut.EditorExtensions.AssetReferenceTile.fileId = { $ofs:8, $t:"System.Int64", $c:ut.EditorExtensions.AssetReferenceTile };
 ut.EditorExtensions.AssetReferenceTile.type = { $ofs:16, $t:"int32_t", $c:ut.EditorExtensions.AssetReferenceTile };
-ut.EditorExtensions.AssetReferenceTMP_FontAsset = function(arg0, arg1, arg2) {
-  this._guid = (arg0 === undefined ? '' : arg0);
-  this._fileId = (/*64BIT*/arg1|0);
-  this._type = (arg2|0);
-};
-ut.EditorExtensions.AssetReferenceTMP_FontAsset.prototype = Object.create(null);
-ut.EditorExtensions.AssetReferenceTMP_FontAsset.prototype.constructor = ut.EditorExtensions.AssetReferenceTMP_FontAsset;
-Object.defineProperties(ut.EditorExtensions.AssetReferenceTMP_FontAsset.prototype, {
-  guid: {
-    get: function() { return this._guid; },
-    set: function(v) { this._guid = (v === undefined ? '' : v); },
-  },
-  fileId: {
-    get: function() { return this._fileId; },
-    set: function(v) { this._fileId = (/*64BIT*/v|0); },
-  },
-  type: {
-    get: function() { return this._type; },
-    set: function(v) { this._type = (v|0); },
-  },
-});
-ut.EditorExtensions.AssetReferenceTMP_FontAsset._size = 24;
-ut.EditorExtensions.AssetReferenceTMP_FontAsset._fromPtr = function(ptr, v) {
-  v = v || Object.create(ut.EditorExtensions.AssetReferenceTMP_FontAsset.prototype);
-  v._guid = (Module._ut_nativestring_data(ptr+0) ? UTF8ToString(Module._ut_nativestring_data(ptr+0)) : "");
-  v._fileId = (/*64BIT*/HEAP32[(ptr+8)>>2]);
-  v._type = HEAP32[(ptr+16)>>2];
-  return v;
-};
-ut.EditorExtensions.AssetReferenceTMP_FontAsset._toPtr = function(ptr, v) {
-  ut.newHeapNativeString(ptr+0, v.guid);
-  HEAP32[(ptr+8)>>2] = /*64BIT*/v.fileId;
-  HEAP32[(ptr+16)>>2] = v.type;
-};
-ut.EditorExtensions.AssetReferenceTMP_FontAsset._toTempHeapPtr = function(ptr, v) {
-  ut.toExistingScratchNativeString(ptr+0, v.guid);
-  HEAP32[(ptr+8)>>2] = /*64BIT*/v.fileId;
-  HEAP32[(ptr+16)>>2] = v.type;
-};
-ut.EditorExtensions.AssetReferenceTMP_FontAsset._tempHeapPtr = function(v) {
-  var ptr = ut.tempHeapPtrBufferZero(24);
-  if (v) ut.EditorExtensions.AssetReferenceTMP_FontAsset._toTempHeapPtr(ptr, v);
-  return ptr;
-};
-ut.EditorExtensions.AssetReferenceTMP_FontAsset.StorageView = function(ptr) {
-  this._ptr = ptr;
-};
-ut.EditorExtensions.AssetReferenceTMP_FontAsset.StorageView.prototype = Object.create(null);
-ut.EditorExtensions.AssetReferenceTMP_FontAsset.StorageView.prototype.constructor = ut.EditorExtensions.AssetReferenceTMP_FontAsset.StorageView;
-ut.EditorExtensions.AssetReferenceTMP_FontAsset._view = ut.EditorExtensions.AssetReferenceTMP_FontAsset.StorageView;
-ut.EditorExtensions.AssetReferenceTMP_FontAsset.StorageView._isSharedComp = ut.EditorExtensions.AssetReferenceTMP_FontAsset._isSharedComp = false;
-ut.EditorExtensions.AssetReferenceTMP_FontAsset.StorageView._fromPtr = ut.EditorExtensions.AssetReferenceTMP_FontAsset._fromPtr;
-ut.EditorExtensions.AssetReferenceTMP_FontAsset.StorageView._toPtr = ut.EditorExtensions.AssetReferenceTMP_FontAsset._toPtr;
-ut.EditorExtensions.AssetReferenceTMP_FontAsset.StorageView._tempHeapPtr = ut.EditorExtensions.AssetReferenceTMP_FontAsset._tempHeapPtr;
-ut.EditorExtensions.AssetReferenceTMP_FontAsset.StorageView._size = ut.EditorExtensions.AssetReferenceTMP_FontAsset._size;
-ut.EditorExtensions.AssetReferenceTMP_FontAsset.StorageView.prototype.$advance = function() {
-  this._ptr += 24;
-};
-Object.defineProperties(ut.EditorExtensions.AssetReferenceTMP_FontAsset.StorageView.prototype, {
-  guid: {
-    get: function() { return (Module._ut_nativestring_data(this._ptr+0) ? UTF8ToString(Module._ut_nativestring_data(this._ptr+0)) : ""); },
-    set: function(v) { ut.newHeapNativeString(this._ptr+0, v); },
-  },
-  fileId: {
-    get: function() { return (/*64BIT*/HEAP32[(this._ptr+8)>>2]); },
-    set: function(v) { HEAP32[(this._ptr+8)>>2] = /*64BIT*/v; },
-  },
-  type: {
-    get: function() { return HEAP32[(this._ptr+16)>>2]; },
-    set: function(v) { HEAP32[(this._ptr+16)>>2] = v; },
-  },
-});
-ut.EditorExtensions.AssetReferenceTMP_FontAsset._dtorFn = function dtor(ptr) {
-  if (!ptr) return; 
-  Module._ut_nativestring_placement_delete(ptr + 0);
-};
-ut.EditorExtensions.AssetReferenceTMP_FontAsset._copyFn = function copy(src, dst) {
-  if (!src) throw 'copy function src ptr is null!';
-  if (!dst) throw 'copy function dst ptr is null!';
-  Module._ut_nativestring_copy_construct(dst + 0, src + 0);
-  for(var i = 0; i < 8; ++i) HEAPU8[dst+8+i] = HEAPU8[src+8+i];
-  for(var i = 0; i < 4; ++i) HEAPU8[dst+16+i] = HEAPU8[src+16+i];
-};
-ut.EditorExtensions.AssetReferenceTMP_FontAsset._typeDesc = (function() {
-  return ut.meta.allocType(5, 'ut.EditorExtensions.AssetReferenceTMP_FontAsset', 24, [
-    {name: 'guid', offset: 0, type: ut.meta.getType('string')},
-    {name: 'fileId', offset: 8, type: ut.meta.getType('int64')},
-    {name: 'type', offset: 16, type: ut.meta.getType('int32')}
-  ]);
-})();
-Object.defineProperties(ut.EditorExtensions.AssetReferenceTMP_FontAsset, { cid: { configurable: true, get: function() { delete ut.EditorExtensions.AssetReferenceTMP_FontAsset.cid; var offsetsPtr = 0, offsetsCount = 0; return ut.EditorExtensions.AssetReferenceTMP_FontAsset.cid = Module._ut_component_register_cid_with_type(ut.EditorExtensions.AssetReferenceTMP_FontAsset._typeDesc, 8, 0, offsetsPtr, offsetsCount, ut.DestructorFn._cb.token_for(ut.EditorExtensions.AssetReferenceTMP_FontAsset._dtorFn), ut.CopyFn._cb.token_for(ut.EditorExtensions.AssetReferenceTMP_FontAsset._copyFn)); } } });
-Object.defineProperties(ut.EditorExtensions.AssetReferenceTMP_FontAsset.StorageView, { cid: { configurable: true, get: function() { return ut.EditorExtensions.AssetReferenceTMP_FontAsset.cid; } } });
-ut.EditorExtensions.AssetReferenceTMP_FontAsset.guid = { $ofs:0, $t:"System.String", $c:ut.EditorExtensions.AssetReferenceTMP_FontAsset };
-ut.EditorExtensions.AssetReferenceTMP_FontAsset.fileId = { $ofs:8, $t:"System.Int64", $c:ut.EditorExtensions.AssetReferenceTMP_FontAsset };
-ut.EditorExtensions.AssetReferenceTMP_FontAsset.type = { $ofs:16, $t:"int32_t", $c:ut.EditorExtensions.AssetReferenceTMP_FontAsset };
 ut.EditorExtensions.CameraCullingMask = function(arg0) {
   this._mask = (arg0|0);
 };

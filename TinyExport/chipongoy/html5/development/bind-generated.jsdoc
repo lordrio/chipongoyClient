@@ -446,6 +446,30 @@
 
 @component
 @memberof ut.EditorExtensions
+@name AssetReferenceTMP_FontAsset
+*/
+/**
+
+@member {string}
+@memberof ut.EditorExtensions.AssetReferenceTMP_FontAsset
+@name guid
+*/
+/**
+
+@member {int64}
+@memberof ut.EditorExtensions.AssetReferenceTMP_FontAsset
+@name fileId
+*/
+/**
+
+@member {int32}
+@memberof ut.EditorExtensions.AssetReferenceTMP_FontAsset
+@name type
+*/
+/**
+
+@component
+@memberof ut.EditorExtensions
 @name AssetReferenceTexture2D
 */
 /**
@@ -488,30 +512,6 @@
 
 @member {int32}
 @memberof ut.EditorExtensions.AssetReferenceTile
-@name type
-*/
-/**
-
-@component
-@memberof ut.EditorExtensions
-@name AssetReferenceTMP_FontAsset
-*/
-/**
-
-@member {string}
-@memberof ut.EditorExtensions.AssetReferenceTMP_FontAsset
-@name guid
-*/
-/**
-
-@member {int64}
-@memberof ut.EditorExtensions.AssetReferenceTMP_FontAsset
-@name fileId
-*/
-/**
-
-@member {int32}
-@memberof ut.EditorExtensions.AssetReferenceTMP_FontAsset
 @name type
 */
 /**

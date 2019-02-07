@@ -73,7 +73,7 @@ entities.game.Bootstrap.name = "Bootstrap";
 entities.game.Bootstrap.load = function(world) {
     var arch0 = world.createArchetype(this.Component, ut.Core2D.Camera2D, ut.Core2D.TransformLocalPosition, ut.Core2D.TransformLocalRotation, ut.Core2D.TransformLocalScale, ut.Core2D.TransformNode, ut.EditorExtensions.CameraCullingMask, ut.layers.Default)
     var e0 = world.createEntity(arch0);
-    world.setEntityName(e0, "Camera");
+    world.setEntityName(e0, "MainCamera");
     var arch1 = world.createArchetype(this.Component, ut.Core2D.TransformLocalPosition, ut.Core2D.TransformLocalRotation, ut.Core2D.TransformLocalScale, ut.Core2D.TransformNode, ut.layers.Default)
     var e1 = world.createEntity(arch1);
     world.setEntityName(e1, "Entity");
@@ -554,7 +554,7 @@ entities.game.Scene1.load = function(world) {
     world.setComponentData(e3, c32);
     var c33 = new ut.UIControls.Button();
     c33.sprite2DRenderer = e3;
-    c33.transition = ut.EntityLookupCache.getByName(world, 'assets/transitions/21978e6f62cf4df08b5cd72dd5057c78');
+    c33.transition = ut.EntityLookupCache.getByName(world, 'assets/transitions/2ed54e48fa9a45558e42e7fbc684d824');
     world.setComponentData(e3, c33);
     var c34 = new ut.EditorExtensions.EntityLayer();
     c34.layer = 5;
@@ -959,8 +959,8 @@ entities.game.FadeIn.load = function(world) {
     world.setComponentData(e1, c12);
     var c13 = new ut.Core2D.Sprite2DRendererOptions();
     var s18 = new ut.Math.Vector2();
-    s18.x = 0;
-    s18.y = 0;
+    s18.x = 4082;
+    s18.y = 994;
     c13.size = s18;
     c13.drawMode = 2;
     world.setComponentData(e1, c13);
@@ -1138,14 +1138,14 @@ entities.game.FadeOut.load = function(world) {
     c11.backgroundColor = s13;
     c11.clearFlags = 0;
     c11.depth = 3;
-    c11.cullingMask = [ut.layers.Default.cid, ut.layers.TransparentFX.cid, ut.layers.IgnoreRaycast.cid, ut.layers.Water.cid, ut.layers.UI.cid, ut.layers.Grid.cid, ut.layers.Cutscene.cid];
+    c11.cullingMask = [ut.layers.UI.cid];
     c11.cullingMode = 2;
     world.setComponentData(e1, c11);
     var c12 = new ut.EditorExtensions.EntityLayer();
     c12.layer = 5;
     world.setComponentData(e1, c12);
     var c13 = new ut.EditorExtensions.CameraCullingMask();
-    c13.mask = -1;
+    c13.mask = 32;
     world.setComponentData(e1, c13);
     var c14 = new ut.Core2D.TransformNode();
     c14.parent = e0;
@@ -1205,8 +1205,8 @@ entities.game.FadeOut.load = function(world) {
     world.setComponentData(e2, c19);
     var c20 = new ut.Core2D.Sprite2DRendererOptions();
     var s23 = new ut.Math.Vector2();
-    s23.x = 0;
-    s23.y = 0;
+    s23.x = 4082;
+    s23.y = 994;
     c20.size = s23;
     c20.drawMode = 2;
     world.setComponentData(e2, c20);

@@ -372,6 +372,21 @@ namespace ut.EditorExtensions
 namespace ut.EditorExtensions
 {
     [global::System.Runtime.InteropServices.StructLayout(global::System.Runtime.InteropServices.LayoutKind.Sequential)]
+    public struct AssetReferenceTMP_FontAsset : UTiny.IComponentData
+    {
+
+
+        public string guid;
+        public long fileId;
+        public int type;
+
+
+
+    }
+}
+namespace ut.EditorExtensions
+{
+    [global::System.Runtime.InteropServices.StructLayout(global::System.Runtime.InteropServices.LayoutKind.Sequential)]
     public struct AssetReferenceTexture2D : UTiny.IComponentData
     {
 
@@ -388,21 +403,6 @@ namespace ut.EditorExtensions
 {
     [global::System.Runtime.InteropServices.StructLayout(global::System.Runtime.InteropServices.LayoutKind.Sequential)]
     public struct AssetReferenceTile : UTiny.IComponentData
-    {
-
-
-        public string guid;
-        public long fileId;
-        public int type;
-
-
-
-    }
-}
-namespace ut.EditorExtensions
-{
-    [global::System.Runtime.InteropServices.StructLayout(global::System.Runtime.InteropServices.LayoutKind.Sequential)]
-    public struct AssetReferenceTMP_FontAsset : UTiny.IComponentData
     {
 
 

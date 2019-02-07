@@ -26,7 +26,7 @@
         "Children": [{
             "Item": {
                 "Name": "JavaScript",
-                "Size": 1203,
+                "Size": 1157,
                 "CompressedSize": 0
             }
         }]
@@ -39,51 +39,51 @@
         "Children": [{
             "Item": {
                 "Name": "TinyExport/chipongoy/html5/development/bin/entities.js",
-                "Size": 41161,
-                "CompressedSize": 4421
+                "Size": 39806,
+                "CompressedSize": 4343
             },
             "Children": [{
                 "Item": {
                     "Name": "SceneMgr",
-                    "Size": 2095,
-                    "CompressedSize": 598
+                    "Size": 2029,
+                    "CompressedSize": 591
                 }
             }, {
                 "Item": {
                     "Name": "Bootstrap",
-                    "Size": 7618,
-                    "CompressedSize": 1534
+                    "Size": 7404,
+                    "CompressedSize": 1529
                 }
             }, {
                 "Item": {
                     "Name": "Scene1",
-                    "Size": 9285,
-                    "CompressedSize": 1922
+                    "Size": 9010,
+                    "CompressedSize": 1905
                 }
             }, {
                 "Item": {
                     "Name": "Scene2",
-                    "Size": 9028,
-                    "CompressedSize": 1816
+                    "Size": 8757,
+                    "CompressedSize": 1806
                 }
             }, {
                 "Item": {
                     "Name": "FadeIn",
-                    "Size": 6459,
-                    "CompressedSize": 1393
+                    "Size": 6267,
+                    "CompressedSize": 1392
                 }
             }, {
                 "Item": {
                     "Name": "FadeOut",
-                    "Size": 6605,
-                    "CompressedSize": 1464
+                    "Size": 6267,
+                    "CompressedSize": 1407
                 }
             }]
         }, {
             "Item": {
                 "Name": "TinyExport/chipongoy/html5/development/bin/bindings.js",
                 "Size": 134970,
-                "CompressedSize": 11452
+                "CompressedSize": 11450
             }
         }, {
             "Item": {
@@ -93,16 +93,16 @@
             },
             "Children": [{
                 "Item": {
-                    "Name": "C:\\Users\\riole\\Documents\\unitards\\chipongoyClient\\TinyExport\\chipongoy\\html5\\development\\ScriptAssemblies\\tsc-emit.js",
-                    "Size": 30591,
-                    "CompressedSize": 5923
+                    "Name": "/Users/fadzli/Documents/chopodoy/chipodoy/TinyExport/chipongoy/html5/development/ScriptAssemblies/tsc-emit.js",
+                    "Size": 30663,
+                    "CompressedSize": 6038
                 }
             }]
         }, {
             "Item": {
                 "Name": "TinyExport/chipongoy/html5/development/bin/main.js",
-                "Size": 7630,
-                "CompressedSize": 1639
+                "Size": 7464,
+                "CompressedSize": 1629
             }
         }, {
             "Item": {

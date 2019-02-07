@@ -7,7 +7,7 @@
             "QualifiedName": "game.MouseSpriteInteractionSystem",
             "Description": "",
             "Source": {
-                "File": "C:/Users/riole/Documents/unitards/chipongoyClient/Assets/chipongoy/Scripts/Sprite/MouseSpriteInteractionSystem.ts",
+                "File": "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/chipongoy/Scripts/Sprite/MouseSpriteInteractionSystem.ts",
                 "Line": 7,
                 "Character": 17
             }
@@ -17,7 +17,7 @@
             "QualifiedName": "game.TimerService",
             "Description": "New System",
             "Source": {
-                "File": "C:/Users/riole/Documents/unitards/chipongoyClient/Assets/chipongoy/Scripts/System/TimerService.ts",
+                "File": "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/chipongoy/Scripts/System/TimerService.ts",
                 "Line": 9,
                 "Character": 17
             }
@@ -27,7 +27,7 @@
             "QualifiedName": "game.CustomButtonSystem",
             "Description": "New System",
             "Source": {
-                "File": "C:/Users/riole/Documents/unitards/chipongoyClient/Assets/chipongoy/Scripts/UI/CustomButtonSystem.ts",
+                "File": "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/chipongoy/Scripts/UI/CustomButtonSystem.ts",
                 "Line": 5,
                 "Character": 17
             }
@@ -39,7 +39,7 @@
             "QualifiedName": "game.SceneMgrBehaviourFilter",
             "Description": "",
             "Source": {
-                "File": "C:/Users/riole/Documents/unitards/chipongoyClient/Assets/chipongoy/Scripts/SceneMgr/SceneMgrBehaviour.ts",
+                "File": "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/chipongoy/Scripts/SceneMgr/SceneMgrBehaviour.ts",
                 "Line": 103,
                 "Character": 17
             },
@@ -49,7 +49,7 @@
                     "QualifiedName": "game.SceneList",
                     "Description": "",
                     "Source": {
-                        "File": "C:/Users/riole/Documents/unitards/chipongoyClient/Assets/chipongoy/Scripts/SceneMgr/SceneMgrBehaviour.ts",
+                        "File": "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/chipongoy/Scripts/SceneMgr/SceneMgrBehaviour.ts",
                         "Line": 103,
                         "Character": 67
                     },
@@ -63,7 +63,7 @@
                     "QualifiedName": "game.SceneDefineContainer",
                     "Description": "",
                     "Source": {
-                        "File": "C:/Users/riole/Documents/unitards/chipongoyClient/Assets/chipongoy/Scripts/SceneMgr/SceneMgrBehaviour.ts",
+                        "File": "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/chipongoy/Scripts/SceneMgr/SceneMgrBehaviour.ts",
                         "Line": 104,
                         "Character": 30
                     },
@@ -79,7 +79,7 @@
             "QualifiedName": "game.SimpleDraggerFilter",
             "Description": "",
             "Source": {
-                "File": "C:/Users/riole/Documents/unitards/chipongoyClient/Assets/chipongoy/Scripts/Sprite/SimpleDragger.ts",
+                "File": "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/chipongoy/Scripts/Sprite/SimpleDragger.ts",
                 "Line": 4,
                 "Character": 17
             },
@@ -89,7 +89,7 @@
                     "QualifiedName": "ut.Core2D.TransformLocalPosition",
                     "Description": "",
                     "Source": {
-                        "File": "C:/Users/riole/Documents/unitards/chipongoyClient/Assets/chipongoy/Scripts/Sprite/SimpleDragger.ts",
+                        "File": "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/chipongoy/Scripts/Sprite/SimpleDragger.ts",
                         "Line": 4,
                         "Character": 63
                     },
@@ -103,7 +103,7 @@
                     "QualifiedName": "game.MouseSpriteInteractionData",
                     "Description": "",
                     "Source": {
-                        "File": "C:/Users/riole/Documents/unitards/chipongoyClient/Assets/chipongoy/Scripts/Sprite/SimpleDragger.ts",
+                        "File": "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/chipongoy/Scripts/Sprite/SimpleDragger.ts",
                         "Line": 6,
                         "Character": 47
                     },
@@ -117,7 +117,7 @@
                     "QualifiedName": "game.SimpleDraggerTag",
                     "Description": "",
                     "Source": {
-                        "File": "C:/Users/riole/Documents/unitards/chipongoyClient/Assets/chipongoy/Scripts/Sprite/SimpleDragger.ts",
+                        "File": "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/chipongoy/Scripts/Sprite/SimpleDragger.ts",
                         "Line": 7,
                         "Character": 54
                     },
@@ -135,7 +135,7 @@
             "QualifiedName": "game.SceneMgrBehaviour",
             "Description": "",
             "Source": {
-                "File": "C:/Users/riole/Documents/unitards/chipongoyClient/Assets/chipongoy/Scripts/SceneMgr/SceneMgrBehaviour.ts",
+                "File": "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/chipongoy/Scripts/SceneMgr/SceneMgrBehaviour.ts",
                 "Line": 110,
                 "Character": 17
             },
@@ -145,7 +145,7 @@
                     "QualifiedName": "game.SceneMgrBehaviourFilter",
                     "Description": "",
                     "Source": {
-                        "File": "C:/Users/riole/Documents/unitards/chipongoyClient/Assets/chipongoy/Scripts/SceneMgr/SceneMgrBehaviour.ts",
+                        "File": "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/chipongoy/Scripts/SceneMgr/SceneMgrBehaviour.ts",
                         "Line": 110,
                         "Character": 67
                     },
@@ -165,7 +165,7 @@
             "QualifiedName": "game.SimpleDragger",
             "Description": "",
             "Source": {
-                "File": "C:/Users/riole/Documents/unitards/chipongoyClient/Assets/chipongoy/Scripts/Sprite/SimpleDragger.ts",
+                "File": "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/chipongoy/Scripts/Sprite/SimpleDragger.ts",
                 "Line": 11,
                 "Character": 17
             },
@@ -175,7 +175,7 @@
                     "QualifiedName": "game.SimpleDraggerFilter",
                     "Description": "",
                     "Source": {
-                        "File": "C:/Users/riole/Documents/unitards/chipongoyClient/Assets/chipongoy/Scripts/Sprite/SimpleDragger.ts",
+                        "File": "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/chipongoy/Scripts/Sprite/SimpleDragger.ts",
                         "Line": 11,
                         "Character": 63
                     },
@@ -195,46 +195,46 @@
         {
             "Key": "tsconfig",
             "Description": "Time taken to read and parse the given tsconfig.json file",
-            "Duration": 109,
+            "Duration": 92,
             "Steps": 1
         },
         {
             "Key": "checksum",
             "Description": "Time taken to compute the MD5 of all inputs",
-            "Duration": 189,
+            "Duration": 308,
             "Steps": 1
         },
         {
             "Key": "compile",
             "Description": "Time taken to compile the TypeScript program",
-            "Duration": 763,
+            "Duration": 866,
             "Steps": 17
         },
         {
             "Key": "emit",
             "Description": "Time taken to generate and write the JavaScript output",
-            "Duration": 116,
+            "Duration": 106,
             "Steps": 2
         },
         {
             "Key": "metadata",
             "Description": "Time taken to reflect Tiny metadata from the compiled program",
-            "Duration": 12,
+            "Duration": 9,
             "Steps": 3
         }
     ],
     "SourceFiles": [
-        "C:/Users/riole/Documents/unitards/chipongoyClient/Assets/chipongoy/Scripts/SceneMgr/SceneMgr.ts",
-        "C:/Users/riole/Documents/unitards/chipongoyClient/Assets/chipongoy/Scripts/SceneMgr/SceneMgrBehaviour.ts",
-        "C:/Users/riole/Documents/unitards/chipongoyClient/Assets/chipongoy/Scripts/Sprite/MouseSpriteInteractionSystem.ts",
-        "C:/Users/riole/Documents/unitards/chipongoyClient/Assets/chipongoy/Scripts/Sprite/SimpleDragger.ts",
-        "C:/Users/riole/Documents/unitards/chipongoyClient/Assets/chipongoy/Scripts/System/InputService.ts",
-        "C:/Users/riole/Documents/unitards/chipongoyClient/Assets/chipongoy/Scripts/System/TimerService.ts",
-        "C:/Users/riole/Documents/unitards/chipongoyClient/Assets/chipongoy/Scripts/Transition/FadeHelper.ts",
-        "C:/Users/riole/Documents/unitards/chipongoyClient/Assets/chipongoy/Scripts/UI/CustomButtonSystem.ts",
-        "C:/Users/riole/Documents/unitards/chipongoyClient/Library/PackageCache/com.unity.tiny@0.13.4-preview/Runtime/Modules/UTiny.EntityGroup/Scripts/EntityGroup.ts",
-        "C:/Users/riole/Documents/unitards/chipongoyClient/Library/PackageCache/com.unity.tiny@0.13.4-preview/Runtime/Modules/UTiny.EntityGroup/Scripts/EntityLookupCache.ts"
+        "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/chipongoy/Scripts/SceneMgr/SceneMgr.ts",
+        "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/chipongoy/Scripts/SceneMgr/SceneMgrBehaviour.ts",
+        "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/chipongoy/Scripts/Sprite/MouseSpriteInteractionSystem.ts",
+        "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/chipongoy/Scripts/Sprite/SimpleDragger.ts",
+        "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/chipongoy/Scripts/System/InputService.ts",
+        "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/chipongoy/Scripts/System/TimerService.ts",
+        "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/chipongoy/Scripts/Transition/FadeHelper.ts",
+        "/Users/fadzli/Documents/chopodoy/chipodoy/Assets/chipongoy/Scripts/UI/CustomButtonSystem.ts",
+        "/Users/fadzli/Documents/chopodoy/chipodoy/Library/PackageCache/com.unity.tiny@0.13.4-preview/Runtime/Modules/UTiny.EntityGroup/Scripts/EntityGroup.ts",
+        "/Users/fadzli/Documents/chopodoy/chipodoy/Library/PackageCache/com.unity.tiny@0.13.4-preview/Runtime/Modules/UTiny.EntityGroup/Scripts/EntityLookupCache.ts"
     ],
-    "InputHash": "f055603c565992bcbae817d3faac8ebb",
-    "GeneratedAt": "Sun Feb 03 2019 12:16:24 GMT+0800 (Malay Peninsula Standard Time)"
+    "InputHash": "d990ca84daf564ecfb610043b5d3d436",
+    "GeneratedAt": "Thu Feb 07 2019 09:42:36 GMT+0800 (+08)"
 }

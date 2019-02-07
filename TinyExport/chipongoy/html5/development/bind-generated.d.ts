@@ -255,6 +255,20 @@ declare namespace ut.EditorExtensions{
         static _tempHeapPtr(v: AssetReferenceSpriteAtlas): number;
         static _dtorFn(v: AssetReferenceSpriteAtlas): void;
     }
+    class AssetReferenceTMP_FontAsset extends ut.Component {
+        constructor();
+        guid: string;
+        fileId: number;
+        type: number;
+        static readonly cid: number;
+        static readonly _view: any;
+        static readonly _isSharedComp: boolean;
+        static _size: number;
+        static _fromPtr(p: number, v?: AssetReferenceTMP_FontAsset): AssetReferenceTMP_FontAsset;
+        static _toPtr(p: number, v: AssetReferenceTMP_FontAsset): void;
+        static _tempHeapPtr(v: AssetReferenceTMP_FontAsset): number;
+        static _dtorFn(v: AssetReferenceTMP_FontAsset): void;
+    }
     class AssetReferenceTexture2D extends ut.Component {
         constructor();
         guid: string;
@@ -282,20 +296,6 @@ declare namespace ut.EditorExtensions{
         static _toPtr(p: number, v: AssetReferenceTile): void;
         static _tempHeapPtr(v: AssetReferenceTile): number;
         static _dtorFn(v: AssetReferenceTile): void;
-    }
-    class AssetReferenceTMP_FontAsset extends ut.Component {
-        constructor();
-        guid: string;
-        fileId: number;
-        type: number;
-        static readonly cid: number;
-        static readonly _view: any;
-        static readonly _isSharedComp: boolean;
-        static _size: number;
-        static _fromPtr(p: number, v?: AssetReferenceTMP_FontAsset): AssetReferenceTMP_FontAsset;
-        static _toPtr(p: number, v: AssetReferenceTMP_FontAsset): void;
-        static _tempHeapPtr(v: AssetReferenceTMP_FontAsset): number;
-        static _dtorFn(v: AssetReferenceTMP_FontAsset): void;
     }
     class CameraCullingMask extends ut.Component {
         constructor();
@@ -338,7 +338,9 @@ declare namespace ut{
             Scene2: EntityGroupData;
             FadeIn: EntityGroupData;
             FadeOut: EntityGroupData;
-            LocalmapBase: EntityGroupData;
+            LocalGridBase: EntityGroupData;
+            LocalMap: EntityGroupData;
+            Player: EntityGroupData;
         }
     }
 }
